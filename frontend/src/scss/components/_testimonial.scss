@@ -1,0 +1,39 @@
+.show {
+  width: 100%;
+  min-height: 500px;
+  background-color: $secondary;
+  @include fleVertical();
+  color: $light;
+
+  &__content h1 {
+    padding-top: 3rem;
+    font-size: 40px;
+    font-weight: 600;
+  }
+  &__card {
+    background: $success;
+    color: rgb(216, 215, 215);
+    padding: 80px 40px;
+    margin: 2rem 2rem;
+    @media screen and (min-width: 920px) {
+    }
+
+    &-h6 {
+      font-size: 12px;
+      font-weight: 300;
+      letter-spacing: 3px;
+      margin-bottom: 10px;
+    }
+
+    &-h4 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    &-text {
+      font-size: 15px;
+      letter-spacing: 1px;
+      line-height: 20px;
+    }
+  }
+}

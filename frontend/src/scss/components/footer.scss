@@ -1,0 +1,55 @@
+.footer {
+  background-color: $secondary;
+  width: 100%;
+  min-height: 75vh;
+  padding-top: 6rem;
+  margin-top: 3rem;
+  &__img-logo {
+    width: 150px;
+    height: 40px;
+    margin-bottom: 3rem;
+  }
+  .footer-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    @media screen and (min-width: 960px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  &__header {
+    font-weight: 600;
+    color: $light;
+    padding-bottom: 1rem;
+  }
+  &__text {
+    font-size: 10px;
+    color: $light;
+    line-height: 2.5;
+  }
+  &__col-3-d {
+    span {
+      display: flex;
+      margin-bottom: 1rem;
+      margin-right: 2rem;
+    }
+  }
+  &__img {
+    height: 30px;
+  }
+  &__img-media {
+    height: 30px;
+    margin-top: 2rem;
+  }
+  &__hrv {
+    border: 0.5px solid $light;
+    width: 100%;
+    margin-top: 2rem;
+  }
+  &__text-copy {
+    font-size: 14px;
+    color: $light;
+    text-align: center;
+    margin-top: 0.5rem;
+  }
+}
