@@ -1,0 +1,35 @@
+.container {
+	// width: 1200px;
+	// margin: 0 auto;
+	width: 100%;
+	padding: 0 5rem;
+
+	@media (max-width: 765px) {
+		width: 100%;
+		padding: 0 10px;
+	}
+}
+
+.whiteBg {
+	background: $info !important;
+	& a {
+		color: $black !important;
+	}
+}
+
+.transparent {
+	background: transparent;
+
+	& a {
+		color: $light;
+	}
+}
+.pl-15 {
+	padding-left: 15px;
+}
+.mt-40 {
+	margin-top: 40px;
+}
+.rel {
+	position: relative;
+}
