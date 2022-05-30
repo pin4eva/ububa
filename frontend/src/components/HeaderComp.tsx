@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { HiMenuAlt4, HiX } from "react-icons/hi";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const HeaderComp = () => {
 	const [toggle, setToggle] = useState(false);
@@ -29,18 +30,16 @@ const HeaderComp = () => {
 					</div>
 
 					<ul className="navbar__right">
-						{[
-							"Home",
-							"About",
-							"Training",
-							"Products",
-							<button>Contact</button>,
-						].map((item) => (
-							<li key={`link-${item}`}>
-								<div />
-								<a href={`#${item}`}>{item}</a>
+						{navList.map((nav, i) => (
+							<li key={i}>
+								<div className="dot" />
+
+								<Link href={nav.link}>
+									<a>{nav.name}</a>
+								</Link>
 							</li>
 						))}
+						<button>Contact</button>
 					</ul>
 					<div className="navbar__menu">
 						<HiMenuAlt4 onClick={() => setToggle(true)} />
@@ -70,3 +69,10 @@ const HeaderComp = () => {
 };
 
 export default HeaderComp;
+
+const navList = [
+	{ name: "Home", link: "/#" },
+	{ name: "About", link: "/#about" },
+	{ name: "Training", link: "/#training" },
+	{ name: "Services", link: "/#services" },
+];

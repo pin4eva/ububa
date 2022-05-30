@@ -1,10 +1,8 @@
-.header {
+.hero {
 	width: 100%;
 	height: 85vh;
-	// @include bgImage("../../images/hero4.jpg");
-	background: url("../styles/img/hero4.jpg");
+	background: url("/images/hero4.jpg") no-repeat;
 	background-size: cover;
-	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-blend-mode: overlay;
 	background-position: center center;
@@ -45,6 +43,7 @@
 			left: 0px;
 			top: 0px;
 		}
+
 		&-buttons .btn_2 {
 			background-color: transparent;
 			border: 2px solid $light;
@@ -70,6 +69,7 @@
 		font-weight: 200;
 	}
 }
+
 .about {
 	padding: 120px 0;
 	width: 100%;
@@ -93,6 +93,7 @@
 		display: flex;
 		// background-color: blue;
 		flex-direction: column;
+
 		@media screen and (min-width: 1024px) {
 			align-items: center;
 			flex-direction: row;
@@ -102,18 +103,21 @@
 			// background-color: red;
 			margin-bottom: 2rem;
 			flex: 1;
+
 			h4 {
 				color: $black;
 				font-size: 30px;
 				font-weight: 200;
 				margin-bottom: 2rem;
 			}
+
 			p {
 				font-size: 18px;
 				color: $silver;
 				font-weight: 100;
 				line-height: 2;
 			}
+
 			button {
 				background-color: $primary;
 				border: 1px solid $primary;
@@ -132,6 +136,7 @@
 				top: 0px;
 			}
 		}
+
 		.about__right {
 			flex: 1;
 			display: flex;
@@ -156,7 +161,7 @@
 	}
 
 	&__cards {
-		background: url("../styles/img/Group\ 1180.png");
+		background: url("/images/Group\ 1180.png");
 		background-position: center center;
 		background-repeat: no-repeat;
 		background-size: cover;
@@ -202,11 +207,13 @@
 		font-weight: 600;
 		margin-bottom: 10px;
 	}
+
 	&__text {
 		color: $silver;
 		font-size: 12px;
 		line-height: 1.5;
 	}
+
 	&__btn {
 		background-color: $success;
 		border: 1px solid $success;
@@ -239,13 +246,14 @@
 		font-size: 40px;
 		font-weight: 600;
 	}
+
 	&__card {
 		background: $success;
 		color: rgb(216, 215, 215);
 		padding: 80px 40px;
 		margin: 2rem 2rem;
-		@media screen and (min-width: 920px) {
-		}
+
+		@media screen and (min-width: 920px) {}
 
 		&-h6 {
 			font-size: 12px;
@@ -259,6 +267,7 @@
 			font-weight: 700;
 			margin-bottom: 10px;
 		}
+
 		&-text {
 			font-size: 15px;
 			letter-spacing: 1px;
@@ -266,6 +275,7 @@
 		}
 	}
 }
+
 .portfolio {
 	width: 100%;
 	min-height: 600px;
@@ -280,10 +290,12 @@
 		z-index: 2;
 		flex-direction: column;
 		gap: 3rem;
+
 		@media screen and (min-width: 960px) {
 			flex-direction: row;
 		}
 	}
+
 	&__content {
 		h6 {
 			color: $black;
@@ -292,6 +304,7 @@
 			text-transform: uppercase;
 			letter-spacing: 14px;
 			font-weight: 400;
+
 			@media screen and (min-width: 960px) {
 				font-weight: 400;
 				font-size: 17px;
@@ -299,6 +312,7 @@
 				letter-spacing: 14px;
 			}
 		}
+
 		h3 {
 			color: $primary;
 			font-size: 60px;
@@ -310,29 +324,35 @@
 			padding-bottom: 2rem;
 		}
 	}
+
 	&__box {
 		// background-color: red;
 	}
+
 	&__card {
 		// background-color: green;
 		text-align: center;
 		padding-bottom: 15px;
+
 		img {
 			width: 100%;
 			height: auto;
 			border-radius: 1rem;
 		}
 	}
+
 	&__card-name {
 		font-size: 18px;
 		text-align: center;
 	}
+
 	&__card-expert {
 		color: $silver;
 		font-size: 14px;
 		text-align: center;
 	}
 }
+
 .blank {
 	width: 100%;
 	height: 200px;
@@ -355,11 +375,13 @@
 		margin-top: 5rem;
 		text-shadow: 0 8px rgba(0, 0, 0, 0.05);
 	}
+
 	&__form {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
+
 		input {
 			width: 100%;
 			max-width: 54rem;
@@ -372,6 +394,7 @@
 			margin-bottom: 1rem;
 			box-shadow: 12px 11px 6px rgba(0, 0, 0, 0.1);
 		}
+
 		textarea {
 			width: 100%;
 			max-width: 54rem;
@@ -392,6 +415,7 @@
 		justify-content: center;
 		align-items: center;
 	}
+
 	&__btn {
 		background-color: $primary;
 		border: 1px solid $primary;
@@ -418,29 +442,35 @@
 	min-height: 75vh;
 	padding-top: 6rem;
 	margin-top: 3rem;
+
 	&__img-logo {
 		width: 150px;
 		height: 40px;
 		margin-bottom: 3rem;
 	}
+
 	.footer-row {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		gap: 2rem;
+
 		@media screen and (min-width: 960px) {
 			grid-template-columns: repeat(4, 1fr);
 		}
 	}
+
 	&__header {
 		font-weight: 600;
 		color: $light;
 		padding-bottom: 1rem;
 	}
+
 	&__text {
 		font-size: 10px;
 		color: $light;
 		line-height: 2.5;
 	}
+
 	&__col-3-d {
 		span {
 			display: flex;
@@ -448,18 +478,22 @@
 			margin-right: 2rem;
 		}
 	}
+
 	&__img {
 		height: 30px;
 	}
+
 	&__img-media {
 		height: 30px;
 		margin-top: 2rem;
 	}
+
 	&__hrv {
 		border: 0.5px solid $light;
 		width: 100%;
 		margin-top: 2rem;
 	}
+
 	&__text-copy {
 		font-size: 14px;
 		color: $light;
