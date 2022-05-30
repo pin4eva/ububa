@@ -140,7 +140,7 @@
 		.about__right {
 			flex: 1;
 			display: flex;
-			justify-content: end;
+			justify-content: flex-end;
 		}
 	}
 }
@@ -325,9 +325,7 @@
 		}
 	}
 
-	&__box {
-		// background-color: red;
-	}
+
 
 	&__card {
 		// background-color: green;
@@ -439,7 +437,6 @@
 .footer {
 	background-color: $secondary;
 	width: 100%;
-	min-height: 75vh;
 	padding-top: 6rem;
 	margin-top: 3rem;
 
