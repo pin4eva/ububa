@@ -11,9 +11,10 @@
 }
 
 .whiteBg {
-	background: $info !important;
+	background: $info  !important;
+
 	& a {
-		color: $black !important;
+		color: $black  !important;
 	}
 }
 
@@ -24,12 +25,27 @@
 		color: $light;
 	}
 }
+
 .pl-15 {
 	padding-left: 15px;
 }
+
 .mt-40 {
 	margin-top: 40px;
 }
+
 .rel {
 	position: relative;
+}
+
+
+// button
+
+.btn {
+	padding: .8rem 2.8rem;
+	box-sizing: border-box;
+
+	&.btn-primary {
+		color: white;
+	}
 }

@@ -23,7 +23,7 @@ const Home: NextPage = () => {
 				</div>
 
 				<div className="about">
-					<div className="">
+					<div className="inner">
 						<div className="about__h4">
 							<h2>About Us</h2>
 						</div>
@@ -43,7 +43,7 @@ const Home: NextPage = () => {
 										for small and big brands , also build authenthic product
 										identities and much more.{" "}
 									</p>
-									<button className="left__btn">View</button>
+									<button className="left__btn btn btn-primary">View</button>
 								</div>
 							</div>
 							<div className=" about__right">
