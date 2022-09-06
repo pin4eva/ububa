@@ -6,13 +6,29 @@ header {
 		width: 1.9rem;
 	}
 
+	.navs.sticky {
+		position: fixed;
+		top: 0;
+		width: 100%;
+		background: #f2f9ff;
+		i {
+			color: $secondary;
+		}
+		a {
+			color: black;
+			&:hover {
+				color: $primary;
+			}
+		}
+	}
+
 	.mobile-nav-overlay {
 		// border: 1px solid green;
 		width: 40%;
 		min-height: 100vh;
 		position: absolute;
 		top: 0;
-		z-index: 1;
+		// z-index: 1;
 
 		background: rgba(22, 42, 62, 0.79);
 		backdrop-filter: blur(3px);
@@ -25,7 +41,7 @@ header {
 		position: absolute;
 		top: 0;
 		right: 0;
-		z-index: 2;
+		// z-index: 2;
 
 		ul {
 			// border: 1px solid red;
@@ -56,6 +72,9 @@ header {
 			&:hover {
 				color: $secondary;
 			}
+			// &.active {
+			// 	color: $secondary;
+			// }
 		}
 	}
 	i {

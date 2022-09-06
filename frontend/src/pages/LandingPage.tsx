@@ -1,4 +1,4 @@
-import React, { UIEventHandler, useEffect } from "react";
+import React from "react";
 import ProductCard from "../components/ProductCard";
 import FrontLayout from "../components/shared/FrontLayout";
 import Header from "../components/shared/Header";
@@ -91,8 +91,8 @@ const LandingPage = () => {
 							required
 							name=""
 							id=""
-							cols={30}
-							rows={10}
+							cols={10}
+							rows={5}
 							placeholder="Message"
 						></textarea>
 						<div className="text-center">

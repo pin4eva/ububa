@@ -5,10 +5,16 @@ import Nav from "../Nav";
 const Header = () => {
 	const [browserWidth, setBrowserWidth] = useState<number>(window.innerWidth);
 	const [view, setView] = useState(false);
+	const [stickyHeader, setStickyHeader] = useState(false);
 
 	function updateBrowserWidth() {
 		setBrowserWidth(window.innerWidth);
 	}
+	const checkScroll = () => {
+		window.scrollY >= 70 ? setStickyHeader(true) : setStickyHeader(false);
+	};
+
+	window.addEventListener("scroll", checkScroll);
 
 	useEffect(() => {
 		window.addEventListener("resize", updateBrowserWidth);
@@ -18,18 +24,27 @@ const Header = () => {
 		};
 	}, [browserWidth]);
 
+	useEffect(() => {
+		window.addEventListener("scroll", checkScroll);
+
+		return () => {
+			window.removeEventListener("scroll", checkScroll);
+		};
+	});
+
 	return (
 		<header>
 			<div
-				className={
-					browserWidth > 800
-						? "d-flex-around pt-3"
-						: "d-flex-between p-4 header"
-				}
+				className={`${
+					browserWidth > 800 ? "d-flex-around p-3" : "d-flex-between p-4 header"
+				} ${stickyHeader ? "navs sticky" : ""}`}
 			>
 				<div className="logo">
 					<a href="#home">
-						<img src="/images/logoa.svg" alt="" />
+						<img
+							src={`/images/${stickyHeader ? "logodark.png" : "logoa.svg"}`}
+							alt=""
+						/>
 					</a>
 				</div>
 
