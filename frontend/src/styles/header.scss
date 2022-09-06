@@ -1,5 +1,8 @@
 header {
 	position: relative;
+	background: #f6921e;
+	color: #ffffff;
+	padding-bottom: 1rem;
 
 	.logo {
 		// border: 1px solid red;
@@ -40,7 +43,7 @@ header {
 			cursor: pointer;
 			font-weight: 700;
 			font-size: 1.4rem;
-			color: $secondary;
+			color: #ffffff;
 		}
 	}
 
@@ -51,10 +54,10 @@ header {
 		a {
 			font-weight: 700;
 			text-decoration: none;
-			color: white;
+			color: rgba(22, 42, 62, 0.79);
 
 			&:hover {
-				color: $secondary;
+				color: #ffffff;
 			}
 		}
 	}
@@ -65,6 +68,9 @@ header {
 	}
 	.contact-us {
 		margin-left: 0;
+		border-radius: 50px;
+		background: #ffffff;
+		color: rgba(22, 42, 62, 0.79);
 		@media screen and (min-width: 800px) {
 			margin-left: 2em;
 		}
