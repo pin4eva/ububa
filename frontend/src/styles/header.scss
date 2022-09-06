@@ -1,7 +1,72 @@
 header {
-	nav {
-		li {
+	position: relative;
+
+	.logo {
+		// border: 1px solid red;
+		width: 1.9rem;
+	}
+
+	.mobile-nav-overlay {
+		// border: 1px solid green;
+		width: 40%;
+		min-height: 100vh;
+		position: absolute;
+		top: 0;
+		z-index: 1;
+
+		background: rgba(22, 42, 62, 0.79);
+		backdrop-filter: blur(3px);
+	}
+	.mobile-nav {
+		background: dimgray;
+		width: 60%;
+		min-height: 100vh;
+
+		position: absolute;
+		top: 0;
+		right: 0;
+		z-index: 2;
+
+		ul {
+			// border: 1px solid red;
+			padding: 1em;
+			li {
+				margin-bottom: 1.5em;
+			}
+		}
+
+		.close-mobile-nav {
+			all: unset;
+			cursor: pointer;
+			font-weight: 700;
+			font-size: 1.4rem;
+			color: $secondary;
+		}
+	}
+
+	ul {
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
+		a {
+			font-weight: 700;
 			text-decoration: none;
+			color: white;
+
+			&:hover {
+				color: $secondary;
+			}
+		}
+	}
+	i {
+		cursor: pointer;
+		font-size: 1.8rem;
+		color: white;
+	}
+	.contact-us {
+		margin-left: 0;
+		@media screen and (min-width: 800px) {
+			margin-left: 2em;
 		}
 	}
 }
