@@ -1,6 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import Nav from "../Nav";
 
 const Header = () => {
@@ -20,29 +19,51 @@ const Header = () => {
 	}, [browserWidth]);
 
 	return (
-		<header className="text-primary bg-secondary">
-			<div className="desktop-nav d-flex">
+		<header>
+			<div
+				className={
+					browserWidth > 800
+						? "d-flex-around pt-3"
+						: "d-flex-between p-4 header"
+				}
+			>
 				<div className="logo">
-					<Link to={"/"}>
-						<i className="fa-solid fa-universal-access"></i>
-					</Link>
+					<a href="#home">
+						<img src="/images/logoa.svg" alt="" />
+					</a>
 				</div>
 
 				{browserWidth > 800 ? (
 					<Nav browserWidth={browserWidth} />
 				) : (
-					<button onClick={() => setView(!view)}>
-						<i className="fa-solid fa-bars text-light"></i>
-					</button>
+					<i onClick={() => setView(true)} className="fa-solid fa-bars"></i>
 				)}
 
-				<div></div>
+				{/* <div></div> */}
 			</div>
 
 			{/* conditionally render mobile nav based on user's screen width */}
-			<div className="mobile-nav">
-				{view && browserWidth < 800 && <Nav browserWidth={browserWidth} />}
-			</div>
+
+			{view && browserWidth < 800 && (
+				<div>
+					<div
+						className="mobile-nav-overlay"
+						onClick={() => setView(false)}
+					></div>
+
+					<div className="mobile-nav">
+						<div className="text-end mt-4 me-4">
+							<button
+								className="close-mobile-nav"
+								onClick={() => setView(false)}
+							>
+								X
+							</button>
+						</div>
+						<Nav browserWidth={browserWidth} />
+					</div>
+				</div>
+			)}
 		</header>
 	);
 };

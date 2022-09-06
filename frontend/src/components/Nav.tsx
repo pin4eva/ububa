@@ -4,32 +4,27 @@ import { Link } from "react-router-dom";
 
 const Nav: React.FC<{ browserWidth: number }> = ({ browserWidth }) => {
 	return (
-		<nav>
-			<ul className={browserWidth > 800 ? "d-flex" : ""}>
+		<nav className={browserWidth < 800 ? "mb-5" : ""}>
+			<ul className={browserWidth > 800 ? `d-flex-between` : ` `}>
 				<li>
-					<Link to={"/"}>
-						<a>HOME</a>
-					</Link>
+					<a href="#home">Home</a>
+				</li>
+
+				<li>
+					<a href="#about-us">About Us</a>
+				</li>
+				<Link to={"/training"}>
+					<li>
+						<a>Training</a>
+					</li>
+				</Link>
+				<li>
+					<a href="#products">Products</a>
 				</li>
 				<li>
-					<Link to={"/about"}>
-						<a>ABOUT</a>
-					</Link>
-				</li>
-				<li>
-					<Link to={"/training"}>
-						<a>TRAINING</a>
-					</Link>
-				</li>
-				<li>
-					<Link to={"/services"}>
-						<a>SERVICES</a>
-					</Link>
-				</li>
-				<li>
-					<Link to={"/contact"}>
-						<a>CONTACT</a>
-					</Link>
+					<a href="#contact-us">
+						<button className="btn-sm contact-us">Contact</button>
+					</a>
 				</li>
 			</ul>
 		</nav>
