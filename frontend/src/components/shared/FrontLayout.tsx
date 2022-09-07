@@ -4,11 +4,12 @@ import Header from "./Header";
 
 const FrontLayout: React.FC<{
 	children: React.ReactElement;
-	showHeader: boolean;
+	showHeader?: boolean;
 }> = ({ children, showHeader }) => {
 	return (
 		<Fragment>
-			<div>{showHeader && <Header />}</div>
+			<Header />
+			<div className="layout">{showHeader && <Header />}</div>
 			{children}
 			<Footer />
 		</Fragment>

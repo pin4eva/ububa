@@ -1,15 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;0,900;1,400&display=swap");
-
-// Override default variables before the import
 @import "./variables.scss";
-
-// Import Bootstrap and its default variables
-@import "~bootstrap/scss/bootstrap.scss";
 @import "./header.scss";
 @import "./product-card.scss";
-@import "./landing-page.scss";
+@import "./home-page.scss";
 @import "./footer.scss";
-
-body {
-	font-family: "Roboto", sans-serif;
-}

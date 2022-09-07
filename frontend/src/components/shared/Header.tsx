@@ -40,7 +40,7 @@ const Header = () => {
 				} ${stickyHeader ? "navs sticky" : ""}`}
 			>
 				<div className="logo">
-					<a href="#home">
+					<a href="/">
 						<img
 							src={`/images/${stickyHeader ? "logodark.png" : "logoa.svg"}`}
 							alt=""

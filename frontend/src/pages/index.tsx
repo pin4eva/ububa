@@ -8,10 +8,9 @@ import { TeamData } from "../data/team.data";
 
 const LandingPage = () => {
 	return (
-		<FrontLayout showHeader={false}>
+		<FrontLayout>
 			<div className="landing-page" id="home">
 				<div className="home-hero">
-					<Header />
 					<div className="home-hero-title text-center">
 						<h4 className="text-light">
 							Build better products and <br /> build better Skills
