@@ -11,7 +11,7 @@ const LandingPage = () => {
 		<FrontLayout>
 			<div className="landing-page" id="home">
 				<div className="home-hero">
-					<div className="home-hero-title text-center">
+					<div className="home-hero-inner text-center">
 						<h4 className="text-light">
 							Build better products and <br /> build better Skills
 						</h4>
