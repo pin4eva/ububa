@@ -10,6 +10,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 		<Fragment>
 			<Head>
 				<title>Ububa</title>
+				<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 				<meta
 					name="description"
 					content="Official website of Joint Heirs Assembly International"

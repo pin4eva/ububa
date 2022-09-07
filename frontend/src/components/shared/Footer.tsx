@@ -1,19 +1,22 @@
-import React from "react";
-import { Link } from "react-router-dom";
+/* eslint-disable @next/next/no-img-element */
+import Link from "next/link";
+import Image from "next/image";
 
 const Footer = () => {
 	return (
 		<footer>
 			<div className="footer-top">
 				<div className="footer-logo d-flex-center">
-					<a href="#home">
-						<img
-							src="/images/footer-logo.png"
-							alt=""
-							width={"200px"}
-							height={"51px"}
-						/>
-					</a>
+					<Link href="/">
+						<a>
+							<Image
+								src="/images/footer-logo.png"
+								alt=""
+								width={200}
+								height={51}
+							/>
+						</a>
+					</Link>
 				</div>
 
 				<div className="footer-navs ">
