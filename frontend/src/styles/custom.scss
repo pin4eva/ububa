@@ -1,10 +1,16 @@
-// Override default variables before the import
 @import "./variables.scss";
-
-// Import Bootstrap and its default variables
-@import "~bootstrap/scss/bootstrap.scss";
 @import "./header.scss";
 @import "./product-card.scss";
-@import "./landing-page.scss";
-@import "./team-card.scss";
+@import "./home-page.scss";
 @import "./footer.scss";
+
+
+.front-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  &-main {
+    flex: 1;
+  }
+}

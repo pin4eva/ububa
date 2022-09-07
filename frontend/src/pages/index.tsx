@@ -1,4 +1,4 @@
-import React, { UIEventHandler, useEffect } from "react";
+import React from "react";
 import ProductCard from "../components/ProductCard";
 import FrontLayout from "../components/shared/FrontLayout";
 import Header from "../components/shared/Header";
@@ -8,11 +8,10 @@ import { TeamData } from "../data/team.data";
 
 const LandingPage = () => {
 	return (
-		<FrontLayout showHeader={false}>
+		<FrontLayout>
 			<div className="landing-page" id="home">
 				<div className="home-hero">
-					<Header />
-					<div className="home-hero-title text-center">
+					<div className="home-hero-inner text-center">
 						<h4 className="text-light">
 							Build better products and <br /> build better Skills
 						</h4>
@@ -91,8 +90,8 @@ const LandingPage = () => {
 							required
 							name=""
 							id=""
-							cols={30}
-							rows={10}
+							cols={10}
+							rows={5}
 							placeholder="Message"
 						></textarea>
 						<div className="text-center">

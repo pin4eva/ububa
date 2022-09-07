@@ -1,19 +1,24 @@
 $primary: #47678b;
 $secondary: #f6921e;
+$blue: #1E3856;
 
 // flex-classes
 .d-flex-between {
 	justify-content: space-between;
 }
+
 .d-flex-around {
 	justify-content: space-around;
 }
+
 .d-flex-center {
 	justify-content: center;
 }
+
 .d-flex-mobile-nav {
 	flex-direction: column;
 }
+
 .d-flex-around,
 .d-flex-between,
 .d-flex-center,
@@ -22,16 +27,19 @@ $secondary: #f6921e;
 	align-items: center;
 	gap: 2em;
 }
+
 // btn classes
 .btn-sm {
 	width: 92px;
 	height: 36px;
 }
+
 .btn-lg {
 	width: 122px;
 	height: 43px;
 	// border-radius: 10px;
 }
+
 .btn-sm,
 .btn-lg {
 	border-radius: 8px;
