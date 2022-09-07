@@ -18,10 +18,8 @@ body {
 				img {
 					margin-top: 10rem;
 
-					@media screen and (max-width: 1200px) {
-						height: 80vh;
-						width: 100%;
-						margin-top: 0;
+					@media screen and (max-width: 1400px) {
+						display: none;
 					}
 				}
 			}
@@ -33,7 +31,7 @@ body {
 			flex-direction: column;
 			border-radius: 19px;
 			margin: 5vh auto;
-			border: 2px solid #f6921e;
+			// border: 2px solid #f6921e;
 			background: #faf3ed;
 			padding: 2rem;
 			box-shadow: 10px 10px 8px #f6921e;

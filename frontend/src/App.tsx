@@ -11,16 +11,16 @@ import "./styles/custom.scss";
 // import Header from "./components/shared/Header";
 // import Footer from "./components/shared/Footer";
 import Register from "./components/Register";
+import { Route, Routes } from "react-router-dom";
+import Training from "./pages/Training";
+import LandingPage from "./pages/LandingPage";
 const App: React.FC = () => {
 	return (
 		<Fragment>
-			{/* <Header />
 			<Routes>
 				<Route path="/" element={<LandingPage />} />
 				<Route path="/training" element={<Training />} />
 			</Routes>
-			<Footer /> */}
-			<Register />
 		</Fragment>
 	);
 };
