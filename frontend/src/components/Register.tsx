@@ -1,6 +1,5 @@
 import React from "react";
 import "../styles/training-page.scss";
-import FrontLayout from "./shared/FrontLayout";
 
 const Register: React.FC = () => {
 	return (

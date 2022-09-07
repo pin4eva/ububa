@@ -12,8 +12,8 @@ import "./styles/custom.scss";
 // import Footer from "./components/shared/Footer";
 import Register from "./components/Register";
 import { Route, Routes } from "react-router-dom";
-import Training from "./pages/Training";
-import LandingPage from "./pages/LandingPage";
+import Training from "./pages/training";
+import LandingPage from "./pages";
 const App: React.FC = () => {
 	return (
 		<Fragment>
