@@ -1,14 +1,11 @@
+/* eslint-disable @next/next/no-img-element */
 import React from "react";
-import "../styles/training-page.scss";
+import Link from "next/link";
 
 const Register: React.FC = () => {
 	return (
 		<div className="register">
 			<div className="registerContainer">
-				<div className="imgContainer">
-					<img src="/images/train-bg.png" alt="train.png" />
-				</div>
-
 				<div className="registerContent">
 					<h1 className="formH1">Register</h1>
 					<form className="registerForm">
@@ -35,7 +32,10 @@ const Register: React.FC = () => {
 						<hr />
 
 						<p>
-							Clicking submit you agree to <a href="/">Terms & Privacy.</a>
+							Clicking submit you agree to{" "}
+							<Link href="/">
+								<a>Terms & Privacy.</a>
+							</Link>
 						</p>
 
 						<button>Submit</button>

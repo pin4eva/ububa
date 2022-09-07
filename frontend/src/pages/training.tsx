@@ -5,7 +5,9 @@ import FrontLayout from "../components/shared/FrontLayout";
 const Training = () => {
 	return (
 		<FrontLayout showHeader={true}>
-			<Register />
+			<div className="container">
+				<Register />
+			</div>
 		</FrontLayout>
 	);
 };
