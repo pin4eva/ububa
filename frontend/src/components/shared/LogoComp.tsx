@@ -3,15 +3,16 @@ import { SVGProps } from "react";
 
 const fill = "#F2F9FF";
 export enum LogoColorEnum {
-	WHITE = "#F2F9FF",
+	UBUBA_BLUE = "#0A1828",
 	YELLOW = "#f6921e",
 	BLUE = "#1E3856",
+	WHITE = "#F2F9FF",
 }
 
 const LogoComp: React.FC<{
 	props?: SVGProps<SVGSVGElement>;
 	fill?: LogoColorEnum;
-}> = ({ props, fill = LogoColorEnum.WHITE }) => {
+}> = ({ props, fill }) => {
 	return (
 		<svg
 			width="2em"

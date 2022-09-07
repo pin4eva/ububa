@@ -1,13 +1,14 @@
 .header {
 	position: fixed;
 	width: 100%;
-	background-color: rgba($blue, 0.3);
+	// background-color: rgba($blue, 0.3);
 	backdrop-filter: blur(5px);
 	color: white;
 
 	.nav {
 		&-link {
-			color: white;
+			// color: white;
+			font-weight: 700;
 		}
 	}
 
@@ -18,12 +19,9 @@
 
 	&.scrolled {
 		background-color: rgba(white, 0.8);
-		color: $blue;
 
 		.nav-link {
-			color: inherit;
+			color: $ububa-blue;
 		}
 	}
-
-
 }

@@ -1,5 +1,4 @@
 .landing-page {
-
 	img {
 		width: 100%;
 	}
@@ -13,7 +12,7 @@
 
 	section {
 		padding: 2em;
-		margin-top: 4em;
+		// margin-top: 4em;
 	}
 
 	// scoped styles
@@ -29,13 +28,11 @@
 		&-inner {
 			padding: 1em;
 
-
 			h4 {
 				font-weight: 700;
 				font-size: 40px;
 				line-height: 185.69%;
 				letter-spacing: -0.005em;
-
 			}
 
 			button {
@@ -49,7 +46,6 @@
 	}
 
 	.about-us {
-
 		background: #f2f9ff;
 
 		// border: 1px solid red;
