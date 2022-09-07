@@ -1,10 +1,8 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Nav: React.FC<{ browserWidth: number }> = ({ browserWidth }) => {
-	// const active =
-	// 	window.location.pathname === window.location.href ? "active" : "";
 	function active() {
 		console.log(window.location.pathname);
 		console.log(window.location.href);

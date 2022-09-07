@@ -3,6 +3,7 @@ footer {
 	background: #1e3856;
 	color: white;
 	padding-bottom: 2em;
+
 	.footer-top {
 		padding: 1em 3em;
 
@@ -42,13 +43,12 @@ footer {
 		}
 
 		@media screen and (min-width: 800px) {
-			.footer-logo {
-				// border: 1px solid red;
-				justify-content: left;
-				margin-left: 0;
-			}
+			.footer-logo,
 			.contact-wrapper {
 				justify-content: left;
+			}
+			.footer-logo {
+				margin-left: 0;
 			}
 			.footer-navs {
 				display: flex;
