@@ -3,3 +3,14 @@
 @import "./product-card.scss";
 @import "./home-page.scss";
 @import "./footer.scss";
+
+
+.front-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  &-main {
+    flex: 1;
+  }
+}

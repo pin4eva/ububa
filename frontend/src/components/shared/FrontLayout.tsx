@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { Fragment, useEffect, useRef, useState } from "react";
 import Footer from "./Footer";
 import Header from "./Header";
@@ -31,9 +32,9 @@ const FrontLayout: React.FC<{
 	}, []);
 	return (
 		<Fragment>
-			<div className="layout">
+			<div className="front-layout">
 				<Header scrolled={scrolled} />
-				{children}
+				<main className="front-layout-main">{children}</main>
 
 				<Footer />
 			</div>
