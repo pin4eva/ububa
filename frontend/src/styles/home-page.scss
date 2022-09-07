@@ -20,14 +20,15 @@
 	.home-hero {
 		min-height: 70vh;
 		background: linear-gradient(rgba(22, 42, 62, 0.79), rgba(22, 42, 62, 0.79)),
-			url("../../public/images/home-hero.jpg") no-repeat center;
+			url("/images/home-hero.jpg") no-repeat center;
 		background-size: cover;
 		background-attachment: fixed;
 		display: grid;
+		place-items: center;
 
-
-		&-title {
+		&-inner {
 			padding: 1em;
+
 
 			h4 {
 				font-weight: 700;
