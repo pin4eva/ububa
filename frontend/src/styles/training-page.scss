@@ -1,79 +1,33 @@
 .register {
-	margin-top: 5vh;
-
-	.registerContainer {
-		display: flex;
-		align-items: center;
-
-		.imgContainer {
-			img {
-				display: none;
-
-				@media screen and (min-width:768px) {
-					display: block;
-				}
-
-			}
-		}
-	}
-
-	.registerContent {
-		width: 400px;
-		min-height: 550px;
-		display: flex;
-		flex-direction: column;
-		border-radius: 19px;
-		margin: 5vh auto;
-		// border: 2px solid #f6921e;
-		background: #faf3ed;
+	background: red;
+	display: flex;
+	padding: 2rem;
+	justify-content: center;
+	.regContainer {
+		background: blue;
+		margin-top: 10vh;
 		padding: 2rem;
-		box-shadow: 10px 10px 8px $secondary;
+		width: 100%;
+		max-width: 700px;
 
-		.formH1 {
-			text-align: center;
-			margin-bottom: 1rem;
-		}
-
-		.registerForm {
+		.form {
 			display: flex;
 			flex-direction: column;
-
-			label {
-				font-size: 1rem;
-				font-weight: 300;
-			}
-
-			select {
-				padding: 0.5rem 0;
-				margin: 1rem 0;
-				border-radius: 5px;
-			}
-
+			width: 50%;
+			border: 2px solid black;
 			input {
 				margin-bottom: 0.5rem;
 				outline: none;
 				border: none;
 				padding: 0.5rem;
 				background: #f1e9e9;
-				border-radius: 12px;
+				border-radius: 4px;
 				font-weight: 400;
-
-				&:focus {
-					background: #f4b876;
-					transition: 1s ease-in;
-				}
 			}
 
-			button {
-				@extend input;
-				background: #f6921e;
-				border-radius: 50px;
-				width: 10rem;
-				align-self: center;
-			}
-
-			p {
-				font-weight: 300;
+			select {
+				padding: 0.5rem;
+				margin-bottom: 0.5rem;
 			}
 		}
 	}
