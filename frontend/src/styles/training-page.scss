@@ -1,33 +1,69 @@
 .register {
-	background: red;
 	display: flex;
 	padding: 2rem;
 	justify-content: center;
 	.regContainer {
-		background: blue;
 		margin-top: 10vh;
 		padding: 2rem;
 		width: 100%;
 		max-width: 700px;
-
 		.form {
 			display: flex;
-			flex-direction: column;
-			width: 50%;
-			border: 2px solid black;
-			input {
-				margin-bottom: 0.5rem;
-				outline: none;
-				border: none;
-				padding: 0.5rem;
-				background: #f1e9e9;
-				border-radius: 4px;
-				font-weight: 400;
+			justify-content: space-evenly;
+
+			@media screen and (max-width: 800px) {
+				flex-direction: column;
 			}
 
-			select {
-				padding: 0.5rem;
-				margin-bottom: 0.5rem;
+			form {
+				display: flex;
+				flex-direction: column;
+				padding: 4rem;
+
+				@media screen and (max-width: 800px) {
+					padding-bottom: 0;
+					padding-top: 0;
+				}
+				input {
+					margin-bottom: 0.5rem;
+					outline: none;
+					border: 0.5px solid;
+					padding: 0.5rem;
+					border-radius: 4px;
+					font-weight: 400;
+					width: 300px;
+					&:focus {
+						border: 2px solid black;
+					}
+
+					@media screen and (max-width: 800px) {
+						width: 100%;
+					}
+				}
+
+				select {
+					padding: 0.5rem;
+					margin-bottom: 0.5rem;
+				}
+
+				p {
+					// font-size: 0.8rem;
+					margin-top: 0.5rem;
+
+					span {
+						margin-left: 0.2rem;
+					}
+
+					#checkbox {
+						width: auto;
+					}
+				}
+
+				button {
+					padding: 0.5rem;
+					background: #f6821f;
+					border: none;
+				}
 			}
 		}
 	}
