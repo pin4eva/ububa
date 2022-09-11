@@ -1,0 +1,42 @@
+.header {
+	position: fixed;
+	width: 100%;
+	backdrop-filter: blur(5px);
+	color: white;
+
+	.nav {
+		&-link {
+			font-weight: 700;
+		}
+		&.abs {
+			background: $secondary;
+			position: absolute;
+			padding: 1em;
+			padding-right: 2em;
+			top: 0;
+			width: 100%;
+			height: 100vh;
+			flex-direction: column;
+			gap: 2em;
+			// margin-left: auto;
+
+			a {
+				display: inline;
+				// font-size: 1.4rem;
+			}
+		}
+	}
+
+	.btn {
+		border: 0;
+		color: inherit;
+	}
+
+	&.scrolled {
+		background-color: rgba(white, 0.8);
+	}
+
+	.fas {
+		font-size: 2em;
+	}
+}
