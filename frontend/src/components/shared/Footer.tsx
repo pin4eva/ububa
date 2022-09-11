@@ -1,21 +1,18 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import Image from "next/image";
+import LogoComp from "./LogoComp";
+import { useState } from "react";
+import { useEffect } from "react";
+import Footerlogo from "./FooterLogo";
 
-const Footer = () => {
+const Footer: React.FC<{ isAtFooter: boolean }> = ({ isAtFooter }) => {
 	return (
 		<footer>
-			<div className="footer-top">
+			<div className="footer-top container">
 				<div className="footer-logo d-flex-center">
 					<Link href="/">
-						<a>
-							<Image
-								src="/images/footer-logo.png"
-								alt=""
-								width={200}
-								height={51}
-							/>
-						</a>
+						<a>{!isAtFooter && <Footerlogo />}</a>
 					</Link>
 				</div>
 

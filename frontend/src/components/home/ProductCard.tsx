@@ -1,5 +1,5 @@
 import React from "react";
-import { IProductsData } from "../interfaces";
+import { IProductsData } from "../../interfaces";
 
 const ProductCard: React.FC<{ product: IProductsData }> = ({ product }) => {
 	return (
