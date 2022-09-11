@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import LogoComp, { LogoColorEnum } from "./LogoComp";
 import { useRouter } from "next/router";
@@ -11,8 +11,14 @@ const Header: React.FC<{
 	toggleMobileNav: (state: boolean) => void;
 }> = ({ scrolled, showMobileNav, toggleMobileNav }) => {
 	const pathName = useRouter().pathname;
-
 	const home = "/";
+	const [isMobile, setIsMobile] = useState(false);
+
+	useEffect(() => {
+		window.addEventListener("resize", () => {
+			window.innerWidth <= 758 ? setIsMobile(true) : setIsMobile(false);
+		});
+	});
 
 	return (
 		<header
@@ -21,7 +27,7 @@ const Header: React.FC<{
 				background: `${pathName === "/" ? "rgba($blue, 0.3)" : "transparent"}`,
 			}}
 		>
-			<nav className="navbar container">
+			<nav className={`navbar ${!isMobile ? "container" : ""}`}>
 				<Link href="/">
 					<a className="ms-2">
 						<LogoComp
