@@ -1,16 +1,18 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import Link from "next/link";
-import Nav from "../home/Nav";
 import LogoComp, { LogoColorEnum } from "./LogoComp";
 import { useRouter } from "next/router";
 
-const Header: React.FC<{ scrolled?: boolean; isMobile?: boolean }> = ({
-	scrolled,
-	isMobile,
-}) => {
+const Header: React.FC<{
+	scrolled?: boolean;
+	showMobileNav: boolean;
+	toggleMobileNav: (state: boolean) => void;
+}> = ({ scrolled, showMobileNav, toggleMobileNav }) => {
 	const pathName = useRouter().pathname;
+
+	const home = "/";
 
 	return (
 		<header
@@ -21,42 +23,45 @@ const Header: React.FC<{ scrolled?: boolean; isMobile?: boolean }> = ({
 		>
 			<nav className="navbar container">
 				<Link href="/">
-					<a>
+					<a className="ms-2">
 						<LogoComp
 							fill={
-								pathName === "/" && !scrolled
-									? LogoColorEnum.WHITE
-									: pathName === "/" && scrolled
+								scrolled
 									? LogoColorEnum.YELLOW
-									: pathName === "/training" && !scrolled
+									: pathName !== home
 									? LogoColorEnum.UBUBA_BLUE
-									: pathName === "/training" && scrolled
-									? LogoColorEnum.YELLOW
 									: LogoColorEnum.WHITE
 							}
 						/>
 					</a>
 				</Link>
 
-				<ul className="nav d-none d-md-flex">
+				<ul
+					className={`nav ${
+						showMobileNav ? "abs text-center" : "d-none d-md-flex"
+					}`}
+				>
+					<div className="text-start">
+						<button
+							className="btn d-md-none "
+							onClick={() => toggleMobileNav(false)}
+						>
+							<i className="fas fa-close text-light"></i>
+						</button>
+					</div>
+
 					{navList.map((nav) => (
 						<li key={nav.name} className="nav-item">
 							<Link href={nav.link}>
 								<a
 									className={`nav-link ${
 										nav.name === "Contact" ? "btn-sm" : ""
+									} ${
+										pathName !== home || (scrolled && !showMobileNav)
+											? "text-primary"
+											: "text-light"
 									}`}
-									style={{
-										color: `${
-											pathName === "/" && !scrolled
-												? "white"
-												: pathName === "/" && scrolled
-												? "#0a1828"
-												: pathName === "/training"
-												? "#0a1828"
-												: ""
-										}`,
-									}}
+									onClick={() => toggleMobileNav(false)}
 								>
 									{nav.name}
 								</a>
@@ -64,8 +69,20 @@ const Header: React.FC<{ scrolled?: boolean; isMobile?: boolean }> = ({
 						</li>
 					))}
 				</ul>
-				<button className="btn d-block d-md-none">
-					<i className="fas fa-bars"></i>
+
+				<button
+					className="btn d-block d-md-none"
+					onClick={() => toggleMobileNav(true)}
+				>
+					<i
+						className={`fas fa-bars ${
+							scrolled
+								? "text-secondary"
+								: pathName != home
+								? "text-primary"
+								: ""
+						} `}
+					></i>
 				</button>
 			</nav>
 		</header>

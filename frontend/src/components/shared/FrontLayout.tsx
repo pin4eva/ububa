@@ -7,36 +7,42 @@ const FrontLayout: React.FC<{
 	children: React.ReactElement;
 	showHeader?: boolean;
 }> = ({ children }) => {
-	const ref = useRef<HTMLDivElement>(null);
 	const [scrolled, setScrolled] = useState(false);
-	const [pageWidth, setPageWidth] = useState(920);
+	const [isAtFooter, setIsAtFooter] = useState(false);
+	const [showMobileNav, setShowMobileNav] = useState(false);
 
 	useEffect(() => {
-		if (typeof window !== "undefined") {
-			window.addEventListener("scroll", (e) => {
-				const isMobile = pageWidth <= 768;
-				const pageHeight = window.scrollY;
-				if (pageHeight > 220) {
-					setScrolled(true);
-				} else setScrolled(false);
-			});
-			window.addEventListener("resize", (e) => {
-				const width = window.innerWidth;
-				if (width < 920) {
-					setPageWidth(width);
-				} else {
-					setPageWidth(920);
-				}
-			});
-		}
-	}, []);
+		window.addEventListener("scroll", () => {
+			const pageHeight = window.scrollY;
+			if (pageHeight > 220) {
+				setScrolled(true);
+			} else setScrolled(false);
+		});
+
+		window.addEventListener("scroll", () => {
+			const pageHeight = window.scrollY;
+			if (pageHeight >= 3500) {
+				setIsAtFooter(true);
+				// console.log(pageHeight);
+			} else setIsAtFooter(false);
+		});
+	});
+
+	const toggleMobileNav = (state: boolean) => {
+		setShowMobileNav(state);
+	};
+
 	return (
 		<Fragment>
-			<div className="front-layout">
-				<Header scrolled={scrolled} />
-				<main className="front-layout-main">{children}</main>
+			<div className={`front-layout`}>
+				<Header
+					scrolled={scrolled}
+					showMobileNav={showMobileNav}
+					toggleMobileNav={toggleMobileNav}
+				/>
+				<main className="front-layout-main ">{children}</main>
 
-				<Footer />
+				<Footer isAtFooter={isAtFooter} />
 			</div>
 		</Fragment>
 	);

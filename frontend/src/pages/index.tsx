@@ -54,7 +54,7 @@ const LandingPage = () => {
 				</section>
 
 				<section className="testimonials mt-5">
-					<h3 className="text-light text-start section-title container">
+					<h3 className="container text-light section-title">
 						We believe in the power of technology
 					</h3>
 					<div className="testimonials-inner container">
