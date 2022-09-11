@@ -1,8 +1,8 @@
+/* eslint-disable @next/next/no-img-element */
 import React from "react";
-import ProductCard from "../components/ProductCard";
+import ProductCard from "../components/home/ProductCard";
 import FrontLayout from "../components/shared/FrontLayout";
-import Header from "../components/shared/Header";
-import TeamCard from "../components/TeamCard";
+import TeamCard from "../components/home/TeamCard";
 import { productsData } from "../data/products.data";
 import { TeamData } from "../data/team.data";
 
@@ -24,7 +24,7 @@ const LandingPage = () => {
 
 				<section id="about-us" className="about-us">
 					<h3 className="text-secondary text-center section-title">About Us</h3>
-					<div className="about-us-inner">
+					<div className="about-us-inner container">
 						<div className="about-us-inner-desc">
 							<h4>IT CONSULTING, COMPUTER TRAINING</h4>
 							<p>
@@ -46,7 +46,7 @@ const LandingPage = () => {
 
 				<section id="products" className="products">
 					<h3 className="text-secondary text-center section-title">Products</h3>
-					<div className="products-inner">
+					<div className="products-inner container">
 						{productsData.map((product) => (
 							<ProductCard key={product.id} product={product} />
 						))}
@@ -54,10 +54,10 @@ const LandingPage = () => {
 				</section>
 
 				<section className="testimonials mt-5">
-					<h3 className="text-light text-start section-title">
+					<h3 className="container text-light section-title">
 						We believe in the power of technology
 					</h3>
-					<div className="testimonials-inner">
+					<div className="testimonials-inner container">
 						<h4 className="mb-3">OUR HAPPY CLIENTS</h4>
 						<h5 className="mb-3">What Clients Say?</h5>
 						<p>
@@ -72,7 +72,7 @@ const LandingPage = () => {
 				<section className="our-team mt-5">
 					<p className="text-center sub-heading">YOU CAN MEET OUR TEAM</p>
 					<h3 className="text-secondary text-center section-title">OUR TEAM</h3>
-					<div className="our-team-card-wrapper">
+					<div className="our-team-card-wrapper container">
 						{TeamData.map((teamMember) => (
 							<TeamCard teamMember={teamMember} key={teamMember.id} />
 						))}
@@ -83,7 +83,7 @@ const LandingPage = () => {
 					<h3 className="text-secondary text-center section-title">
 						Contact Us
 					</h3>
-					<form>
+					<form className="container">
 						<input required type="text" name="name" placeholder="Name" />
 						<input required type="email" name="email" placeholder="Email" />
 						<textarea
