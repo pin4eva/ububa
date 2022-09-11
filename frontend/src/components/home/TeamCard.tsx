@@ -1,5 +1,5 @@
 import React from "react";
-import { ITeamCard } from "../interfaces";
+import { ITeamCard } from "../../interfaces";
 
 const TeamCard: React.FC<{ teamMember: ITeamCard }> = ({ teamMember }) => {
 	return (

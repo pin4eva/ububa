@@ -1,19 +1,13 @@
 .landing-page {
-
 	img {
 		width: 100%;
+		height: 100%;
 	}
 
 	.section-title {
-		padding: 0.9em 0;
-		// margin-top: 1em;
+		padding: 1.5em 0.3em;
 		font-weight: 700;
-		font-size: 40px;
-	}
-
-	section {
-		padding: 2em;
-		margin-top: 4em;
+		font-size: 2.5rem;
 	}
 
 	// scoped styles
@@ -29,13 +23,11 @@
 		&-inner {
 			padding: 1em;
 
-
 			h4 {
 				font-weight: 700;
 				font-size: 40px;
 				line-height: 185.69%;
 				letter-spacing: -0.005em;
-
 			}
 
 			button {
@@ -49,7 +41,6 @@
 	}
 
 	.about-us {
-
 		background: #f2f9ff;
 
 		// border: 1px solid red;
@@ -70,11 +61,14 @@
 				display: flex;
 				justify-content: space-between;
 				align-items: center;
-				gap: 2em;
+				gap: 4em;
 
 				.img {
 					min-width: 50%;
 				}
+				// &-desc {
+				// 	// max-width: 50%;
+				// }
 			}
 		}
 	}

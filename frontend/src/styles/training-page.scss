@@ -9,6 +9,31 @@
 		.alert {
 			z-index: 1;
 			width: 60%;
+      
+		.imgContainer {
+			img {
+				display: none;
+
+				@media screen and (min-width: 768px) {
+					display: block;
+				}
+			}
+		}
+	}
+
+	.registerContent {
+		width: 400px;
+		min-height: 550px;
+		display: flex;
+		flex-direction: column;
+		border-radius: 19px;
+		margin: 5vh auto;
+		// border: 2px solid #f6921e;
+		background: #faf3ed;
+		padding: 2rem;
+		box-shadow: 10px 10px 8px $secondary;
+
+		.formH1 {
 			text-align: center;
 			align-self: center;
 

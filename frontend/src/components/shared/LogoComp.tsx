@@ -1,11 +1,11 @@
 import * as React from "react";
 import { SVGProps } from "react";
 
-const fill = "#F2F9FF";
 export enum LogoColorEnum {
-	WHITE = "#F2F9FF",
+	UBUBA_BLUE = "#0A1828",
 	YELLOW = "#f6921e",
 	BLUE = "#1E3856",
+	WHITE = "#F2F9FF",
 }
 
 const LogoComp: React.FC<{
