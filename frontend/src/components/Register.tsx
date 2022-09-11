@@ -52,7 +52,7 @@ const Register: React.FC = () => {
 						<input type="number" placeholder="Age" name="age" />
 						<p>
 							<input type="checkbox" name="checkbox" id="checkbox" />
-							<span>I agree to Ububa's</span>
+							<span>I agree to Ububas</span>
 							<Link href="/">
 								<a>Terms and Conditions</a>
 							</Link>
