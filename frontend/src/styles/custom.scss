@@ -2,16 +2,17 @@
 @import "./header.scss";
 @import "./product-card.scss";
 @import "./home-page.scss";
-@import "./training-page.scss";
+@import "./register.scss";
 @import "./footer.scss";
-
+@import "./form-page.scss";
+@import "./training-page.scss";
 
 .front-layout {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
 
-  &-main {
-    flex: 1;
-  }
+	&-main {
+		flex: 1;
+	}
 }
