@@ -1,6 +1,12 @@
 .trainingPageContainer {
 	margin-top: 2vh;
 
+	img {
+		height: 500px;
+		width: 400px;
+		cursor: pointer;
+	}
+
 	.alertContainer {
 		display: flex;
 		justify-content: center;
@@ -31,31 +37,16 @@
 	.onGoingTraining {
 		margin-left: 4rem;
 		margin-bottom: 4rem;
-
-		.cohort3 {
-			height: 500px;
-			width: 400px;
-			img {
-				height: 500px;
-				width: 400px;
-				cursor: pointer;
-			}
-		}
 	}
 
 	.previousTrainings {
 		margin-left: 4rem;
 		display: flex;
+		flex-direction: column;
 		gap: 4rem;
 
-		@media screen and (max-width: 900px) {
-			flex-direction: column;
-		}
-
-		img {
-			height: 500px;
-			width: 400px;
-			cursor: pointer;
+		@media screen and (min-width: 800px) {
+			flex-direction: row;
 		}
 	}
 

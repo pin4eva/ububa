@@ -4,7 +4,7 @@ import FrontLayout from "../../components/shared/FrontLayout";
 
 const Training = () => {
 	return (
-		<FrontLayout showHeader={true}>
+		<FrontLayout>
 			<div className="trainingPageContainer">
 				<div className="alertContainer">
 					<p className="alert alert-info img-fluid">
