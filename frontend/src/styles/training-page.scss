@@ -1,79 +1,58 @@
-.register {
-	margin-top: 5vh;
+.trainingPageContainer {
+	margin-top: 2vh;
 
-	.registerContainer {
+	img {
+		height: 500px;
+		width: 400px;
+		cursor: pointer;
+	}
+
+	.alertContainer {
 		display: flex;
-		align-items: center;
+		justify-content: center;
+		margin-bottom: 4rem;
 
-		.imgContainer {
-			img {
-				display: none;
+		.alert {
+			z-index: 1;
+			width: 60%;
+			text-align: center;
+			align-self: center;
+			@media screen and (max-width: 1500px) {
+				width: 90%;
+			}
 
-				@media screen and (min-width: 768px) {
-					display: block;
-				}
+			.fa-solid {
+				margin: 0 1rem;
+			}
+
+			span {
+				margin: 0 0.3rem;
 			}
 		}
 	}
 
-	.registerContent {
-		width: 400px;
-		min-height: 550px;
+	h2 {
+		margin: 2rem 4rem;
+	}
+	.onGoingTraining {
+		margin-left: 4rem;
+		margin-bottom: 4rem;
+	}
+
+	.previousTrainings {
+		margin-left: 4rem;
 		display: flex;
 		flex-direction: column;
-		border-radius: 19px;
-		margin: 5vh auto;
-		// border: 2px solid #f6921e;
-		background: #faf3ed;
-		padding: 2rem;
-		box-shadow: 10px 10px 8px $secondary;
+		gap: 4rem;
 
-		.formH1 {
-			text-align: center;
-			margin-bottom: 1rem;
+		@media screen and (min-width: 800px) {
+			flex-direction: row;
 		}
+	}
 
-		.registerForm {
-			display: flex;
-			flex-direction: column;
-
-			label {
-				font-size: 1rem;
-				font-weight: 300;
-			}
-
-			select {
-				padding: 0.5rem 0;
-				margin: 1rem 0;
-				border-radius: 5px;
-			}
-
-			input {
-				margin-bottom: 0.5rem;
-				outline: none;
-				border: none;
-				padding: 0.5rem;
-				background: #f1e9e9;
-				border-radius: 12px;
-				font-weight: 400;
-
-				&:focus {
-					background: #f4b876;
-					transition: 1s ease-in;
-				}
-			}
-
-			button {
-				@extend input;
-				background: #f6921e;
-				border-radius: 50px;
-				width: 10rem;
-				align-self: center;
-			}
-
-			p {
-				font-weight: 300;
-			}
-		}
+	p {
+		text-align: center;
+		margin-top: 4rem;
+		color: #1e3856;
 	}
 }
