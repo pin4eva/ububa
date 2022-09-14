@@ -1,11 +1,14 @@
 import { Fragment } from "react";
 import Head from "next/head";
 import type { AppProps } from "next/app";
+import { ApolloProvider } from "@apollo/client";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "../styles/index.scss";
 import "../styles/custom.scss";
+import { useApollo } from "../apollo";
 
 function MyApp({ Component, pageProps }: AppProps) {
+	const client = useApollo(pageProps.initialApolloState);
 	return (
 		<Fragment>
 			<Head>
@@ -16,7 +19,9 @@ function MyApp({ Component, pageProps }: AppProps) {
 					content="Official website of Joint Heirs Assembly International"
 				/>
 			</Head>
-			<Component {...pageProps} />
+			<ApolloProvider client={client}>
+				<Component {...pageProps} />
+			</ApolloProvider>
 		</Fragment>
 	);
 }
