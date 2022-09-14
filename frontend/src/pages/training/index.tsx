@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import React from "react";
 import FrontLayout from "../../components/shared/FrontLayout";
@@ -12,7 +13,7 @@ const Training = () => {
 						Ububa school of code and design cohort 2 training is ongoing click
 						the link to
 						<span>
-							<Link href={"/training/formpage"}>
+							<Link href={"/training/register"}>
 								<a className="alert-link" role="alert">
 									apply
 								</a>
@@ -24,7 +25,7 @@ const Training = () => {
 				<h2>Ongoing Training</h2>
 				<div className="onGoingTraining">
 					<div className="cohort3">
-						<Link href={"/training/formpage"}>
+						<Link href="/training/register">
 							<img
 								src="/images/ongoing.png"
 								alt="ongoing-img"
