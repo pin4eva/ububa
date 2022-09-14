@@ -8,31 +8,33 @@ import { productsData } from "../data/products.data";
 import { TeamData } from "../data/team.data";
 
 const LandingPage = () => {
-	const [Loading, setLoading] = useState(true);
+	const [pageIsLoaded, setPageIsLoaded] = useState(false);
 
 	useEffect(() => {
 		// toggles state of isLoading & run once!
 		const toggleLoading = () => {
-			setLoading(!Loading);
+			setPageIsLoaded(true);
 		};
 
-		// check state of resources if already loaded, call fxn.
+		// check state of resources if already loaded.
 		if (document.readyState === "complete") {
-			setLoading(false);
+			setPageIsLoaded(true);
 		}
 		// else add an event listener and call fxn.
 		else {
 			window.addEventListener("load", toggleLoading);
 		}
 
-		// console.log(typeof document.readyState);
+		// console.log(document.readyState);
+
+		// return window.removeEventListener("load", toggleLoading);
 	}, []);
+
+	console.log(pageIsLoaded);
 
 	return (
 		<>
-			{Loading ? (
-				<p>Loading...</p>
-			) : (
+			{pageIsLoaded ? (
 				<FrontLayout>
 					<div className="landing-page" id="home">
 						<div className="home-hero">
@@ -132,6 +134,8 @@ const LandingPage = () => {
 						</section>
 					</div>
 				</FrontLayout>
+			) : (
+				<p>Loading...</p>
 			)}
 		</>
 	);
