@@ -1,16 +1,3 @@
-<<<<<<< HEAD
-@import "./variables";
-@import "bootstrap/scss/bootstrap.scss";
-
-
-html {
-	font-size: 14px;
-
-	@media screen and (min-width: 768px) {
-		font-size: 14px;
-	}
-}
-=======
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;0,900;1,400&display=swap");
 // Override default variables before the import
 @import "./variables.scss";
@@ -22,4 +9,3 @@ body {
 	font-family: "Roboto", sans-serif;
 	scroll-behavior: smooth;
 }
->>>>>>> a28323c8fbf62594586e1e453044ffdab20286b3
