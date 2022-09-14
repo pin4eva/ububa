@@ -1,19 +1,23 @@
-import type { AppProps } from "next/app";
+import { Fragment } from "react";
 import Head from "next/head";
-
+import type { AppProps } from "next/app";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 import "../styles/index.scss";
-import "../styles/style.scss";
+import "../styles/custom.scss";
 
 function MyApp({ Component, pageProps }: AppProps) {
 	return (
-		<>
+		<Fragment>
 			<Head>
-				<title>Ububa Technology</title>
-				<meta name="description" content="Ububa Website" />
-				<link rel="icon" href="/favicon.ico" />
+				<title>Ububa</title>
+				<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+				<meta
+					name="description"
+					content="Official website of Joint Heirs Assembly International"
+				/>
 			</Head>
 			<Component {...pageProps} />
-		</>
+		</Fragment>
 	);
 }
 

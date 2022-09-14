@@ -1,0 +1,58 @@
+.trainingPageContainer {
+	margin-top: 2vh;
+
+	img {
+		height: 500px;
+		width: 400px;
+		cursor: pointer;
+	}
+
+	.alertContainer {
+		display: flex;
+		justify-content: center;
+		margin-bottom: 4rem;
+
+		.alert {
+			z-index: 1;
+			width: 60%;
+			text-align: center;
+			align-self: center;
+			@media screen and (max-width: 1500px) {
+				width: 90%;
+			}
+
+			.fa-solid {
+				margin: 0 1rem;
+			}
+
+			span {
+				margin: 0 0.3rem;
+			}
+		}
+	}
+
+	h2 {
+		margin: 2rem 4rem;
+	}
+	.onGoingTraining {
+		margin-left: 4rem;
+		margin-bottom: 4rem;
+	}
+
+	.previousTrainings {
+		margin-left: 4rem;
+		display: flex;
+		flex-direction: column;
+		gap: 4rem;
+
+		@media screen and (min-width: 800px) {
+			flex-direction: row;
+		}
+	}
+
+	p {
+		text-align: center;
+		margin-top: 4rem;
+		color: #1e3856;
+	}
+}
