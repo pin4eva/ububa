@@ -95,7 +95,7 @@ const LandingPage = () => {
 							placeholder="Message"
 						></textarea>
 						<div className="text-center">
-							<button className="btn-sm">Register</button>
+							<button className="btn-sm">Submit</button>
 						</div>
 					</form>
 				</section>
