@@ -10,9 +10,14 @@ import { TeamData } from "../data/team.data";
 const LandingPage = () => {
 	const [loaded, setLoaded] = useState(false);
 	useEffect(() => {
-		window.addEventListener("load", () => {
+		// check load state of document
+		if (document.readyState === "complete") {
 			setLoaded(true);
-		});
+		} else {
+			window.addEventListener("load", () => {
+				setLoaded(true);
+			});
+		}
 	});
 	return (
 		<>
