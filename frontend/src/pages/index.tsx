@@ -6,6 +6,7 @@ import FrontLayout from "../components/shared/FrontLayout";
 import TeamCard from "../components/home/TeamCard";
 import { productsData } from "../data/products.data";
 import { TeamData } from "../data/team.data";
+import { ClipLoader } from "react-spinners";
 
 const LandingPage = () => {
 	const [loaded, setLoaded] = useState(false);
@@ -19,6 +20,18 @@ const LandingPage = () => {
 			});
 		}
 	});
+
+	// logo path
+	const icon = {
+		hidden: {
+			pathLength: 0,
+			fill: "rgba(255, 255, 255, 0)",
+		},
+		visible: {
+			pathLength: 1,
+			fill: "rgba(255, 255, 255, 1)",
+		},
+	};
 	return (
 		<>
 			{loaded ? (
@@ -122,7 +135,10 @@ const LandingPage = () => {
 					</div>
 				</FrontLayout>
 			) : (
-				<p>loading...</p>
+				// <p>loading...</p>
+				<div className="spinner">
+					<ClipLoader size={70} loading={true} color="#f6921e" />
+				</div>
 			)}
 		</>
 	);

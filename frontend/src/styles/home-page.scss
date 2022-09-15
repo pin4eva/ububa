@@ -1,3 +1,12 @@
+.spinner {
+	min-height: 100vh;
+	background: #0a1828;
+	// position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
 .landing-page {
 	img {
 		width: 100%;
