@@ -7,6 +7,7 @@ import TeamCard from "../components/home/TeamCard";
 import { productsData } from "../data/products.data";
 import { TeamData } from "../data/team.data";
 import { ClipLoader } from "react-spinners";
+import Head from "next/head";
 
 const LandingPage = () => {
 	const [loaded, setLoaded] = useState(false);
@@ -33,6 +34,14 @@ const LandingPage = () => {
 
 	return (
 		<>
+			<Head>
+				<title>Ububa Technology</title>
+				<meta
+					name="description"
+					content="At Ububa Technology, we develop creative solutions for small and big brands, give technical support and build authentic product identities amongst other technical and non-technical services."
+				/>
+			</Head>
+
 			<div className="spinner" style={{ display: loaded ? "none" : "flex" }}>
 				<ClipLoader size={70} loading={true} color="#f6921e" />
 			</div>
