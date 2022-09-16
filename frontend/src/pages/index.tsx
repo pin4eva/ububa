@@ -49,7 +49,7 @@ const LandingPage = () => {
 			</div>
 			<div style={{ display: loaded ? "block" : "none" }}>
 				<div
-					className="events-alert text-center p-2"
+					className="events-alert text-center p-1"
 					style={{ display: EventsAlerts.length > 0 ? "block" : "none" }}
 				>
 					{EventsAlerts.map((eventalert) => (

@@ -32,7 +32,7 @@
 
 	// scoped styles
 	.home-hero {
-		min-height: 80vh;
+		min-height: 90vh;
 
 		position: relative;
 		background: linear-gradient(rgba(22, 42, 62, 0.79), rgba(22, 42, 62, 0.79));
@@ -71,6 +71,9 @@
 				font-size: 40px;
 				line-height: 185.69%;
 				letter-spacing: -0.005em;
+				@media screen and (min-width: 800px) {
+					font-size: 55px;
+				}
 			}
 		}
 	}
