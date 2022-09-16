@@ -100,7 +100,7 @@ export default Header;
 const navList = [
 	{ name: "Home", link: "/" },
 	{ name: "About Us", link: "/#about-us" },
-	{ name: "Products", link: "/#products" },
+	{ name: "Services", link: "/#services" },
 	{ name: "Training", link: "/training" },
 	{ name: "Contact", link: "/#contact-us" },
 ];

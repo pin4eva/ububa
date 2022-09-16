@@ -1,14 +1,14 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @next/next/no-img-element */
 import React, { useEffect, useLayoutEffect, useState } from "react";
-import ProductCard from "../components/home/ProductCard";
+import ServiceCard from "../components/home/ServiceCard";
 import FrontLayout from "../components/shared/FrontLayout";
 import TeamCard from "../components/home/TeamCard";
-import { productsData } from "../data/products.data";
 import { TeamData } from "../data/team.data";
 import { ClipLoader } from "react-spinners";
 import Head from "next/head";
 import Link from "next/link";
+import { servicesData } from "data/services.data";
 
 const LandingPage = () => {
 	const [loaded, setLoaded] = useState(false);
@@ -61,7 +61,9 @@ const LandingPage = () => {
 								</h4>
 								<div className="mt-5 d-flex-center">
 									<Link href={"/#services"}>
-										<button className="btn-lg ">View Services</button>
+										<a>
+											<button className="btn-lg ">View Services</button>
+										</a>
 									</Link>
 								</div>
 							</div>
@@ -91,13 +93,13 @@ const LandingPage = () => {
 							</div>
 						</section>
 
-						<section id="products" className="products">
+						<section id="services" className="services">
 							<h3 className="text-secondary text-center section-title">
-								Products
+								Services
 							</h3>
-							<div className="products-inner container">
-								{productsData.map((product) => (
-									<ProductCard key={product.id} product={product} />
+							<div className="services-inner container">
+								{servicesData.map((service) => (
+									<ServiceCard key={service.id} service={service} />
 								))}
 							</div>
 						</section>
