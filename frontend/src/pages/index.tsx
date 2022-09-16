@@ -26,13 +26,15 @@ const LandingPage = () => {
 					// check for all image
 
 					const images = document?.getElementsByTagName("img");
-					console.log(images);
+					// console.log(images);
 
 					const imageLength = images.length;
 					// console.log(imageLength);
 
 					let loadedImages = 0;
 					Array.from(images).forEach((image) => {
+						console.log(image);
+
 						if (image?.complete && image?.naturalHeight != 0) loadedImages += 1;
 					});
 					if (loadedImages === imageLength) setLoaded(true);
