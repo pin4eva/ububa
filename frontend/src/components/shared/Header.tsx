@@ -23,19 +23,15 @@ const Header: React.FC<{
 	return (
 		<header
 			className={`header ${scrolled ? "scrolled" : ""}`}
-			style={{
-				background: `${pathName === "/" ? "rgba($blue, 0.3)" : "transparent"}`,
-			}}
+			// style={{
+			// 	background: `${pathName === "/" ? "rgba($blue, 0.3)" : "transparent"}`,
+			// }}
 		>
 			<nav className={`navbar ${!isMobile ? "container" : ""}`}>
 				<Link href="/">
 					<a className="ms-2">
 						<LogoComp
-							fill={
-								scrolled && pathName !== home
-									? LogoColorEnum.UBUBA_BLUE
-									: LogoColorEnum.YELLOW
-							}
+							fill={scrolled ? LogoColorEnum.YELLOW : LogoColorEnum.UBUBA_BLUE}
 						/>
 					</a>
 				</Link>
@@ -60,7 +56,7 @@ const Header: React.FC<{
 								<a
 									className={`nav-link ${
 										nav.name === "Contact" ? "nav-contact-btn" : ""
-									}`}
+									} ${scrolled ? "text-primary" : "text-primary"}`}
 									onClick={() => toggleMobileNav(false)}
 								>
 									{nav.name}

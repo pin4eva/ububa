@@ -9,6 +9,7 @@ import { ClipLoader } from "react-spinners";
 import Head from "next/head";
 import Link from "next/link";
 import { servicesData } from "data/services.data";
+import { EventsAlerts } from "data/alerts.data";
 
 const LandingPage = () => {
 	const [loaded, setLoaded] = useState(false);
@@ -47,8 +48,19 @@ const LandingPage = () => {
 				<ClipLoader size={70} loading={true} color="#f6921e" />
 			</div>
 			<div style={{ display: loaded ? "block" : "none" }}>
-				{/* adding message alerts */}
-				<div className="alert">alert</div>
+				<div
+					className="events-alert text-center p-2"
+					style={{ display: EventsAlerts.length > 0 ? "block" : "none" }}
+				>
+					{EventsAlerts.map((eventalert) => (
+						<Link href={eventalert.link} key={eventalert.id}>
+							<a>
+								<i className="fa-solid fa-circle-exclamation me-2"></i>
+								{eventalert.message}
+							</a>
+						</Link>
+					))}
+				</div>
 				<FrontLayout>
 					<div className="landing-page" id="home">
 						<div className="home-hero">
