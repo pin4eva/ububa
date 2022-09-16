@@ -6,10 +6,16 @@
 	z-index: 2;
 
 	.nav {
+		gap: 0.5em;
 		&-link {
-			// font-weight: 700;
+			border-bottom: 1.5px solid transparent;
 			&:hover {
-				font-weight: 700;
+				border-color: inherit;
+			}
+			&.nav-contact-btn {
+				background: $secondary;
+				color: white;
+				border-radius: 8px;
 			}
 		}
 

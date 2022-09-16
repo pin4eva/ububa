@@ -61,7 +61,7 @@ const Header: React.FC<{
 							<Link href={nav.link}>
 								<a
 									className={`nav-link ${
-										nav.name === "Contact" ? "btn-sm" : ""
+										nav.name === "Contact" ? "nav-contact-btn" : ""
 									} ${
 										pathName !== home || (scrolled && !showMobileNav)
 											? "text-primary"

@@ -8,6 +8,7 @@ import { productsData } from "../data/products.data";
 import { TeamData } from "../data/team.data";
 import { ClipLoader } from "react-spinners";
 import Head from "next/head";
+import Link from "next/link";
 
 const LandingPage = () => {
 	const [loaded, setLoaded] = useState(false);
@@ -59,8 +60,9 @@ const LandingPage = () => {
 									Build better products and <br /> build better Skills
 								</h4>
 								<div className="mt-5 d-flex-center">
-									<button className="btn-lg ">View</button>
-									<button className="btn-lg">Call</button>
+									<Link href={"/#services"}>
+										<button className="btn-lg ">View Services</button>
+									</Link>
 								</div>
 							</div>
 						</div>
