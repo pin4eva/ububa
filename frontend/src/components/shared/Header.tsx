@@ -76,7 +76,7 @@ const Header: React.FC<{
 								? "text-secondary"
 								: pathName != home
 								? "text-primary"
-								: ""
+								: "text-primary"
 						} `}
 					></i>
 				</button>
