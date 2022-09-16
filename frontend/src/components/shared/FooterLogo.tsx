@@ -7,7 +7,7 @@ const Footerlogo: React.FC<{ props?: SVGProps<SVGSVGElement> }> = ({
 	return (
 		<svg
 			width="8em"
-			height="auto"
+			height="100%"
 			fill="none"
 			xmlns="http://www.w3.org/2000/svg"
 			viewBox="0 0 220 51"

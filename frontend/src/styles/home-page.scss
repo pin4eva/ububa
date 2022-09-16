@@ -1,3 +1,12 @@
+.spinner {
+	min-height: 100vh;
+	background: #0a1828;
+	// position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
 .landing-page {
 	img {
 		width: 100%;
@@ -13,15 +22,25 @@
 	// scoped styles
 	.home-hero {
 		min-height: 80vh;
-		background: linear-gradient(rgba(22, 42, 62, 0.79), rgba(22, 42, 62, 0.79)),
-			url("/images/home-hero.jpg") no-repeat center;
-		background-size: cover;
-		background-attachment: fixed;
-		display: grid;
-		place-items: center;
+
+		position: relative;
+		background: linear-gradient(rgba(22, 42, 62, 0.79), rgba(22, 42, 62, 0.79));
+
+		.hero-bg {
+			position: absolute;
+			top: 0;
+			width: 100%;
+
+			z-index: -1;
+		}
 
 		&-inner {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
 			padding: 1em;
+			padding-top: 3em;
 
 			h4 {
 				font-weight: 700;
@@ -66,6 +85,7 @@
 				.img {
 					min-width: 50%;
 				}
+
 				// &-desc {
 				// 	// max-width: 50%;
 				// }

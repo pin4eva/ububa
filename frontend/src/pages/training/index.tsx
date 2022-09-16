@@ -1,61 +1,68 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import React from "react";
-import FrontLayout from "../../components/shared/FrontLayout";
+import FrontLayout from "components/shared/FrontLayout";
+import Head from "next/head";
 
 const Training = () => {
 	return (
-		<FrontLayout>
-			<div className="trainingPageContainer">
-				<div className="alertContainer">
-					<p className="alert alert-info img-fluid">
-						<i className="fa-solid fa-circle-exclamation"></i>
-						Ububa school of code and design cohort 2 training is ongoing click
-						the link to
-						<span>
-							<Link href={"/training/register"}>
-								<a className="alert-link" role="alert">
-									apply
-								</a>
+		<>
+			<Head>
+				<title>Training</title>
+				<meta name="description" content="Ububa training" />
+			</Head>
+			<FrontLayout>
+				<div className="trainingPageContainer">
+					<div className="alertContainer">
+						<p className="alert alert-info img-fluid">
+							<i className="fa-solid fa-circle-exclamation"></i>
+							Ububa school of code and design cohort 2 training is ongoing click
+							the link to
+							<span>
+								<Link href={"/training/register"}>
+									<a className="alert-link" role="alert">
+										apply
+									</a>
+								</Link>
+							</span>
+							to learn software development
+						</p>
+					</div>
+					<h2>Ongoing Training</h2>
+					<div className="onGoingTraining">
+						<div className="cohort3">
+							<Link href="/training/register">
+								<img
+									src="/images/ongoing.png"
+									alt="ongoing-img"
+									className="img-fluid"
+								/>
 							</Link>
-						</span>
-						to learn software development
-					</p>
-				</div>
-				<h2>Ongoing Training</h2>
-				<div className="onGoingTraining">
-					<div className="cohort3">
-						<Link href="/training/register">
+						</div>
+					</div>
+					<h2>Previous Trainings</h2>
+					<div className="previousTrainings">
+						<div className="cohort2">
 							<img
-								src="/images/ongoing.png"
-								alt="ongoing-img"
+								src="/images/cohort2.png"
+								alt="previous-img"
 								className="img-fluid"
 							/>
-						</Link>
+						</div>
+						<div className="cohort1">
+							<img
+								src="/images/cohort1.png"
+								alt="previous-img"
+								className="img-fluid"
+							/>
+						</div>
 					</div>
+					<p>
+						Have any questions? Send us an email at <a>info@ububatech.org</a>
+					</p>
 				</div>
-				<h2>Previous Trainings</h2>
-				<div className="previousTrainings">
-					<div className="cohort2">
-						<img
-							src="/images/cohort2.png"
-							alt="previous-img"
-							className="img-fluid"
-						/>
-					</div>
-					<div className="cohort1">
-						<img
-							src="/images/cohort1.png"
-							alt="previous-img"
-							className="img-fluid"
-						/>
-					</div>
-				</div>
-				<p>
-					Have any questions? Send us an email at <a>info@ububatech.org</a>
-				</p>
-			</div>
-		</FrontLayout>
+			</FrontLayout>
+		</>
 	);
 };
 
