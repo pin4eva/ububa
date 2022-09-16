@@ -47,6 +47,8 @@ const LandingPage = () => {
 				<ClipLoader size={70} loading={true} color="#f6921e" />
 			</div>
 			<div style={{ display: loaded ? "block" : "none" }}>
+				{/* adding message alerts */}
+				<div className="alert">alert</div>
 				<FrontLayout>
 					<div className="landing-page" id="home">
 						<div className="home-hero">

@@ -32,11 +32,9 @@ const Header: React.FC<{
 					<a className="ms-2">
 						<LogoComp
 							fill={
-								scrolled
-									? LogoColorEnum.YELLOW
-									: pathName !== home
+								scrolled && pathName !== home
 									? LogoColorEnum.UBUBA_BLUE
-									: LogoColorEnum.WHITE
+									: LogoColorEnum.YELLOW
 							}
 						/>
 					</a>
@@ -62,10 +60,6 @@ const Header: React.FC<{
 								<a
 									className={`nav-link ${
 										nav.name === "Contact" ? "nav-contact-btn" : ""
-									} ${
-										pathName !== home || (scrolled && !showMobileNav)
-											? "text-primary"
-											: "text-light"
 									}`}
 									onClick={() => toggleMobileNav(false)}
 								>

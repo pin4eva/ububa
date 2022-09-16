@@ -14,7 +14,7 @@ const FrontLayout: React.FC<{
 	useEffect(() => {
 		window.addEventListener("scroll", () => {
 			const pageHeight = window.scrollY;
-			if (pageHeight > 220) {
+			if (pageHeight > 0) {
 				setScrolled(true);
 			} else setScrolled(false);
 		});
