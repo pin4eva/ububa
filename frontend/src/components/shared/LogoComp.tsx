@@ -15,7 +15,7 @@ const LogoComp: React.FC<{
 	return (
 		<svg
 			width="2em"
-			height="auto"
+			height="2em"
 			fill="none"
 			xmlns="http://www.w3.org/2000/svg"
 			viewBox="0 0 46 53"

@@ -15,26 +15,14 @@ const LandingPage = () => {
 		// check load state of document
 
 		if (document.readyState === "complete") {
-			console.log("Loaded Ready");
 			setLoaded(true);
 		} else {
 			if (typeof window !== undefined) {
 				window?.addEventListener("load", (e) => {
-					// const hero = document.querySelector<HTMLDivElement>(".home-hero");
-					// console.log(hero?.style.backgroundImage);
-
-					// check for all image
-
 					const images = document?.getElementsByTagName("img");
-					// console.log(images);
-
 					const imageLength = images.length;
-					// console.log(imageLength);
-
 					let loadedImages = 0;
 					Array.from(images).forEach((image) => {
-						console.log(image);
-
 						if (image?.complete && image?.naturalHeight != 0) loadedImages += 1;
 					});
 					if (loadedImages === imageLength) setLoaded(true);
