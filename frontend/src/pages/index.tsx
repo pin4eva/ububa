@@ -51,13 +51,7 @@ const LandingPage = () => {
 			<div style={{ display: loaded ? "block" : "none" }}>
 				<FrontLayout>
 					<div className="landing-page" id="home">
-						<div
-							className="home-hero"
-							// 				style={{
-							// 					background: `linear-gradient(rgba(22, 42, 62, 0.79), rgba(22, 42, 62, 0.79)),
-							// url("/images/home-hero.jpg")no-repeat center`,
-							// 				}}
-						>
+						<div className="home-hero">
 							<img
 								src="/images/home-hero.jpg"
 								alt="hero bg img"
