@@ -22,8 +22,8 @@
 	// scoped styles
 	.home-hero {
 		min-height: 80vh;
-		background: linear-gradient(rgba(22, 42, 62, 0.79), rgba(22, 42, 62, 0.79)),
-			url("/images/home-hero.jpg") no-repeat center;
+		background-repeat: no-repeat;
+		background-position: center;
 		background-size: cover;
 		background-attachment: fixed;
 		display: grid;

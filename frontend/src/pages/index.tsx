@@ -15,7 +15,7 @@ const LandingPage = () => {
 		// check load state of document
 
 		if (document.readyState === "complete") {
-			console.log("Loaded Ready");
+			// console.log("Loaded Ready");
 			setLoaded(true);
 		} else {
 			if (typeof window !== undefined) {
@@ -45,7 +45,13 @@ const LandingPage = () => {
 			<div style={{ display: loaded ? "block" : "none" }}>
 				<FrontLayout>
 					<div className="landing-page" id="home">
-						<div className="home-hero">
+						<div
+							className="home-hero"
+							style={{
+								background: `linear-gradient(rgba(22, 42, 62, 0.79), rgba(22, 42, 62, 0.79)),
+			url("/images/home-hero.jpg")`,
+							}}
+						>
 							<div className="home-hero-inner text-center">
 								<h4 className="text-light">
 									Build better products and <br /> build better Skills
