@@ -11,7 +11,7 @@ const Training = () => {
 				<title>Ububa Technology - Training</title>
 				<meta
 					name="description"
-					content="Learn in-demand skills via hands-on learning and in-person classes at Ububa Technology. At the end of your learning, students would be exposed to building industry-standard products and ready to take on entry-level and junior positions in just 12 weeks. Apply today to get started with your journey into tech with us."
+					content="Learn in-demand skills via hands-on learning and in-person classes at Ububa Technology. We journey you from the basic concepts to intermediate concepts so as prepare you for intermediate level roles after your period of training. Apply today to get started with your journey into tech with us."
 				/>
 			</Head>
 			<FrontLayout>
