@@ -62,7 +62,7 @@ const LandingPage = () => {
 								<div className="mt-5 d-flex-center">
 									<Link href={"/#services"}>
 										<a>
-											<button className="btn-lg ">View Services</button>
+											<button className="hero-cta ">View Services</button>
 										</a>
 									</Link>
 								</div>
@@ -85,7 +85,7 @@ const LandingPage = () => {
 										develop creative solutions for small and big brands , also
 										build authenthic product identities and much more.
 									</p>
-									<button className="btn-lg">READ MORE</button>
+									<button className="btn-lg">Read More</button>
 								</div>
 								<div className="img">
 									<img src="/images/side1.png" alt="" />
