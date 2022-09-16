@@ -20,8 +20,8 @@ const LandingPage = () => {
 		} else {
 			if (typeof window !== undefined) {
 				window?.addEventListener("load", (e) => {
-					const hero = document.querySelector<HTMLDivElement>(".home-hero");
-					console.log(hero?.style.background);
+					// const hero = document.querySelector<HTMLDivElement>(".home-hero");
+					// console.log(hero?.style.backgroundImage);
 
 					// check for all image
 
@@ -29,7 +29,7 @@ const LandingPage = () => {
 					console.log(images);
 
 					const imageLength = images.length;
-					console.log(imageLength);
+					// console.log(imageLength);
 
 					let loadedImages = 0;
 					Array.from(images).forEach((image) => {
@@ -51,11 +51,16 @@ const LandingPage = () => {
 					<div className="landing-page" id="home">
 						<div
 							className="home-hero"
-							style={{
-								background: `linear-gradient(rgba(22, 42, 62, 0.79), rgba(22, 42, 62, 0.79)),
-			url("/images/home-hero.jpg")no-repeat center`,
-							}}
+							// 				style={{
+							// 					background: `linear-gradient(rgba(22, 42, 62, 0.79), rgba(22, 42, 62, 0.79)),
+							// url("/images/home-hero.jpg")no-repeat center`,
+							// 				}}
 						>
+							<img
+								src="/images/home-hero.jpg"
+								alt="hero bg img"
+								className="hero-bg"
+							/>
 							<div className="home-hero-inner text-center">
 								<h4 className="text-light">
 									Build better products and <br /> build better Skills
