@@ -1,10 +1,22 @@
 .spinner {
 	min-height: 100vh;
 	background: #0a1828;
-	// position: relative;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+}
+
+.events-alert {
+	border-radius: 0;
+	margin-bottom: 0;
+	background: rgba(22, 42, 62, 0.79);
+	a {
+		color: white;
+		font-weight: bold;
+		&:hover {
+			text-decoration: none;
+		}
+	}
 }
 
 .landing-page {
@@ -21,7 +33,7 @@
 
 	// scoped styles
 	.home-hero {
-		min-height: 80vh;
+		min-height: 90vh;
 
 		position: relative;
 		background: linear-gradient(rgba(22, 42, 62, 0.79), rgba(22, 42, 62, 0.79));
@@ -29,9 +41,22 @@
 		.hero-bg {
 			position: absolute;
 			top: 0;
-			width: 100%;
 
 			z-index: -1;
+		}
+
+		.hero-cta {
+			// border: 1px solid $secondary;
+			background: $secondary;
+			color: white;
+			border: none;
+			outline: none;
+			font-weight: 700;
+			font-size: 1.2rem;
+			padding: 16px 32px;
+			// width: 250px;
+			// height: 60px;
+			border-radius: 4px;
 		}
 
 		&-inner {
@@ -47,13 +72,8 @@
 				font-size: 40px;
 				line-height: 185.69%;
 				letter-spacing: -0.005em;
-			}
-
-			button {
-				&:hover {
-					background: $primary;
-					outline: 2.5px solid $secondary;
-					transition: all ease-in-out 0.9s;
+				@media screen and (min-width: 800px) {
+					font-size: 55px;
 				}
 			}
 		}
@@ -68,7 +88,7 @@
 				margin-bottom: 3em;
 
 				p {
-					line-height: 35px;
+					// line-height: 1.6rem;s
 				}
 			}
 		}
@@ -93,10 +113,10 @@
 		}
 	}
 
-	.products {
+	.services {
 		padding: 0;
 
-		.products-inner {
+		.services-inner {
 			display: grid;
 			// border: 2px solid yellow;
 			background: url("../../public/images/products-bg.png") no-repeat center;

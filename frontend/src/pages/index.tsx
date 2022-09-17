@@ -1,12 +1,15 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @next/next/no-img-element */
 import React, { useEffect, useLayoutEffect, useState } from "react";
-import ProductCard from "../components/home/ProductCard";
+import ServiceCard from "../components/home/ServiceCard";
 import FrontLayout from "../components/shared/FrontLayout";
 import TeamCard from "../components/home/TeamCard";
-import { productsData } from "../data/products.data";
 import { TeamData } from "../data/team.data";
 import { ClipLoader } from "react-spinners";
+import Head from "next/head";
+import Link from "next/link";
+import { servicesData } from "data/services.data";
+import { EventsAlerts } from "data/alerts.data";
 
 const LandingPage = () => {
 	const [loaded, setLoaded] = useState(false);
@@ -33,10 +36,31 @@ const LandingPage = () => {
 
 	return (
 		<>
+			<Head>
+				<title>Ububa Technology</title>
+				<meta
+					name="description"
+					content="At Ububa Technology, we develop creative solutions for small and big brands, give technical support and build authentic product identities amongst other technical and non-technical services."
+				/>
+			</Head>
+
 			<div className="spinner" style={{ display: loaded ? "none" : "flex" }}>
 				<ClipLoader size={70} loading={true} color="#f6921e" />
 			</div>
 			<div style={{ display: loaded ? "block" : "none" }}>
+				<div
+					className="events-alert text-center p-1"
+					style={{ display: EventsAlerts.length > 0 ? "block" : "none" }}
+				>
+					{EventsAlerts.map((eventalert) => (
+						<Link href={eventalert.link} key={eventalert.id}>
+							<a>
+								<i className="fa-solid fa-circle-exclamation me-2"></i>
+								{eventalert.message}
+							</a>
+						</Link>
+					))}
+				</div>
 				<FrontLayout>
 					<div className="landing-page" id="home">
 						<div className="home-hero">
@@ -50,8 +74,11 @@ const LandingPage = () => {
 									Build better products and <br /> build better Skills
 								</h4>
 								<div className="mt-5 d-flex-center">
-									<button className="btn-lg ">View</button>
-									<button className="btn-lg">Call</button>
+									<Link href={"/#services"}>
+										<a>
+											<button className="hero-cta ">View Services</button>
+										</a>
+									</Link>
 								</div>
 							</div>
 						</div>
@@ -72,7 +99,7 @@ const LandingPage = () => {
 										develop creative solutions for small and big brands , also
 										build authenthic product identities and much more.
 									</p>
-									<button className="btn-lg">READ MORE</button>
+									<button className="btn-lg">Read More</button>
 								</div>
 								<div className="img">
 									<img src="/images/side1.png" alt="" />
@@ -80,13 +107,13 @@ const LandingPage = () => {
 							</div>
 						</section>
 
-						<section id="products" className="products">
+						<section id="services" className="services">
 							<h3 className="text-secondary text-center section-title">
-								Products
+								Services
 							</h3>
-							<div className="products-inner container">
-								{productsData.map((product) => (
-									<ProductCard key={product.id} product={product} />
+							<div className="services-inner container">
+								{servicesData.map((service) => (
+									<ServiceCard key={service.id} service={service} />
 								))}
 							</div>
 						</section>

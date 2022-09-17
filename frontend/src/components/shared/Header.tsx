@@ -23,21 +23,15 @@ const Header: React.FC<{
 	return (
 		<header
 			className={`header ${scrolled ? "scrolled" : ""}`}
-			style={{
-				background: `${pathName === "/" ? "rgba($blue, 0.3)" : "transparent"}`,
-			}}
+			// style={{
+			// 	background: `${pathName === "/" ? "rgba($blue, 0.3)" : "transparent"}`,
+			// }}
 		>
 			<nav className={`navbar ${!isMobile ? "container" : ""}`}>
 				<Link href="/">
 					<a className="ms-2">
 						<LogoComp
-							fill={
-								scrolled
-									? LogoColorEnum.YELLOW
-									: pathName !== home
-									? LogoColorEnum.UBUBA_BLUE
-									: LogoColorEnum.WHITE
-							}
+							fill={scrolled ? LogoColorEnum.YELLOW : LogoColorEnum.UBUBA_BLUE}
 						/>
 					</a>
 				</Link>
@@ -61,12 +55,8 @@ const Header: React.FC<{
 							<Link href={nav.link}>
 								<a
 									className={`nav-link ${
-										nav.name === "Contact" ? "btn-sm" : ""
-									} ${
-										pathName !== home || (scrolled && !showMobileNav)
-											? "text-primary"
-											: "text-light"
-									}`}
+										nav.name === "Contact" ? "nav-contact-btn" : ""
+									} ${scrolled ? "text-primary" : "text-primary"}`}
 									onClick={() => toggleMobileNav(false)}
 								>
 									{nav.name}
@@ -86,7 +76,7 @@ const Header: React.FC<{
 								? "text-secondary"
 								: pathName != home
 								? "text-primary"
-								: ""
+								: "text-primary"
 						} `}
 					></i>
 				</button>
@@ -100,7 +90,7 @@ export default Header;
 const navList = [
 	{ name: "Home", link: "/" },
 	{ name: "About Us", link: "/#about-us" },
-	{ name: "Products", link: "/#products" },
+	{ name: "Services", link: "/#services" },
 	{ name: "Training", link: "/training" },
 	{ name: "Contact", link: "/#contact-us" },
 ];

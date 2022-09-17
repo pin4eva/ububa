@@ -8,8 +8,11 @@ const Training = () => {
 	return (
 		<>
 			<Head>
-				<title>Training</title>
-				<meta name="description" content="Ububa training" />
+				<title>Ububa Technology - Training</title>
+				<meta
+					name="description"
+					content="Learn in-demand skills via hands-on learning and in-person classes at Ububa Technology. We journey you from the basic concepts to intermediate concepts so as prepare you for intermediate level roles after your period of training. Apply today to get started with your journey into tech with us."
+				/>
 			</Head>
 			<FrontLayout>
 				<div className="trainingPageContainer">
