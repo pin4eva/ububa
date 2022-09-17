@@ -6,6 +6,7 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import "../styles/index.scss";
 import "../styles/custom.scss";
 import { useApollo } from "../apollo";
+import "reflect-metadata";
 
 function MyApp({ Component, pageProps }: AppProps) {
 	const client = useApollo(pageProps.initialApolloState);
