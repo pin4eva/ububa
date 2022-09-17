@@ -2,8 +2,12 @@ import { ApolloServer } from "apollo-server-micro";
 import { NextApiHandler, NextApiRequest, NextApiResponse } from "next";
 import { schema } from "../../apollo/typeDefs/index.type";
 import Cors from "cors";
+import { ApolloServerPluginLandingPageGraphQLPlayground } from "apollo-server-core";
 
-const apolloServer = new ApolloServer({ schema });
+const apolloServer = new ApolloServer({
+	schema,
+	plugins: [ApolloServerPluginLandingPageGraphQLPlayground],
+});
 
 const cors = Cors({
 	methods: ["GET", "HEAD", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
