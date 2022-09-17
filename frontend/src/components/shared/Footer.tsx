@@ -62,7 +62,7 @@ const Footer: React.FC<{ isAtFooter: boolean }> = ({ isAtFooter }) => {
 							{/* <div className="icon"> */}
 							<img src="/images/Email.png" alt="" className="footer-icon" />
 							{/* </div> */}
-							<p>ububatechnologies@gmail.com</p>
+							<p>ububa.tech@gmail.com</p>
 						</div>
 					</div>
 				</div>

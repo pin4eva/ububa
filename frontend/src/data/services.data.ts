@@ -1,6 +1,6 @@
-import { IProductsData } from "../interfaces";
+import { IServicesData } from "../interfaces";
 
-export const productsData: IProductsData[] = [
+export const servicesData: IServicesData[] = [
 	{
 		id: 1,
 		productTitle: "Software Dev.",
