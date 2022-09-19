@@ -15,23 +15,44 @@ const LandingPage = () => {
 	const [loaded, setLoaded] = useState(false);
 
 	useEffect(() => {
-		// check load state of document
-
-		if (document.readyState === "complete") {
-			setLoaded(true);
-		} else {
-			if (typeof window !== undefined) {
-				window?.addEventListener("load", (e) => {
+		// check document status at an instance
+		if (document.readyState == "complete") setLoaded(true);
+		else {
+			if (typeof window !== "undefined") {
+				window.addEventListener("load", () => {
 					const images = document?.getElementsByTagName("img");
-					const imageLength = images.length;
-					let loadedImages = 0;
-					Array.from(images).forEach((image) => {
-						if (image?.complete && image?.naturalHeight != 0) loadedImages += 1;
-					});
-					if (loadedImages === imageLength) setLoaded(true);
+					console.log(images);
+
+					const heroImg = Array.from(images)[0];
+					if (heroImg.complete && heroImg.naturalHeight !== 0) setLoaded(true);
 				});
 			}
 		}
+
+		// check load state of document
+		// 		if (document.readyState === "complete") {
+		// 			setLoaded(true);
+		// 			console.log("page already loaded");
+		// 		} else {
+		// if (typeof window !== undefined) {
+		// 						window?.addEventListener("load", (e) => {
+		// 							const images = document?.getElementsByTagName("img");
+		// 							// const imageLength = images.length;
+		// 							// let loadedImages = 0;
+		// 							Array.from(images).forEach((image) => {
+		// 								console.log(image);
+		//
+		// 								// if (
+		// 								// 	image?.baseURI == "/images/home-hero.jpg" &&
+		// 								// 	image?.complete &&
+		// 								// 	image?.naturalHeight != 0
+		// 								// )
+		// 								// 	console.log("done");
+		// 							});
+		// 		// 					// if (loadedImages === imageLength) setLoaded(true);
+		// 		// 				});
+		// 			}
+		// 		}
 	}, []);
 
 	return (
