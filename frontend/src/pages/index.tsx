@@ -10,6 +10,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { servicesData } from "data/services.data";
 import { EventsAlerts } from "data/alerts.data";
+import ContactForm from "components/home/ContactForm";
 
 const LandingPage = () => {
 	const [loaded, setLoaded] = useState(false);
@@ -150,21 +151,7 @@ const LandingPage = () => {
 							<h3 className="text-secondary text-center section-title">
 								Contact Us
 							</h3>
-							<form className="container">
-								<input required type="text" name="name" placeholder="Name" />
-								<input required type="email" name="email" placeholder="Email" />
-								<textarea
-									required
-									name=""
-									id=""
-									cols={10}
-									rows={5}
-									placeholder="Message"
-								></textarea>
-								<div className="text-center">
-									<button className="btn-sm">Submit</button>
-								</div>
-							</form>
+							<ContactForm />
 						</section>
 					</div>
 				</FrontLayout>
