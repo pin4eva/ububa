@@ -6,7 +6,7 @@ const ServiceCard: React.FC<{ service: IServicesData }> = ({ service }) => {
 		<div className="product-card">
 			<h5>{service.productTitle}</h5>
 			<p>{service.productDesc}</p>
-			<button className="btn-card btn-lg">Read more</button>
+			<button className="btn-card btn-lg">Book Service</button>
 		</div>
 	);
 };
