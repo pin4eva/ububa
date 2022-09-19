@@ -90,10 +90,6 @@
 		&-inner {
 			&-desc {
 				margin-bottom: 3em;
-
-				p {
-					// line-height: 1.6rem;s
-				}
 			}
 		}
 
@@ -191,6 +187,12 @@
 		&-inner {
 			.locate-us {
 				border: 1px solid green;
+				flex: 1;
+
+				.google-map-container {
+					border: 1px solid blue;
+					height: 50vh;
+				}
 
 				&-contact-details {
 					i {
@@ -229,7 +231,7 @@
 
 			@media screen and (min-width: 800px) {
 				display: flex;
-				justify-content: space-between;
+				gap: 4em;
 			}
 		}
 
