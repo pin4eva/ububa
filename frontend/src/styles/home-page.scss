@@ -32,7 +32,7 @@
 
 	.section-title {
 		// padding-top: 1.5em;
-		padding-bottom: 0.7em;
+		// padding-bottom: 0.7em;
 		font-weight: 700;
 		font-size: 2.5rem;
 	}
@@ -120,9 +120,6 @@
 
 		.services-inner {
 			display: grid;
-			// border: 2px solid yellow;
-			background: url("../../public/images/products-bg.png") no-repeat center;
-			background-size: cover;
 			padding: 2em;
 		}
 
@@ -167,9 +164,6 @@
 				margin-bottom: 2em;
 				position: relative;
 				&-overlay {
-					background: rgba(22, 42, 62, 0.5);
-					backdrop-filter: blur(1.5px);
-					// border: 1px solid red;
 					position: absolute;
 					width: 100%;
 					height: 100%;
@@ -178,12 +172,19 @@
 					align-items: center;
 					justify-content: center;
 
+					&:hover {
+						background: rgba(22, 42, 62, 0.5);
+						backdrop-filter: blur(1.5px);
+						transition: all ease-in-out 0.4s;
+					}
+
 					&-inner {
 						// border: 1px solid red;
 						color: white;
 						font-size: 1.5rem;
 						i {
 							color: white;
+							font-size: 1.5rem;
 						}
 						.team-socials-wrapper {
 							display: flex;

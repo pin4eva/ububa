@@ -1,21 +1,31 @@
 .product-card {
-	background: #f2f9ff;
-	box-shadow: 5px 5px 5px 3px rgba(0, 0, 0, 0.5);
-	border-radius: 10px;
-	padding: 2em;
-	margin-bottom: 2em;
+	border-radius: 4px;
+	padding: 1em;
+	padding-bottom: 4em;
+	outline: 0.01px solid $primary;
+	color: $primary;
+	position: relative;
 	h5 {
 		margin-bottom: 1em;
 	}
-	p {
-		margin-bottom: 2em;
-	}
 
-	.btn-card {
+	.book-service {
+		outline: 1px solid $secondary;
+		border: none;
 		background: white;
+		padding: 6px 12px;
 		color: black;
 		font-weight: 400;
 		font-size: inherit;
+
+		position: absolute;
+		bottom: 1.4em;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	&:hover {
+		box-shadow: 0px 5px 12px 3px rgba(0, 0, 0, 0.2);
 	}
 
 	@media screen and (min-width: 800px) {
