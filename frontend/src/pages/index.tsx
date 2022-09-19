@@ -105,7 +105,7 @@ const LandingPage = () => {
 							</div>
 
 							<section className="our-team pt-4">
-								<h3 className="text-center section-title">OUR TEAM</h3>
+								<h3 className="text-center section-title">Our Team</h3>
 								<div className="our-team-card-wrapper container">
 									{TeamData.map((teamMember) => (
 										<TeamCard teamMember={teamMember} key={teamMember.id} />

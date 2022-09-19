@@ -117,6 +117,7 @@
 
 	.services {
 		padding: 0;
+		// position: relative;
 
 		.services-inner {
 			display: grid;
@@ -154,8 +155,8 @@
 		margin-top: 4em;
 		.section-title {
 			padding: 0;
-			text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-			letter-spacing: 0.39em;
+			// text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+			// letter-spacing: 0.39em;
 		}
 
 		&-card-wrapper {
