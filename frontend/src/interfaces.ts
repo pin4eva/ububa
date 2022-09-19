@@ -9,4 +9,8 @@ export interface ITeamCard {
 	img: string;
 	name: string;
 	position: string;
+	socials: {
+		facebook: string;
+		twitter: string;
+	};
 }

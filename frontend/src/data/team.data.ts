@@ -6,17 +6,29 @@ export const TeamData: ITeamCard[] = [
 		img: "/images/gee5.png",
 		name: "Mr Peter",
 		position: "web/mobile developer",
+		socials: {
+			facebook: "https://facebook.com/",
+			twitter: "https://twitter.com/",
+		},
 	},
 	{
 		id: 2,
 		img: "/images/gee5.png",
 		name: "Mr Peter",
 		position: "web/mobile developer",
+		socials: {
+			facebook: "https://facebook.com/",
+			twitter: "https://twitter.com/",
+		},
 	},
 	{
 		id: 3,
 		img: "/images/gee5.png",
 		name: "Mr Peter",
 		position: "web/mobile developer",
+		socials: {
+			facebook: "https://facebook.com/",
+			twitter: "https://twitter.com/",
+		},
 	},
 ];
