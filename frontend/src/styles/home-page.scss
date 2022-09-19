@@ -7,6 +7,7 @@
 }
 
 .events-alert {
+	font-size: 0.9rem;
 	border-radius: 0;
 	margin-bottom: 0;
 	background: rgba(22, 42, 62, 0.79);
@@ -30,7 +31,7 @@
 	}
 
 	.section-title {
-		padding: 1.5em 0.3em;
+		padding: 0.6em 0;
 		font-weight: 700;
 		font-size: 2.5rem;
 	}
@@ -179,18 +180,11 @@
 	}
 
 	.contact-us {
-		border: 1px solid red;
-		// padding-top: 0;
-		// h3 {
-		// 		padding-top: 0;
-		// 	}
 		&-inner {
 			.locate-us {
-				border: 1px solid green;
 				flex: 1;
 
 				.google-map-container {
-					border: 1px solid blue;
 					height: 50vh;
 				}
 
@@ -205,7 +199,6 @@
 			}
 
 			.message-us {
-				border: 1px solid blue;
 				form {
 					input {
 						height: 60px;

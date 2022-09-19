@@ -49,7 +49,7 @@ const LandingPage = () => {
 			</div>
 			<div style={{ display: loaded ? "block" : "none" }}>
 				<div
-					className="events-alert text-center p-1"
+					className="events-alert text-center p-2"
 					style={{ display: EventsAlerts.length > 0 ? "block" : "none" }}
 				>
 					{EventsAlerts.map((eventalert) => (
@@ -164,7 +164,6 @@ const LandingPage = () => {
 											width="100%"
 											height="100%"
 											loading="lazy"
-											allowFullScreen
 										/>
 									</div>
 								</div>
