@@ -83,7 +83,7 @@ const LandingPage = () => {
 							</div>
 						</div>
 
-						<section id="about-us" className="about-us pt-5">
+						<section id="about-us" className="about-us pt-5 pb-4">
 							<h3 className="text-center section-title">About Us</h3>
 							<div className="about-us-inner container">
 								<div className="about-us-inner-desc">
@@ -103,15 +103,15 @@ const LandingPage = () => {
 									<img src="/images/side1.png" alt="" />
 								</div>
 							</div>
-						</section>
 
-						<section className="our-team pt-5">
-							<h3 className="text-center section-title">OUR TEAM</h3>
-							<div className="our-team-card-wrapper container">
-								{TeamData.map((teamMember) => (
-									<TeamCard teamMember={teamMember} key={teamMember.id} />
-								))}
-							</div>
+							<section className="our-team pt-4">
+								<h3 className="text-center section-title">OUR TEAM</h3>
+								<div className="our-team-card-wrapper container">
+									{TeamData.map((teamMember) => (
+										<TeamCard teamMember={teamMember} key={teamMember.id} />
+									))}
+								</div>
+							</section>
 						</section>
 
 						<section id="services" className="services pt-5">
