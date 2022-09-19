@@ -8,8 +8,12 @@ import "../styles/custom.scss";
 import { useApollo } from "../apollo";
 import "reflect-metadata";
 
-function MyApp({ Component, pageProps }: AppProps) {
-	const client = useApollo(pageProps.initialApolloState);
+function MyApp({
+	Component,
+	pageProps,
+}: AppProps & { pageProps: { initialState?: any } }) {
+	const client = useApollo(pageProps.initialState);
+	console.log(pageProps);
 	return (
 		<Fragment>
 			<Head>
