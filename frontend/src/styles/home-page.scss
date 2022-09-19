@@ -31,7 +31,8 @@
 	}
 
 	.section-title {
-		padding: 0.6em 0;
+		// padding-top: 1.5em;
+		padding-bottom: 0.7em;
 		font-weight: 700;
 		font-size: 2.5rem;
 	}
@@ -153,6 +154,7 @@
 	}
 
 	.our-team {
+		margin-top: 4em;
 		.section-title {
 			padding: 0;
 			text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -161,7 +163,6 @@
 
 		&-card-wrapper {
 			padding: 2em;
-
 			.team-card {
 				margin-bottom: 2em;
 				position: relative;
@@ -198,10 +199,9 @@
 			}
 
 			@media screen and (min-width: 800px) {
-				display: flex;
-				align-items: center;
-				justify-content: space-between;
-				gap: 2em;
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				gap: 5px;
 			}
 		}
 	}

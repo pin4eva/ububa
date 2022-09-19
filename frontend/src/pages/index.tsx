@@ -83,7 +83,7 @@ const LandingPage = () => {
 							</div>
 						</div>
 
-						<section id="about-us" className="about-us">
+						<section id="about-us" className="about-us pt-5">
 							<h3 className="text-center section-title">About Us</h3>
 							<div className="about-us-inner container">
 								<div className="about-us-inner-desc">
@@ -105,7 +105,16 @@ const LandingPage = () => {
 							</div>
 						</section>
 
-						<section id="services" className="services">
+						<section className="our-team pt-5">
+							<h3 className="text-center section-title">OUR TEAM</h3>
+							<div className="our-team-card-wrapper container">
+								{TeamData.map((teamMember) => (
+									<TeamCard teamMember={teamMember} key={teamMember.id} />
+								))}
+							</div>
+						</section>
+
+						<section id="services" className="services pt-5">
 							<h3 className=" text-center section-title">Services</h3>
 							<div className="services-inner container">
 								{servicesData.map((service) => (
@@ -114,7 +123,7 @@ const LandingPage = () => {
 							</div>
 						</section>
 
-						<section className="testimonials mt-5">
+						<section className="testimonials pt-5">
 							<h3 className="container text-light section-title">
 								We believe in the power of technology
 							</h3>
@@ -130,16 +139,7 @@ const LandingPage = () => {
 							</div>
 						</section>
 
-						<section className="our-team mt-5">
-							<h3 className="text-center section-title">OUR TEAM</h3>
-							<div className="our-team-card-wrapper container">
-								{TeamData.map((teamMember) => (
-									<TeamCard teamMember={teamMember} key={teamMember.id} />
-								))}
-							</div>
-						</section>
-
-						<section id="contact-us" className="contact-us container">
+						<section id="contact-us" className="contact-us container pt-5">
 							<div className="contact-us-inner">
 								<div className="locate-us">
 									<h3 className="section-title ps-0">Contact Us</h3>
