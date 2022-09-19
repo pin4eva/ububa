@@ -18,6 +18,12 @@ const createIsomorphicLink = () => {
 	}
 };
 
+export const apollo = new ApolloClient({
+	ssrMode: typeof window === undefined,
+	link: createIsomorphicLink(),
+	cache: new InMemoryCache(),
+});
+
 const createApolloClient = () => {
 	return new ApolloClient({
 		ssrMode: typeof window === undefined,

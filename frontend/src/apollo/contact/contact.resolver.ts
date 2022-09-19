@@ -1,5 +1,5 @@
 import { Resolver, Mutation, Query, Arg } from "type-graphql";
-import { CreateContactInput } from "./contact.dto";
+import { CreateContactInput, UpdateContactInput } from "./contact.dto";
 import { Contact } from "./contact.model";
 import { ContactService } from "./contact.service";
 
@@ -17,5 +17,14 @@ export class ContactResolver {
 	@Mutation(() => Contact)
 	createContact(@Arg("input") input: CreateContactInput) {
 		return this.service.createContact(input);
+	}
+
+	@Mutation(() => Contact)
+	updateContact(@Arg("input") input: UpdateContactInput) {
+		return this.service.updateContact(input);
+	}
+	@Mutation(() => Contact)
+	deleteContact(@Arg("id") id: string) {
+		return this.service.deleteContact(id);
 	}
 }

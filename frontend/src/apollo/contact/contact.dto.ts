@@ -13,3 +13,15 @@ export class CreateContactInput {
 	@IsString()
 	message: string;
 }
+
+@InputType()
+export class UpdateContactInput {
+	@Field()
+	id: string;
+	@Field({ nullable: true })
+	name?: string;
+	@Field({ nullable: true })
+	email?: string;
+	@Field({ nullable: true })
+	message?: string;
+}

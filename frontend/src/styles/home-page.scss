@@ -10,9 +10,11 @@
 	border-radius: 0;
 	margin-bottom: 0;
 	background: rgba(22, 42, 62, 0.79);
+
 	a {
 		color: white;
 		font-weight: bold;
+
 		&:hover {
 			text-decoration: none;
 		}
@@ -72,6 +74,7 @@
 				font-size: 40px;
 				line-height: 185.69%;
 				letter-spacing: -0.005em;
+
 				@media screen and (min-width: 800px) {
 					font-size: 55px;
 				}
@@ -195,6 +198,10 @@
 				height: 60px;
 			}
 
+			.form-group {
+				margin-bottom: 2em;
+			}
+
 			input,
 			textarea {
 				display: block;
@@ -202,7 +209,7 @@
 				background: #f2f9ff;
 				box-shadow: 12px 11px 6px rgba(0, 0, 0, 0.1);
 				padding: 1em;
-				margin-bottom: 2em;
+
 				border: none;
 				outline: none;
 
