@@ -85,7 +85,7 @@ const LandingPage = () => {
 						</div>
 
 						<section id="about-us" className="about-us pt-5 pb-4">
-							<h3 className="text-center section-title">About Us</h3>
+							{/* <h3 className="text-center section-title">About Us</h3> */}
 							<div className="about-us-inner container">
 								<div className="about-us-inner-desc">
 									<h4>IT CONSULTING, COMPUTER TRAINING</h4>
@@ -116,7 +116,7 @@ const LandingPage = () => {
 						</section>
 
 						<section id="services" className="services pt-5">
-							<h3 className=" text-center section-title">Services</h3>
+							<h3 className=" text-center section-title">Our Services</h3>
 							<div className="services-inner container">
 								{servicesData.map((service) => (
 									<ServiceCard
@@ -129,9 +129,9 @@ const LandingPage = () => {
 						</section>
 
 						<section className="testimonials pt-5">
-							<h3 className="container text-light section-title">
+							{/* <h3 className="container text-light section-title">
 								We believe in the power of technology
-							</h3>
+							</h3> */}
 							<div className="testimonials-inner container">
 								<h4 className="mb-3">OUR HAPPY CLIENTS</h4>
 								<h5 className="mb-3">What Clients Say?</h5>
