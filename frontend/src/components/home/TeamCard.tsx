@@ -26,8 +26,8 @@ const TeamCard: React.FC<{ teamMember: ITeamCard }> = ({ teamMember }) => {
 						{teamMember.position}
 					</p>
 					<div className="team-socials-wrapper">
-						<a href={teamMember.socials.facebook}>
-							<i className="fa-brands fa-facebook"></i>
+						<a href={teamMember.socials.linkedin}>
+							<i className="fa-brands fa-linkedin"></i>
 						</a>
 						<a href={teamMember.socials.twitter}>
 							<i className="fa-brands fa-twitter"></i>

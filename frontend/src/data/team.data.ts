@@ -7,7 +7,7 @@ export const TeamData: ITeamCard[] = [
 		name: "Chukwudi",
 		position: "Mobile Development",
 		socials: {
-			facebook: "https://facebook.com/",
+			linkedin: "https://linkedin.com/",
 			twitter: "https://twitter.com/",
 		},
 	},
@@ -17,7 +17,7 @@ export const TeamData: ITeamCard[] = [
 		name: "Golden",
 		position: "Brand Identity Design",
 		socials: {
-			facebook: "https://facebook.com/",
+			linkedin: "https://linkedin.com/",
 			twitter: "https://twitter.com/",
 		},
 	},
@@ -27,7 +27,7 @@ export const TeamData: ITeamCard[] = [
 		name: "Charles",
 		position: "Product Design",
 		socials: {
-			facebook: "https://facebook.com/",
+			linkedin: "https://linkedin.com/",
 			twitter: "https://twitter.com/",
 		},
 	},

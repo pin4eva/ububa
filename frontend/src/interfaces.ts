@@ -11,7 +11,7 @@ export interface ITeamCard {
 	name: string;
 	position: string;
 	socials: {
-		facebook: string;
+		linkedin: string;
 		twitter: string;
 	};
 }
