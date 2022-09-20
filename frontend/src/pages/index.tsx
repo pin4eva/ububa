@@ -13,6 +13,11 @@ import { EventsAlerts } from "data/alerts.data";
 
 const LandingPage = () => {
 	const [loaded, setLoaded] = useState(false);
+	const [revealPayload, setRevealPayload] = useState(false);
+
+	const handlePayload = (state: boolean) => {
+		setRevealPayload(state);
+	};
 
 	useEffect(() => {
 		// check document status at an instance
@@ -99,22 +104,26 @@ const LandingPage = () => {
 									<img src="/images/side1.png" alt="" loading="lazy" />
 								</div>
 							</div>
+						</section>
 
-							<section className="our-team pt-4">
-								<h3 className="text-center section-title">Our Team</h3>
-								<div className="our-team-card-wrapper container">
-									{TeamData.map((teamMember) => (
-										<TeamCard teamMember={teamMember} key={teamMember.id} />
-									))}
-								</div>
-							</section>
+						<section className="our-team pt-4">
+							<h3 className="text-center section-title">Our Team</h3>
+							<div className="our-team-card-wrapper container">
+								{TeamData.map((teamMember) => (
+									<TeamCard teamMember={teamMember} key={teamMember.id} />
+								))}
+							</div>
 						</section>
 
 						<section id="services" className="services pt-5">
 							<h3 className=" text-center section-title">Services</h3>
 							<div className="services-inner container">
 								{servicesData.map((service) => (
-									<ServiceCard key={service.id} service={service} />
+									<ServiceCard
+										key={service.id}
+										service={service}
+										handlePayload={handlePayload}
+									/>
 								))}
 							</div>
 						</section>
@@ -166,7 +175,21 @@ const LandingPage = () => {
 								<div className="message-us">
 									<h3 className="ps-0 section-title">Send Us a Message</h3>
 									<form className="form-group">
+										{
+											<select
+												required
+												style={{ display: revealPayload ? "block" : "none" }}
+											>
+												<option style={{ color: "gray" }}>
+													Select Needed Service
+												</option>
+												{Object.values(servicesData).map((elem) => (
+													<option key={elem.id}>{elem.productTitle}</option>
+												))}
+											</select>
+										}
 										<input
+											autoFocus
 											required
 											type="text"
 											name="name"
@@ -184,10 +207,15 @@ const LandingPage = () => {
 											id=""
 											cols={10}
 											rows={5}
-											placeholder="Message"
+											placeholder="Kindly give us a brief description of your project needs"
 										></textarea>
 										<div className="text-end">
-											<button className="btn-sm">Submit</button>
+											<button
+												onClick={() => handlePayload(false)}
+												className="btn-sm"
+											>
+												Submit
+											</button>
 										</div>
 									</form>
 								</div>

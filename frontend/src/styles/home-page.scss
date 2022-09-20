@@ -162,6 +162,7 @@
 		&-card-wrapper {
 			padding: 2em;
 			.team-card {
+				// background: rgba(0, 0, 0, 0.1);
 				margin-bottom: 2em;
 				position: relative;
 				&-overlay {
@@ -174,9 +175,8 @@
 					justify-content: center;
 
 					&:hover {
-						background: rgba(22, 42, 62, 0.5);
+						background: rgba(22, 42, 62, 0.75);
 						backdrop-filter: blur(1.5px);
-						transition: all ease-in-out 0.4s;
 					}
 
 					&-inner {
@@ -203,7 +203,7 @@
 			@media screen and (min-width: 800px) {
 				display: grid;
 				grid-template-columns: repeat(3, 1fr);
-				gap: 5px;
+				gap: 1em;
 			}
 		}
 	}
@@ -235,7 +235,8 @@
 					}
 
 					input,
-					textarea {
+					textarea,
+					select {
 						display: block;
 						width: 100%;
 						background: #f2f9ff;

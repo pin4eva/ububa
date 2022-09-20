@@ -17,8 +17,8 @@ export const TeamData: ITeamCard[] = [
 		name: "Golden",
 		position: "Brand Identity Design",
 		socials: {
-			linkedin: "https://linkedin.com/",
-			twitter: "https://twitter.com/",
+			linkedin: "https://linkedin.com/golden-okwu",
+			twitter: "https://twitter.com/lioneldgreat",
 		},
 	},
 	{
