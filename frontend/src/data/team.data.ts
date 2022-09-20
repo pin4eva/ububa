@@ -3,9 +3,9 @@ import { ITeamCard } from "../interfaces";
 export const TeamData: ITeamCard[] = [
 	{
 		id: 1,
-		img: "/images/gee5.png",
-		name: "Mr Peter",
-		position: "web/mobile developer",
+		img: "/images/chukwudi.jpg",
+		name: "Chukwudi",
+		position: "Mobile Development",
 		socials: {
 			facebook: "https://facebook.com/",
 			twitter: "https://twitter.com/",
@@ -13,9 +13,9 @@ export const TeamData: ITeamCard[] = [
 	},
 	{
 		id: 2,
-		img: "/images/gee5.png",
-		name: "Mr Peter",
-		position: "web/mobile developer",
+		img: "/images/golden.png",
+		name: "Golden",
+		position: "Brand Identity Design",
 		socials: {
 			facebook: "https://facebook.com/",
 			twitter: "https://twitter.com/",
@@ -23,9 +23,9 @@ export const TeamData: ITeamCard[] = [
 	},
 	{
 		id: 3,
-		img: "/images/gee5.png",
-		name: "Mr Peter",
-		position: "web/mobile developer",
+		img: "/images/charles.jpg",
+		name: "Charles",
+		position: "Product Design",
 		socials: {
 			facebook: "https://facebook.com/",
 			twitter: "https://twitter.com/",

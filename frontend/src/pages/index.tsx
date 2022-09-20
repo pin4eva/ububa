@@ -28,31 +28,6 @@ const LandingPage = () => {
 				});
 			}
 		}
-
-		// check load state of document
-		// 		if (document.readyState === "complete") {
-		// 			setLoaded(true);
-		// 			console.log("page already loaded");
-		// 		} else {
-		// if (typeof window !== undefined) {
-		// 						window?.addEventListener("load", (e) => {
-		// 							const images = document?.getElementsByTagName("img");
-		// 							// const imageLength = images.length;
-		// 							// let loadedImages = 0;
-		// 							Array.from(images).forEach((image) => {
-		// 								console.log(image);
-		//
-		// 								// if (
-		// 								// 	image?.baseURI == "/images/home-hero.jpg" &&
-		// 								// 	image?.complete &&
-		// 								// 	image?.naturalHeight != 0
-		// 								// )
-		// 								// 	console.log("done");
-		// 							});
-		// 		// 					// if (loadedImages === imageLength) setLoaded(true);
-		// 		// 				});
-		// 			}
-		// 		}
 	}, []);
 
 	return (
@@ -121,7 +96,7 @@ const LandingPage = () => {
 									<button className="btn-lg">Read More</button>
 								</div>
 								<div className="img">
-									<img src="/images/side1.png" alt="" />
+									<img src="/images/side1.png" alt="" loading="lazy" />
 								</div>
 							</div>
 
