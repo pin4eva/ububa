@@ -32,7 +32,7 @@
 
 	.section-title {
 		// padding-top: 1.5em;
-		padding-bottom: 0.3em;
+		padding-bottom: 0.4em;
 		font-weight: 700;
 		font-size: 2.5rem;
 	}
@@ -211,11 +211,9 @@
 	.contact-us {
 		&-inner {
 			.locate-us {
+				display: flex;
+				flex-direction: column;
 				flex: 1;
-
-				.google-map-container {
-					height: 50vh;
-				}
 
 				&-contact-details {
 					i {
@@ -224,6 +222,9 @@
 						color: $secondary;
 						// fill: 1px solid $secondary;
 					}
+				}
+				.google-map-container {
+					flex: 1;
 				}
 			}
 
@@ -253,7 +254,7 @@
 
 			@media screen and (min-width: 800px) {
 				display: flex;
-				gap: 4em;
+				gap: 5em;
 			}
 		}
 

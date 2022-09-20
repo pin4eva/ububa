@@ -138,7 +138,7 @@ const LandingPage = () => {
 						<section id="contact-us" className="contact-us container pt-5">
 							<div className="contact-us-inner">
 								<div className="locate-us">
-									<h3 className="section-title ps-0">Contact Us</h3>
+									<h3 className="section-title ps-0 ">Contact Us</h3>
 									<div className="locate-us-contact-details">
 										<p>
 											<i className="fa-solid fa-location-pin"></i>
@@ -153,7 +153,6 @@ const LandingPage = () => {
 											ububa.tech@gmail.com
 										</p>
 									</div>
-									{/* map goes here */}
 									<div className="google-map-container">
 										<iframe
 											src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248.4667677297858!2d7.0300656572127425!3d4.860912785864461!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1069d38495de7af1%3A0xe105140708574a41!2sGourmet%20Spanish%20Supermarket!5e0!3m2!1sen!2sng!4v1663574022010!5m2!1sen!2sng"
