@@ -48,12 +48,12 @@ const TestimonialsSlider = () => {
 				{TestimonialsData.map((testimony) => (
 					<div key={testimony.id} className="slide">
 						<p className="testimony mt-2 mb-5">{testimony.testimony}</p>
-						<div className="d-flex-center">
+						<div className="d-flex-center gap-3">
 							<div className="testifier-avi">
 								<img src={testimony.image} alt="testifier's image" />
 							</div>
-							<div>
-								<p className="p-0 m-0">{testimony.name}</p>
+							<div className="text-start">
+								<p className="p-0 m-0 fs-6 fw-bold">{testimony.name}</p>
 								<p className="p-0 m-0 text-info">{testimony.occupation}</p>
 							</div>
 						</div>
@@ -61,8 +61,8 @@ const TestimonialsSlider = () => {
 				))}
 			</div>
 
-			<i className="fa-solid fa-arrow-left previous" />
-			<i className="fa-solid fa-arrow-right next" />
+			<i className="fa-solid fa-circle-chevron-left previous" />
+			<i className="fa-solid fa-circle-chevron-right next"></i>
 		</section>
 	);
 };
