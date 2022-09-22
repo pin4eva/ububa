@@ -44,20 +44,23 @@ const TestimonialsSlider = () => {
 	return (
 		<section className="testimonials pb-0 text-center">
 			<h3 className=" text-center section-title pb-0">Clients Reviews</h3>
-			{TestimonialsData.map((testimony) => (
-				<div key={testimony.id} className="slide">
-					<p className="testimony mt-2 mb-5">{testimony.testimony}</p>
-					<div className="d-flex-center">
-						<div className="testifier-avi">
-							<img src={testimony.image} alt="testifier's image" />
-						</div>
-						<div>
-							<p className="p-0 m-0">{testimony.name}</p>
-							<p className="p-0 m-0 text-info">{testimony.occupation}</p>
+			<div className="slider-wrapper">
+				{TestimonialsData.map((testimony) => (
+					<div key={testimony.id} className="slide">
+						<p className="testimony mt-2 mb-5">{testimony.testimony}</p>
+						<div className="d-flex-center">
+							<div className="testifier-avi">
+								<img src={testimony.image} alt="testifier's image" />
+							</div>
+							<div>
+								<p className="p-0 m-0">{testimony.name}</p>
+								<p className="p-0 m-0 text-info">{testimony.occupation}</p>
+							</div>
 						</div>
 					</div>
-				</div>
-			))}
+				))}
+			</div>
+
 			<i className="fa-solid fa-arrow-left previous" />
 			<i className="fa-solid fa-arrow-right next" />
 		</section>

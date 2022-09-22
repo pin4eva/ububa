@@ -1,15 +1,21 @@
 .testimonials {
 	padding: 1em;
 	background: white;
-	min-height: 370px;
-	position: relative;
+	// min-height: 370px;
 	overflow: hidden;
+	position: relative;
+
+	.slider-wrapper {
+		display: grid;
+		grid-template-columns: 1fr;
+	}
 
 	.slide {
 		padding: 2em;
-		// border: 1px solid green;
-		position: absolute;
 		width: 100%;
+		grid-row-start: 1;
+		grid-column-start: 1;
+
 		.testifier-avi {
 			width: 60px;
 			height: 60px;
@@ -30,9 +36,9 @@
 		cursor: pointer;
 	}
 	.next {
-		right: 0.8em;
+		right: 20px;
 	}
 	.previous {
-		left: 0.8em;
+		left: 20px;
 	}
 }
