@@ -22,17 +22,17 @@
 
 .landing-page {
 	color: $primary;
-	h3 {
-		color: $primary;
-	}
 	img {
 		width: 100%;
 		height: 100%;
 	}
+	section {
+		margin-bottom: 1em;
+	}
 
 	.section-title {
-		// padding-top: 1.5em;
-		padding-bottom: 0.4em;
+		color: $primary;
+		margin-top: 0.5em;
 		font-weight: 700;
 		font-size: 2.5rem;
 	}
@@ -141,22 +141,22 @@
 		}
 	}
 
-	.testimonials {
-		background: #1e3856;
-		color: white;
-		padding-bottom: 4em;
-
-		&-inner {
-			background: $primary;
-			padding: 2em;
-
-			@media screen and (min-width: 800px) {
-				p {
-					padding-right: 3em;
-				}
-			}
-		}
-	}
+	// 	.testimonials {
+	// 		// background: #1e3856;
+	// 		background: white;
+	// 		color: $primary;
+	// 		padding-bottom: 4em;
+	// 		margin-bottom: 50em;
+	//
+	// 		&-inner {
+	// 			// background: $primary;
+	// 			border: 1px solid blue;
+	// 			padding: 2em;
+	// 			// position: relative;
+	//
+	//
+	// 		}
+	// 	}
 
 	.our-team {
 		margin: 3.5em 0;
@@ -219,6 +219,7 @@
 				display: flex;
 				flex-direction: column;
 				flex: 1;
+				margin-bottom: 3em;
 
 				&-contact-details {
 					i {
@@ -230,6 +231,10 @@
 				}
 				.google-map-container {
 					flex: 1;
+				}
+
+				@media screen and (min-width: 900px) {
+					margin-bottom: 0;
 				}
 			}
 
@@ -244,7 +249,7 @@
 					select {
 						display: block;
 						width: 100%;
-						background: #f2f9ff;
+						background: white;
 						// box-shadow: 12px 11px 6px rgba(0, 0, 0, 0.1);
 						padding: 1em;
 						margin-bottom: 2em;
@@ -260,7 +265,11 @@
 
 			@media screen and (min-width: 800px) {
 				display: flex;
-				gap: 5em;
+				gap: 4em;
+
+				.message-us {
+					min-width: 40%;
+				}
 			}
 		}
 

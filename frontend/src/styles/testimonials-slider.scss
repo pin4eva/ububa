@@ -1,0 +1,38 @@
+.testimonials {
+	padding: 1em;
+	background: white;
+	min-height: 370px;
+	position: relative;
+	overflow: hidden;
+
+	.slide {
+		padding: 2em;
+		// border: 1px solid green;
+		position: absolute;
+		width: 100%;
+		.testifier-avi {
+			width: 60px;
+			height: 60px;
+			border-radius: 50%;
+			overflow: hidden;
+		}
+		.testimony {
+			font-size: 2rem;
+		}
+	}
+
+	.next,
+	.previous {
+		position: absolute;
+		top: 50%;
+		color: $secondary;
+		font-size: 1.8rem;
+		cursor: pointer;
+	}
+	.next {
+		right: 0.8em;
+	}
+	.previous {
+		left: 0.8em;
+	}
+}

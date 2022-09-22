@@ -9,8 +9,6 @@ const ServiceCard: React.FC<{
 }> = ({ service, handlePayload }) => {
 	return (
 		<>
-			{/* clicking on an order service tirggers the state of a hook that renders a payload */}
-
 			<div className="product-card text-center">
 				<div style={{ width: "120px", margin: "auto" }}>
 					<img src={service.productImg} alt="service img" />
