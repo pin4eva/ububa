@@ -211,20 +211,31 @@
 			padding: 2em;
 
 			.team-card {
-				// background: rgba(0, 0, 0, 0.1);
 				margin-bottom: 2em;
 				position: relative;
+
+				&:hover {
+					.team-card-overlay {
+						display: flex;
+						bottom: 0;
+						animation: 0.5s reveal-to-top forwards;
+					}
+				}
 
 				&-overlay {
 					background: rgba(22, 42, 62, 0.75);
 					backdrop-filter: blur(1.5px);
 					position: absolute;
 					width: 100%;
-					height: 100%;
-					top: 0;
+					height: 0;
+					overflow: hidden;
+					// top: 0;
 					display: flex;
 					align-items: center;
 					justify-content: center;
+					// display: none;
+
+
 
 					&-inner {
 						// border: 1px solid red;
@@ -318,4 +329,6 @@
 			}
 		}
 	}
+
+
 }
