@@ -11,6 +11,7 @@ import Link from "next/link";
 import { servicesData } from "data/services.data";
 import { EventsAlerts } from "data/alerts.data";
 import TestimonialsSlider from "components/TestimonialsSlider";
+import ContactForm from "components/home/ContactForm";
 
 const LandingPage = () => {
 	const [loaded, setLoaded] = useState(false);
@@ -163,50 +164,7 @@ const LandingPage = () => {
 
 								<div className="message-us">
 									{/* <h3 className="ps-0 section-title">Send Us a Message</h3> */}
-									<form className="form-group">
-										{
-											<select
-												required
-												style={{ display: revealPayload ? "block" : "none" }}
-											>
-												<option style={{ color: "gray" }}>
-													Select Needed Service
-												</option>
-												{Object.values(servicesData).map((elem) => (
-													<option key={elem.id}>{elem.productTitle}</option>
-												))}
-											</select>
-										}
-										<input
-											autoFocus
-											required
-											type="text"
-											name="name"
-											placeholder="Name"
-										/>
-										<input
-											required
-											type="email"
-											name="email"
-											placeholder="Email"
-										/>
-										<textarea
-											required
-											name=""
-											id=""
-											cols={10}
-											rows={5}
-											placeholder="Kindly give us a brief description of your project needs"
-										></textarea>
-										<div className="text-end">
-											<button
-												onClick={() => handlePayload(false)}
-												className="btn-sm"
-											>
-												Submit
-											</button>
-										</div>
-									</form>
+									<ContactForm revealPayload={false} />
 								</div>
 							</div>
 						</section>
