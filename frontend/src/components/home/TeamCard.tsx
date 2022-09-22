@@ -4,7 +4,6 @@ import { ITeamCard } from "../../interfaces";
 
 const TeamCard: React.FC<{ teamMember: ITeamCard }> = ({ teamMember }) => {
 	const [showTeamInfo, setShowTeamInfo] = useState(false);
-	console.log(showTeamInfo);
 
 	return (
 		<div
