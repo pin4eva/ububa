@@ -7,6 +7,16 @@ import "../styles/index.scss";
 import "../styles/custom.scss";
 import { useApollo } from "../apollo";
 import "reflect-metadata";
+import Router, { useRouter } from "next/router";
+import Nprogress from "nprogress";
+
+Router.events.on("routeChangeStart", () => {
+	Nprogress.start();
+});
+Router.events.on("routeChangeComplete", () => {
+	Nprogress.done();
+});
+Router.events.on("routeChangeError", () => Nprogress.done());
 
 function MyApp({
 	Component,
