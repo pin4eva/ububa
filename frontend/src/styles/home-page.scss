@@ -11,9 +11,11 @@
 	border-radius: 0;
 	margin-bottom: 0;
 	background: rgba(22, 42, 62, 0.79);
+
 	a {
 		color: white;
 		font-weight: bold;
+
 		&:hover {
 			text-decoration: none;
 		}
@@ -22,10 +24,12 @@
 
 .landing-page {
 	color: $primary;
+
 	img {
 		width: 100%;
 		height: 100%;
 	}
+
 	section {
 		margin-bottom: 1em;
 	}
@@ -47,7 +51,8 @@
 		.hero-bg {
 			position: absolute;
 			top: 0;
-
+			object-position: center;
+			object-fit: cover;
 			z-index: -1;
 		}
 
@@ -78,6 +83,7 @@
 				font-size: 1.5rem;
 				line-height: 185.69%;
 				letter-spacing: -0.005em;
+
 				@media screen and (min-width: 800px) {
 					font-size: 3rem;
 				}
@@ -129,16 +135,29 @@
 		.services-inner {
 			display: grid;
 			padding: 2em;
-		}
+			gap: 1rem;
 
-		@media screen and (min-width: 800px) {
-			padding: 2em;
+			@media screen and (min-width:992px) {
+				grid-template-columns: repeat(3, 1fr);
+			}
 
-			&-inner {
-				grid-template-columns: repeat(3, auto);
-				grid-gap: 2.5em;
+			@media screen and (max-width:992px) {
+				grid-template-columns: repeat(2, 1fr);
+			}
+
+			@media screen and (max-width:768px) {
+				grid-template-columns: repeat(1, 1fr);
 			}
 		}
+
+		// @media screen and (min-width: 800px) {
+		// 	padding: 2em;
+
+		// 	&-inner {
+		// 		grid-template-columns: repeat(3, auto);
+		// 		grid-gap: 2.5em;
+		// 	}
+		// }
 	}
 
 	.testimonials {
@@ -165,9 +184,11 @@
 				border-radius: 50%;
 				overflow: hidden;
 			}
+
 			.testimony {
 				font-size: 1.2rem;
 				padding: 0 1em;
+
 				@media screen and (min-width: 900px) {
 					font-size: 2rem;
 				}
@@ -182,9 +203,11 @@
 			font-size: 2.5rem;
 			cursor: pointer;
 		}
+
 		.next {
 			right: 20px;
 		}
+
 		.previous {
 			left: 20px;
 		}
@@ -192,35 +215,51 @@
 
 	.our-team {
 		margin: 3.5em 0;
+
 		.section-title {
 			padding: 0;
 		}
 
 		&-card-wrapper {
 			padding: 2em;
+
 			.team-card {
-				// background: rgba(0, 0, 0, 0.1);
 				margin-bottom: 2em;
 				position: relative;
+
+				&:hover {
+					.team-card-overlay {
+						display: flex;
+						bottom: 0;
+						animation: 0.5s reveal-to-top forwards;
+					}
+				}
+
 				&-overlay {
 					background: rgba(22, 42, 62, 0.75);
 					backdrop-filter: blur(1.5px);
 					position: absolute;
 					width: 100%;
-					height: 100%;
-					top: 0;
+					height: 0;
+					overflow: hidden;
+					// top: 0;
 					display: flex;
 					align-items: center;
 					justify-content: center;
+					// display: none;
+
+
 
 					&-inner {
 						// border: 1px solid red;
 						color: white;
 						font-size: 1.5rem;
+
 						i {
 							color: white;
 							font-size: 1.5rem;
 						}
+
 						.team-socials-wrapper {
 							display: flex;
 							justify-content: center;
@@ -258,6 +297,7 @@
 						// fill: 1px solid $secondary;
 					}
 				}
+
 				.google-map-container {
 					flex: 1;
 				}
@@ -302,4 +342,6 @@
 			}
 		}
 	}
+
+
 }

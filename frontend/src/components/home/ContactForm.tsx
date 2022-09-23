@@ -7,7 +7,12 @@ import { useForm, SubmitHandler } from "react-hook-form";
 const ContactForm: React.FC<{ revealPayload: boolean }> = ({
 	revealPayload,
 }) => {
-	const { register, handleSubmit } = useForm<CreateContactInput>();
+	const {
+		register,
+		handleSubmit,
+		reset,
+		formState: { isSubmitting },
+	} = useForm<CreateContactInput>();
 
 	const onSubmit: SubmitHandler<CreateContactInput> = async (input) => {
 		try {
@@ -15,7 +20,10 @@ const ContactForm: React.FC<{ revealPayload: boolean }> = ({
 				mutation: CREATE_CONTACT,
 				variables: { input },
 			});
-			console.log(data);
+			if (data) {
+				alert("Thank you for message, we will respond in the next 24hrs");
+				reset({ email: "", message: "", name: "" });
+			}
 		} catch (error) {
 			console.log(error);
 		}
@@ -55,7 +63,9 @@ const ContactForm: React.FC<{ revealPayload: boolean }> = ({
 				></textarea>
 			</div>
 			<div className="text-end">
-				<button className="btn-sm">Submit</button>
+				<button disabled={isSubmitting} className="btn-sm">
+					{isSubmitting ? "processing..." : "Submit"}
+				</button>
 			</div>
 		</form>
 	);

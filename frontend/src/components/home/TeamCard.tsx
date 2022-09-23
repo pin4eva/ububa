@@ -3,23 +3,13 @@ import React, { useEffect, useState } from "react";
 import { ITeamCard } from "../../interfaces";
 
 const TeamCard: React.FC<{ teamMember: ITeamCard }> = ({ teamMember }) => {
-	const [showTeamInfo, setShowTeamInfo] = useState(false);
-	console.log(showTeamInfo);
-
 	return (
-		<div
-			className="team-card"
-			onMouseOver={() => setShowTeamInfo(true)}
-			onMouseOut={() => setShowTeamInfo(false)}
-		>
+		<div className="team-card">
 			<div>
 				<img src={teamMember.img} alt="" className="member-img" />
 			</div>
 
-			<div
-				className="team-card-overlay text-center"
-				style={{ display: showTeamInfo ? "flex" : "none" }}
-			>
+			<div className="team-card-overlay text-center">
 				<div className="team-card-overlay-inner">
 					<h1 className="mb-0">{teamMember.name}</h1>
 					<p className="mt-2 mb-2" style={{ fontStyle: "italic" }}>
