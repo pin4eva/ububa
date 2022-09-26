@@ -57,7 +57,7 @@ const Register: React.FC = () => {
 								<a>Terms and Conditions</a>
 							</Link>
 						</p>
-						<button>Proceed To Payment</button>
+						<button className="btn-animation">Proceed To Payment</button>
 					</form>
 				</div>
 			</div>

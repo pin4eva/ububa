@@ -26,6 +26,14 @@
 		bottom: 1.4em;
 		left: 50%;
 		transform: translateX(-50%);
+
+		&:hover {
+			background: $secondary;
+			color: white;
+			border: none;
+			outline: none;
+			transition: ease-in-out 0.2s;
+		}
 	}
 
 	&:hover {

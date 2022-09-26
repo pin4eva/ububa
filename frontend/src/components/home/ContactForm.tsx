@@ -63,7 +63,7 @@ const ContactForm: React.FC<{ revealPayload: boolean }> = ({
 				></textarea>
 			</div>
 			<div className="text-end">
-				<button disabled={isSubmitting} className="btn-sm">
+				<button disabled={isSubmitting} className="btn-sm btn-animation">
 					{isSubmitting ? "processing..." : "Submit"}
 				</button>
 			</div>

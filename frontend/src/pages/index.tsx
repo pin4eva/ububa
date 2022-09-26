@@ -12,6 +12,7 @@ import { servicesData } from "data/services.data";
 import { EventsAlerts } from "data/alerts.data";
 import TestimonialsSlider from "components/TestimonialsSlider";
 import ContactForm from "components/home/ContactForm";
+import "animate.css";
 
 const LandingPage = () => {
 	const [loaded, setLoaded] = useState(false);
@@ -52,13 +53,13 @@ const LandingPage = () => {
 			</div>
 			<div style={{ display: loaded ? "block" : "none" }}>
 				<div
-					className="events-alert text-center p-2"
+					className="events-alert text-center p-2 "
 					style={{ display: EventsAlerts.length > 0 ? "block" : "none" }}
 				>
 					{EventsAlerts.map((eventalert) => (
 						<Link href={eventalert.link} key={eventalert.id}>
 							<a>
-								<i className="fa-solid fa-circle-exclamation me-2"></i>
+								{/* <i className="fa-solid fa-circle-exclamation me-2"></i> */}
 								{eventalert.message}
 							</a>
 						</Link>
@@ -66,20 +67,22 @@ const LandingPage = () => {
 				</div>
 				<FrontLayout>
 					<div className="landing-page" id="home">
-						<div className="home-hero">
+						<div className="home-hero ">
 							<img
 								src="/images/home-hero.jpg"
 								alt="hero bg img"
 								className="hero-bg"
 							/>
-							<div className="home-hero-inner text-center">
-								<h4 className="text-light">
+							<div className="home-hero-inner text-center ">
+								<h4 className="text-light animate__animated animate__backInUp">
 									Build better products and <br /> build better Skills
 								</h4>
-								<div className="mt-5 d-flex-center">
+								<div className="mt-5 d-flex-center animate__animated animate__backInDown">
 									<Link href={"/#services"}>
 										<a>
-											<button className="hero-cta ">View Services</button>
+											<button className="hero-cta btn-animation">
+												View Services
+											</button>
 										</a>
 									</Link>
 								</div>
@@ -89,7 +92,13 @@ const LandingPage = () => {
 						<section id="about-us" className="about-us pt-5 pb-4">
 							{/* <h3 className="text-center section-title">About Us</h3> */}
 							<div className="about-us-inner container">
-								<div className="about-us-inner-desc">
+								<div
+									className="about-us-inner-desc"
+									data-aos="fade-left"
+									data-aos-easing="ease-in-out"
+									data-aos-delay="100"
+									data-aos-duration="800"
+								>
 									<h3>IT CONSULTING, COMPUTER TRAINING</h3>
 									<p>
 										We help you transform your innovation performance for
@@ -100,15 +109,27 @@ const LandingPage = () => {
 										develop creative solutions for small and big brands , also
 										build authenthic product identities and much more.
 									</p>
-									<button className="btn-lg">Read More</button>
+									<button className="btn-lg btn-animation">Read More</button>
 								</div>
-								<div className="img">
+								<div
+									className="img"
+									data-aos="fade-right"
+									data-aos-easing="ease-in-out"
+									data-aos-delay="100"
+									data-aos-duration="800"
+								>
 									<img src="/images/side1.png" alt="" loading="lazy" />
 								</div>
 							</div>
 						</section>
 
-						<section className="our-team pt-4">
+						<section
+							className="our-team pt-4"
+							data-aos="fade-left"
+							data-aos-easing="ease-in-out"
+							data-aos-delay="100"
+							data-aos-duration="800"
+						>
 							<h3 className="text-center section-title">Our Team</h3>
 							<div className="our-team-card-wrapper container">
 								{TeamData.map((teamMember) => (
@@ -117,7 +138,14 @@ const LandingPage = () => {
 							</div>
 						</section>
 
-						<section id="services" className="services">
+						<section
+							id="services"
+							className="services mb-5"
+							data-aos="fade-right"
+							data-aos-easing="ease-in-out"
+							data-aos-delay="100"
+							data-aos-duration="800"
+						>
 							<h3 className=" text-center section-title">Our Services</h3>
 							<div className="services-inner container">
 								{servicesData.map((service) => (
@@ -136,8 +164,14 @@ const LandingPage = () => {
 							<h3 className="section-title ps-0 pt-3 pb-5 text-center">
 								{"We'd Love to Hear From You"}
 							</h3>
-							<div className="contact-us-inner ">
-								<div className="locate-us">
+							<div className="contact-us-inner">
+								<div
+									className="locate-us"
+									data-aos="fade-left"
+									data-aos-easing="ease-in-out"
+									data-aos-delay="100"
+									data-aos-duration="800"
+								>
 									<div className="locate-us-contact-details">
 										<p>
 											<i className="fa-solid fa-location-pin"></i>
@@ -162,8 +196,13 @@ const LandingPage = () => {
 									</div>
 								</div>
 
-								<div className="message-us">
-									{/* <h3 className="ps-0 section-title">Send Us a Message</h3> */}
+								<div
+									className="message-us"
+									data-aos="fade-right"
+									data-aos-easing="ease-in-out"
+									data-aos-delay="100"
+									data-aos-duration="800"
+								>
 									<ContactForm revealPayload={false} />
 								</div>
 							</div>

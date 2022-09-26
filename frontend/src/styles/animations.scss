@@ -1,9 +1,18 @@
 @keyframes reveal-to-top {
-  from {
-    height: 0%
-  }
+	from {
+		height: 0%;
+	}
 
-  to {
-    height: 100%
-  }
+	to {
+		height: 100%;
+	}
+}
+
+.swiper-pagination-bullet,
+.swiper-pagination-bullet-active {
+	background-color: #f6921e !important;
+}
+.swiper-button-prev,
+.swiper-button-next {
+	color: #0a1828 !important;
 }

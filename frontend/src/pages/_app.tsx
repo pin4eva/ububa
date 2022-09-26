@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment, useEffect } from "react";
 import Head from "next/head";
 import type { AppProps } from "next/app";
 import { ApolloProvider } from "@apollo/client";
@@ -9,6 +9,8 @@ import { useApollo } from "../apollo";
 import "reflect-metadata";
 import Router, { useRouter } from "next/router";
 import Nprogress from "nprogress";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 Router.events.on("routeChangeStart", () => {
 	Nprogress.start();
@@ -24,6 +26,11 @@ function MyApp({
 }: AppProps & { pageProps: { initialState?: any } }) {
 	const client = useApollo(pageProps.initialState);
 	console.log(pageProps);
+
+	useEffect(() => {
+		AOS.init();
+		AOS.refresh();
+	}, []);
 	return (
 		<Fragment>
 			<Head>
