@@ -35,7 +35,7 @@ const Training = () => {
 
 					<div className="ongoing-training">
 						<h2 className="section-title mb-4">Ongoing Training</h2>
-						<div className="ongoing-training-ads">
+						<div className="ongoing-training-ads animate__animated animate__slideInRight">
 							<Link href="/training/register">
 								<Image
 									src="/images/ongoing.png"
