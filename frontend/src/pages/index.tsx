@@ -74,10 +74,10 @@ const LandingPage = () => {
 								className="hero-bg"
 							/>
 							<div className="home-hero-inner text-center ">
-								<h4 className="text-light animate__animated animate__backInUp">
+								<h4 className="text-light animate__animated animate__backInUp ">
 									Build better products and <br /> build better Skills
 								</h4>
-								<div className="mt-5 d-flex-center animate__animated animate__backInDown">
+								<div className="mt-5 d-flex-center animate__animated animate__backInDown ">
 									<Link href={"/#services"}>
 										<a>
 											<button className="hero-cta btn-animation">
@@ -97,7 +97,7 @@ const LandingPage = () => {
 									data-aos="fade-left"
 									data-aos-easing="ease-in-out"
 									data-aos-delay="100"
-									data-aos-duration="800"
+									data-aos-duration="1000"
 								>
 									<h3>IT CONSULTING, COMPUTER TRAINING</h3>
 									<p>
@@ -116,7 +116,7 @@ const LandingPage = () => {
 									data-aos="fade-right"
 									data-aos-easing="ease-in-out"
 									data-aos-delay="100"
-									data-aos-duration="800"
+									data-aos-duration="1000"
 								>
 									<img src="/images/side1.png" alt="" loading="lazy" />
 								</div>
@@ -128,7 +128,7 @@ const LandingPage = () => {
 							data-aos="fade-left"
 							data-aos-easing="ease-in-out"
 							data-aos-delay="100"
-							data-aos-duration="800"
+							data-aos-duration="1000"
 						>
 							<h3 className="text-center section-title">Our Team</h3>
 							<div className="our-team-card-wrapper container">
@@ -144,7 +144,7 @@ const LandingPage = () => {
 							data-aos="fade-right"
 							data-aos-easing="ease-in-out"
 							data-aos-delay="100"
-							data-aos-duration="800"
+							data-aos-duration="1000"
 						>
 							<h3 className=" text-center section-title">Our Services</h3>
 							<div className="services-inner container">
@@ -170,7 +170,7 @@ const LandingPage = () => {
 									data-aos="fade-left"
 									data-aos-easing="ease-in-out"
 									data-aos-delay="100"
-									data-aos-duration="800"
+									data-aos-duration="1000"
 								>
 									<div className="locate-us-contact-details">
 										<p>
@@ -201,7 +201,7 @@ const LandingPage = () => {
 									data-aos="fade-right"
 									data-aos-easing="ease-in-out"
 									data-aos-delay="100"
-									data-aos-duration="800"
+									data-aos-duration="1000"
 								>
 									<ContactForm revealPayload={false} />
 								</div>
