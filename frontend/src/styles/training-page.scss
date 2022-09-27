@@ -1,16 +1,21 @@
 .trainingPageContainer {
-	margin-top: 2vh;
+	// margin-top: 2vh;
 
 	img {
-		height: 500px;
-		width: 400px;
+		height: 100%;
+		width: 100%;
 		cursor: pointer;
 	}
 
+	.cohort3 {
+		border: 1px solid green;
+	}
+
 	.alertContainer {
+		border: 1px solid red;
 		display: flex;
 		justify-content: center;
-		margin-bottom: 4rem;
+		// margin-bottom: 4rem;
 
 		.alert {
 			z-index: 1;
@@ -52,7 +57,7 @@
 
 	p {
 		text-align: center;
-		margin-top: 4rem;
+		// margin-top: 4rem;
 		color: #1e3856;
 	}
 }

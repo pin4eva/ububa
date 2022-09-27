@@ -17,7 +17,7 @@ const Training = () => {
 			<FrontLayout>
 				<div className="trainingPageContainer">
 					<div className="alertContainer">
-						<p className="alert alert-info img-fluid">
+						<p className="alert alert-info mb-0 img-fluid">
 							<i className="fa-solid fa-circle-exclamation"></i>
 							Ububa school of code and design cohort 2 training is ongoing click
 							the link to

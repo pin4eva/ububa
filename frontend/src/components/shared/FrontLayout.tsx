@@ -34,7 +34,7 @@ const FrontLayout: React.FC<{
 
 	return (
 		<Fragment>
-			<div className={`front-layout`}>
+			<div className={`front-layout`} style={{ overflow: "hidden" }}>
 				<Header
 					scrolled={scrolled}
 					showMobileNav={showMobileNav}
