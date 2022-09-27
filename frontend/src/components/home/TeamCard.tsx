@@ -7,11 +7,15 @@ const TeamCard: React.FC<{ teamMember: ITeamCard }> = ({ teamMember }) => {
 	return (
 		<div className="team-card">
 			<div>
-				<img
+				<Image
 					src={teamMember.img}
 					alt={`${teamMember.name}`}
+					layout="responsive"
+					width={100}
+					height={100}
 					className="member-img"
-					loading="lazy"
+					placeholder="blur"
+					blurDataURL={teamMember.img}
 				/>
 			</div>
 
