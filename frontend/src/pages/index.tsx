@@ -59,7 +59,7 @@ const LandingPage = () => {
 					{EventsAlerts.map((eventalert) => (
 						<Link href={eventalert.link} key={eventalert.id}>
 							<a>
-								{/* <i className="fa-solid fa-circle-exclamation me-2"></i> */}
+								<i className="fa-solid fa-circle-exclamation me-2 text-light"></i>
 								{eventalert.message}
 							</a>
 						</Link>
@@ -94,7 +94,7 @@ const LandingPage = () => {
 							</div>
 						</div>
 
-						<section id="about-us" className="about-us pt-5 pb-4">
+						<section id="about-us" className="about-us pt-5 ">
 							{/* <h3 className="text-center section-title">About Us</h3> */}
 							<div className="about-us-inner container">
 								<div
@@ -123,7 +123,15 @@ const LandingPage = () => {
 									data-aos-delay="100"
 									data-aos-duration="900"
 								>
-									<img src="/images/side1.png" alt="" loading="lazy" />
+									<Image
+										src="/images/side1.png"
+										alt="team in meeting"
+										layout="responsive"
+										width={100}
+										height={80}
+										placeholder="blur"
+										blurDataURL="/images/side1.png"
+									/>
 								</div>
 							</div>
 						</section>
