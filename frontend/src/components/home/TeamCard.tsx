@@ -1,12 +1,18 @@
 /* eslint-disable @next/next/no-img-element */
 import React, { useEffect, useState } from "react";
 import { ITeamCard } from "../../interfaces";
+import Image from "next/image";
 
 const TeamCard: React.FC<{ teamMember: ITeamCard }> = ({ teamMember }) => {
 	return (
 		<div className="team-card">
 			<div>
-				<img src={teamMember.img} alt="" className="member-img" />
+				<img
+					src={teamMember.img}
+					alt={`${teamMember.name}`}
+					className="member-img"
+					loading="lazy"
+				/>
 			</div>
 
 			<div className="team-card-overlay text-center">
