@@ -13,6 +13,7 @@ import { EventsAlerts } from "data/alerts.data";
 import TestimonialsSlider from "components/TestimonialsSlider";
 import ContactForm from "components/home/ContactForm";
 import "animate.css";
+import Image from "next/image";
 
 const LandingPage = () => {
 	const [loaded, setLoaded] = useState(false);
@@ -29,7 +30,6 @@ const LandingPage = () => {
 			if (typeof window !== "undefined") {
 				window.addEventListener("load", () => {
 					const images = document?.getElementsByTagName("img");
-					console.log(images);
 
 					const heroImg = Array.from(images)[0];
 					if (heroImg.complete && heroImg.naturalHeight !== 0) setLoaded(true);
@@ -68,10 +68,15 @@ const LandingPage = () => {
 				<FrontLayout>
 					<div className="landing-page" id="home">
 						<div className="home-hero ">
-							<img
+							<Image
 								src="/images/home-hero.jpg"
 								alt="hero bg img"
 								className="hero-bg"
+								layout="fill"
+								width={100}
+								height={100}
+								placeholder="blur"
+								blurDataURL="/images/home-hero.jpg"
 							/>
 							<div className="home-hero-inner text-center ">
 								<h4 className="text-light animate__animated animate__backInUp ">
@@ -97,7 +102,7 @@ const LandingPage = () => {
 									data-aos="fade-left"
 									data-aos-easing="ease-in-out"
 									data-aos-delay="100"
-									data-aos-duration="1000"
+									data-aos-duration="90fixed0"
 								>
 									<h3>IT CONSULTING, COMPUTER TRAINING</h3>
 									<p>
@@ -116,7 +121,7 @@ const LandingPage = () => {
 									data-aos="fade-right"
 									data-aos-easing="ease-in-out"
 									data-aos-delay="100"
-									data-aos-duration="1000"
+									data-aos-duration="900"
 								>
 									<img src="/images/side1.png" alt="" loading="lazy" />
 								</div>
@@ -128,7 +133,7 @@ const LandingPage = () => {
 							data-aos="fade-left"
 							data-aos-easing="ease-in-out"
 							data-aos-delay="100"
-							data-aos-duration="1000"
+							data-aos-duration="900"
 						>
 							<h3 className="text-center section-title">Our Team</h3>
 							<div className="our-team-card-wrapper container">
@@ -144,7 +149,7 @@ const LandingPage = () => {
 							data-aos="fade-right"
 							data-aos-easing="ease-in-out"
 							data-aos-delay="100"
-							data-aos-duration="1000"
+							data-aos-duration="900"
 						>
 							<h3 className=" text-center section-title">Our Services</h3>
 							<div className="services-inner container">
@@ -170,7 +175,7 @@ const LandingPage = () => {
 									data-aos="fade-left"
 									data-aos-easing="ease-in-out"
 									data-aos-delay="100"
-									data-aos-duration="1000"
+									data-aos-duration="900"
 								>
 									<div className="locate-us-contact-details">
 										<p>
@@ -201,7 +206,7 @@ const LandingPage = () => {
 									data-aos="fade-right"
 									data-aos-easing="ease-in-out"
 									data-aos-delay="100"
-									data-aos-duration="1000"
+									data-aos-duration="900"
 								>
 									<ContactForm revealPayload={false} />
 								</div>
