@@ -53,7 +53,12 @@ const Training = () => {
 					<div className="prev-training">
 						<h2 className="section-title mb-4">Previous Trainings</h2>
 						<div className="prev-training-inner">
-							<div className="prev-img mb-5 mb-lg-0">
+							<div
+								className="prev-img mb-5 mb-lg-0"
+								data-aos="zoom-in-right"
+								data-aos-easing="ease-out-cubic"
+								data-aos-duration="1000"
+							>
 								<Image
 									src="/images/cohort2.png"
 									alt="previous-img"
@@ -64,7 +69,12 @@ const Training = () => {
 									blurDataURL="/images/cohort2.png"
 								/>
 							</div>
-							<div className="prev-img">
+							<div
+								className="prev-img"
+								data-aos="zoom-in-left"
+								data-aos-easing="ease-out-cubic"
+								data-aos-duration="1000"
+							>
 								<Image
 									src="/images/cohort1.png"
 									alt="previous-img"

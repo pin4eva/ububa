@@ -12,7 +12,6 @@ import { servicesData } from "data/services.data";
 import { EventsAlerts } from "data/alerts.data";
 import TestimonialsSlider from "components/TestimonialsSlider";
 import ContactForm from "components/home/ContactForm";
-import "animate.css";
 import Image from "next/image";
 
 const LandingPage = () => {

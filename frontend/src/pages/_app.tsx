@@ -11,6 +11,7 @@ import Router, { useRouter } from "next/router";
 import Nprogress from "nprogress";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import "animate.css";
 
 Router.events.on("routeChangeStart", () => {
 	Nprogress.start();
