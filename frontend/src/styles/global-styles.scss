@@ -1,0 +1,53 @@
+.spinner {
+	min-height: 100vh;
+	background: #0a1828;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.events-alert {
+	font-size: 1rem;
+	border-radius: 0;
+	margin-bottom: 0;
+	background: rgba(22, 42, 62, 0.79);
+
+	a {
+		color: white;
+		font-weight: bold;
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}
+
+.section-title {
+	color: $primary;
+	margin-top: 0.5em;
+	font-weight: 700;
+	font-size: 2.5rem;
+}
+
+form {
+	input,
+	select {
+		height: 60px;
+	}
+
+	input,
+	textarea,
+	select {
+		display: block;
+		width: 100%;
+		background: white;
+		padding: 1em;
+		margin-bottom: 2em;
+		border: none;
+		outline: none;
+	}
+
+	button {
+		height: 50px;
+	}
+}
