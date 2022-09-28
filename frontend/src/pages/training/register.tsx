@@ -6,7 +6,7 @@ const formpage = () => {
 		<FrontLayout>
 			<main className="reg-page container">
 				<div className="reg-page-intro text-center">
-					<h2 className="section-title ">Start your application</h2>
+					<h2 className="section-title mb-4">Start your application</h2>
 					<p>
 						Thank you for your interest in applying to Ububa school of code &
 						design. To continue your application process, please note that the
