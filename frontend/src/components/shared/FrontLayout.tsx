@@ -21,7 +21,7 @@ const FrontLayout: React.FC<{
 
 		window.addEventListener("scroll", () => {
 			const pageHeight = window.scrollY;
-			if (pageHeight >= 3500) {
+			if (pageHeight >= 4000) {
 				setIsAtFooter(true);
 				// console.log(pageHeight);
 			} else setIsAtFooter(false);
