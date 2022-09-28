@@ -72,8 +72,6 @@ const LandingPage = () => {
 								alt="hero bg img"
 								className="hero-bg"
 								layout="fill"
-								width={100}
-								height={100}
 								placeholder="blur"
 								blurDataURL="/images/home-hero.jpg"
 							/>
