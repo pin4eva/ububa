@@ -7,6 +7,9 @@
 	}
 
 	.reg-form-wrapper {
+		label {
+			margin-bottom: 0.5rem;
+		}
 		.ububa-terms {
 			gap: 1em;
 			input {
@@ -30,7 +33,7 @@
 
 		@media screen and (min-width: 992px) {
 			display: flex;
-			gap: 2em;
+			gap: 3em;
 
 			form {
 				width: 50%;
