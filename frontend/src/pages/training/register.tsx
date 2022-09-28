@@ -91,9 +91,7 @@ const formpage = () => {
 							</p>
 						</div>
 
-						<button className=" submit-reg mt-4 mb-4">
-							Proceed To Payment
-						</button>
+						<button className=" submit-reg mt-4 mb-4 fw-bold">Submit</button>
 					</form>
 				</div>
 
