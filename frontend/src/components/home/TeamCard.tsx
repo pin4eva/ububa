@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import React, { useEffect, useState } from "react";
-import { ITeamCard } from "../../interfaces";
 import Image from "next/image";
+import { ITeamCard } from "interface/team.interface";
 
 const TeamCard: React.FC<{ teamMember: ITeamCard }> = ({ teamMember }) => {
 	return (

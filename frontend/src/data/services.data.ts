@@ -1,4 +1,4 @@
-import { IServicesData } from "../interfaces";
+import { IServicesData } from "../interface/services.interface.ts";
 
 export const servicesData: IServicesData[] = [
 	{

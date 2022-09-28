@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import React, { useState } from "react";
-import { IServicesData } from "../../interfaces";
+import { IServicesData } from "../../interface/services.interface.ts";
 
 const ServiceCard: React.FC<{
 	service: IServicesData;
