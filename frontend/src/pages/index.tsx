@@ -72,8 +72,6 @@ const LandingPage = () => {
 								alt="hero bg img"
 								className="hero-bg"
 								layout="fill"
-								placeholder="blur"
-								blurDataURL="/images/home-hero.jpg"
 							/>
 							<div className="home-hero-inner text-center ">
 								<h4 className="text-light animate__animated animate__backInUp ">
@@ -99,7 +97,7 @@ const LandingPage = () => {
 									data-aos="fade-left"
 									data-aos-easing="ease-in-out"
 									data-aos-delay="100"
-									data-aos-duration="90fixed0"
+									data-aos-duration="1000"
 								>
 									<h3>IT CONSULTING, COMPUTER TRAINING</h3>
 									<p>
@@ -118,7 +116,7 @@ const LandingPage = () => {
 									data-aos="fade-right"
 									data-aos-easing="ease-in-out"
 									data-aos-delay="100"
-									data-aos-duration="900"
+									data-aos-duration="1000"
 								>
 									<Image
 										src="/images/side1.png"
@@ -126,8 +124,6 @@ const LandingPage = () => {
 										layout="responsive"
 										width={100}
 										height={80}
-										placeholder="blur"
-										blurDataURL="/images/side1.png"
 									/>
 								</div>
 							</div>
@@ -138,7 +134,7 @@ const LandingPage = () => {
 							data-aos="fade-left"
 							data-aos-easing="ease-in-out"
 							data-aos-delay="100"
-							data-aos-duration="900"
+							data-aos-duration="1000"
 						>
 							<h3 className="text-center section-title">Our Team</h3>
 							<div className="our-team-card-wrapper container">
@@ -148,14 +144,7 @@ const LandingPage = () => {
 							</div>
 						</section>
 
-						<section
-							id="services"
-							className="services mb-5"
-							data-aos="fade-right"
-							data-aos-easing="ease-in-out"
-							data-aos-delay="100"
-							data-aos-duration="900"
-						>
+						<section id="services" className="services mb-5">
 							<h3 className=" text-center section-title">Our Services</h3>
 							<div className="services-inner container">
 								{servicesData.map((service) => (
@@ -180,7 +169,7 @@ const LandingPage = () => {
 									data-aos="fade-left"
 									data-aos-easing="ease-in-out"
 									data-aos-delay="100"
-									data-aos-duration="900"
+									data-aos-duration="1000"
 								>
 									<div className="locate-us-contact-details">
 										<p>
@@ -211,7 +200,7 @@ const LandingPage = () => {
 									data-aos="fade-right"
 									data-aos-easing="ease-in-out"
 									data-aos-delay="100"
-									data-aos-duration="900"
+									data-aos-duration="1000"
 								>
 									<ContactForm revealPayload={false} />
 								</div>
@@ -225,5 +214,3 @@ const LandingPage = () => {
 };
 
 export default LandingPage;
-
-// This page should comprise of the header and hero component

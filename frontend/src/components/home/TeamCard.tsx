@@ -14,8 +14,6 @@ const TeamCard: React.FC<{ teamMember: ITeamCard }> = ({ teamMember }) => {
 					width={100}
 					height={100}
 					className="member-img"
-					placeholder="blur"
-					blurDataURL={teamMember.img}
 				/>
 			</div>
 
