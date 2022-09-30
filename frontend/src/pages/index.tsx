@@ -74,10 +74,10 @@ const LandingPage = () => {
 								layout="fill"
 							/>
 							<div className="home-hero-inner text-center ">
-								<h4 className="text-light animate__animated animate__backInUp ">
+								<h4 className="text-light">
 									Build better products and <br /> build better Skills
 								</h4>
-								<div className="mt-5 d-flex-center animate__animated animate__backInDown ">
+								<div className="mt-5 d-flex-center">
 									<Link href={"/#services"}>
 										<a>
 											<button className="hero-cta btn-animation">
@@ -164,13 +164,7 @@ const LandingPage = () => {
 								{"We'd Love to Hear From You"}
 							</h3>
 							<div className="contact-us-inner">
-								<div
-									className="locate-us"
-									data-aos="fade-left"
-									data-aos-easing="ease-in-out"
-									data-aos-delay="100"
-									data-aos-duration="1000"
-								>
+								<div className="locate-us">
 									<div className="locate-us-contact-details">
 										<p>
 											<i className="fa-solid fa-location-pin"></i>
@@ -195,13 +189,7 @@ const LandingPage = () => {
 									</div>
 								</div>
 
-								<div
-									className="message-us"
-									data-aos="fade-right"
-									data-aos-easing="ease-in-out"
-									data-aos-delay="100"
-									data-aos-duration="1000"
-								>
+								<div className="message-us">
 									<ContactForm revealPayload={false} />
 								</div>
 							</div>

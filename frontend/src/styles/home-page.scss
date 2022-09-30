@@ -37,6 +37,9 @@
 			padding: 1rem 2rem;
 			border-radius: 4px;
 
+			animation: backInDown;
+			animation-duration: 1.3s;
+
 			@media screen and (min-width: 993px) {
 				padding: 1.5rem 3rem;
 				font-size: 1.5rem;
@@ -48,6 +51,9 @@
 				font-weight: 700;
 				font-size: 2rem;
 				line-height: 185.69%;
+
+				animation: backInUp;
+				animation-duration: 1.3s;
 
 				@media screen and (min-width: 992px) {
 					font-size: 4rem;

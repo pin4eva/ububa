@@ -10,7 +10,7 @@ const ServiceCard: React.FC<{
 	return (
 		<>
 			<div className="product-card text-center">
-				<div style={{ width: "120px", margin: "auto" }}>
+				<div className="img-wrap">
 					<img src={service.productImg} alt="service img" />
 				</div>
 				<h5 style={{ fontWeight: "bold", marginTop: "1em" }}>
