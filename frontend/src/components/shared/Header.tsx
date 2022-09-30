@@ -36,7 +36,7 @@ const Header: React.FC<{
 						showMobileNav ? "abs text-center" : "d-none d-md-flex"
 					}`}
 				>
-					<div className="text-start">
+					<div className="text-end">
 						<button
 							className="btn d-md-none btn-animation"
 							onClick={() => toggleMobileNav(false)}
@@ -62,7 +62,7 @@ const Header: React.FC<{
 				</ul>
 
 				<button
-					className="btn d-block d-md-none btn-animation"
+					className="btn d-block d-md-none"
 					onClick={() => toggleMobileNav(true)}
 				>
 					<i
