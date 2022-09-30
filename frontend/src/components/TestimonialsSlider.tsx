@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { TestimonialsData } from "data/testimonials.data";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Autoplay, Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -9,6 +9,15 @@ import "swiper/css/navigation";
 import "swiper/css/autoplay";
 
 const TestimonialsSlider = () => {
+	const [isDesktop, setIsDesktop] = useState(true);
+	useEffect(() => {
+		window.addEventListener("resize", () => {
+			window.innerWidth <= 768
+				? setIsDesktop(!isDesktop)
+				: setIsDesktop(!isDesktop);
+		});
+	});
+
 	return (
 		<section className="testimonials pb-0 text-center">
 			<h3 className=" text-center section-title pb-0">Clients Reviews</h3>
@@ -17,7 +26,7 @@ const TestimonialsSlider = () => {
 				spaceBetween={1}
 				slidesPerView={1}
 				pagination={{ clickable: true }}
-				navigation
+				navigation={{ enabled: isDesktop ? true : false }}
 				loop={true}
 				autoplay={{
 					delay: 2500,
