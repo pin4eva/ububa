@@ -27,33 +27,38 @@
 			z-index: -1;
 		}
 
-		.hero-cta {
-			background: $secondary;
-			color: white;
-			border: none;
-			outline: none;
-			font-weight: 700;
-			font-size: 1.2rem;
-			padding: 1rem 2rem;
-			border-radius: 4px;
-
-			animation: backInDown;
+		&-inner {
+			animation: rollIn;
 			animation-duration: 1.3s;
 
-			@media screen and (min-width: 993px) {
-				padding: 1.5rem 3rem;
-				font-size: 1.5rem;
-			}
-		}
+			.hero-cta {
+				background: $secondary;
+				color: white;
+				border: none;
+				outline: none;
+				font-weight: 700;
+				font-size: 1.2rem;
+				padding: 1rem 2rem;
+				border-radius: 4px;
 
-		&-inner {
+				&:hover {
+					animation: pulse;
+					animation-duration: 1.3s;
+					animation-iteration-count: 3;
+				}
+
+				@media screen and (min-width: 993px) {
+					padding: 1.5rem 3rem;
+					font-size: 1.5rem;
+				}
+			}
 			h4 {
 				font-weight: 700;
 				font-size: 2rem;
 				line-height: 185.69%;
 
-				animation: backInUp;
-				animation-duration: 1.3s;
+				// animation: backInUp;
+				// animation-duration: 1.3s;
 
 				@media screen and (min-width: 992px) {
 					font-size: 4rem;
@@ -142,10 +147,15 @@
 			grid-column-start: 1;
 
 			.testifier-avi {
-				width: 80px;
-				height: 80px;
+				width: 50px;
+				height: 50px;
 				border-radius: 50%;
 				overflow: hidden;
+
+				@media screen and (min-width: 992px) {
+					width: 80px;
+					height: 80px;
+				}
 			}
 
 			.testimony {
