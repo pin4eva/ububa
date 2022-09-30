@@ -130,7 +130,7 @@ const LandingPage = () => {
 
 						<section
 							className="our-team pt-4"
-							data-aos="fade-left"
+							data-aos="fade-up"
 							data-aos-easing="ease-in-out"
 							data-aos-delay="100"
 							data-aos-duration="1000"
