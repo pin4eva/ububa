@@ -67,11 +67,10 @@ const LandingPage = () => {
 				<FrontLayout>
 					<div className="landing-page" id="home">
 						<div className="home-hero ">
-							<Image
+							<img
 								src="/images/home-hero.jpg"
 								alt="hero bg img"
 								className="hero-bg"
-								layout="fill"
 							/>
 							<div className="home-hero-inner text-center ">
 								<h4 className="text-light">
