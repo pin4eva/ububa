@@ -12,6 +12,10 @@ import Nprogress from "nprogress";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "animate.css";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import "swiper/css/autoplay";
 
 Router.events.on("routeChangeStart", () => {
 	Nprogress.start();

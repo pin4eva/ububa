@@ -5,7 +5,13 @@ import { ITeamCard } from "interface/team.interface";
 
 const TeamCard: React.FC<{ teamMember: ITeamCard }> = ({ teamMember }) => {
 	return (
-		<div className="team-card">
+		<div
+			className="team-card"
+			data-aos="fade-up"
+			data-aos-easing="ease-in-out"
+			data-aos-delay="100"
+			data-aos-duration="1000"
+		>
 			<div>
 				<Image
 					src={teamMember.img}

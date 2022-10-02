@@ -1,16 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
 import { TestimonialsData } from "data/testimonials.data";
-import { useEffect, useState } from "react";
 import { Autoplay, Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-import "swiper/css/autoplay";
 
 const TestimonialsSlider = () => {
 	return (
-		<section className="testimonials pb-0 text-center">
+		<section className="testimonials pb-0 text-center pt-4 pb-4">
 			<h3 className=" text-center section-title pb-0">Clients Reviews</h3>
 			<Swiper
 				modules={[Autoplay, Pagination, Navigation]}

@@ -13,14 +13,10 @@ import { EventsAlerts } from "data/alerts.data";
 import TestimonialsSlider from "components/TestimonialsSlider";
 import ContactForm from "components/home/ContactForm";
 import Image from "next/image";
+import ServicesSlider from "components/ServicesSlider";
 
 const LandingPage = () => {
 	const [loaded, setLoaded] = useState(false);
-	const [revealPayload, setRevealPayload] = useState(false);
-
-	const handlePayload = (state: boolean) => {
-		setRevealPayload(state);
-	};
 
 	useEffect(() => {
 		// check document status at an instance
@@ -64,6 +60,7 @@ const LandingPage = () => {
 						</Link>
 					))}
 				</div>
+
 				<FrontLayout>
 					<div className="landing-page" id="home">
 						<div className="home-hero ">
@@ -88,7 +85,7 @@ const LandingPage = () => {
 							</div>
 						</div>
 
-						<section id="about-us" className="about-us pt-5 ">
+						<section id="about-us" className="about-us mt-0">
 							{/* <h3 className="text-center section-title">About Us</h3> */}
 							<div className="about-us-inner container">
 								<div
@@ -128,13 +125,7 @@ const LandingPage = () => {
 							</div>
 						</section>
 
-						<section
-							className="our-team pt-4"
-							data-aos="fade-up"
-							data-aos-easing="ease-in-out"
-							data-aos-delay="100"
-							data-aos-duration="1000"
-						>
+						<section className="our-team ">
 							<h3 className="text-center section-title">Our Team</h3>
 							<div className="our-team-card-wrapper container">
 								{TeamData.map((teamMember) => (
@@ -143,22 +134,11 @@ const LandingPage = () => {
 							</div>
 						</section>
 
-						<section id="services" className="services mb-5">
-							<h3 className=" text-center section-title">Our Services</h3>
-							<div className="services-inner container">
-								{servicesData.map((service) => (
-									<ServiceCard
-										key={service.id}
-										service={service}
-										handlePayload={handlePayload}
-									/>
-								))}
-							</div>
-						</section>
+						<ServicesSlider />
 
 						<TestimonialsSlider />
 
-						<section id="contact-us" className="contact-us container pt-5">
+						<section id="contact-us" className="contact-us container">
 							<h3 className="section-title ps-0 pt-3 pb-5 text-center">
 								{"We'd Love to Hear From You"}
 							</h3>
