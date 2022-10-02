@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 const TestimonialsSlider = () => {
 	return (
-		<section className="testimonials pb-0 text-center pt-4 pb-4">
+		<section className="testimonials pb-0 text-center  mb-5">
 			<h3 className=" text-center section-title pb-0">Clients Reviews</h3>
 			<Swiper
 				modules={[Autoplay, Pagination, Navigation]}

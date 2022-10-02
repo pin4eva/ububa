@@ -7,7 +7,7 @@ import Link from "next/link";
 
 const ServicesSlider = () => {
 	return (
-		<section id="services" className="container services">
+		<section id="services" className="container services mb-5">
 			<h3 className=" text-center section-title">Our Services</h3>
 			{/* services swiper for lg screens */}
 			<div className="services-swiper_lg">

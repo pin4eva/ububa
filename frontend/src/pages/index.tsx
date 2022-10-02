@@ -63,7 +63,7 @@ const LandingPage = () => {
 
 				<FrontLayout>
 					<div className="landing-page" id="home">
-						<div className="home-hero ">
+						<div className="home-hero mb-5">
 							<img
 								src="/images/home-hero.jpg"
 								alt="hero bg img"
@@ -85,7 +85,7 @@ const LandingPage = () => {
 							</div>
 						</div>
 
-						<section id="about-us" className="about-us mt-0">
+						<section id="about-us" className="about-us mt-0 mb-5">
 							{/* <h3 className="text-center section-title">About Us</h3> */}
 							<div className="about-us-inner container">
 								<div
@@ -125,7 +125,7 @@ const LandingPage = () => {
 							</div>
 						</section>
 
-						<section className="our-team ">
+						<section className="our-team mb-5">
 							<h3 className="text-center section-title">Our Team</h3>
 							<div className="our-team-card-wrapper container">
 								{TeamData.map((teamMember) => (
