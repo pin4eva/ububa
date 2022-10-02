@@ -85,7 +85,7 @@ const LandingPage = () => {
 							</div>
 						</div>
 
-						<section id="about-us" className="about-us mt-0 mb-5">
+						<section id="about-us" className="about-us mb-5 ">
 							{/* <h3 className="text-center section-title">About Us</h3> */}
 							<div className="about-us-inner container">
 								<div
@@ -95,7 +95,7 @@ const LandingPage = () => {
 									data-aos-delay="100"
 									data-aos-duration="1000"
 								>
-									<h3>IT CONSULTING, COMPUTER TRAINING</h3>
+									<h3 className="pt-5">IT CONSULTING, COMPUTER TRAINING</h3>
 									<p>
 										We help you transform your innovation performance for
 										long-term success by combining our Programming knowledge
