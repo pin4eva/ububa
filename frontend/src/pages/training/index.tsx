@@ -35,18 +35,20 @@ const Training = () => {
 
 					<div className="ongoing-training">
 						<h2 className="section-title mb-4">Ongoing Training</h2>
-						<div className="ongoing-training-ads animate__animated animate__slideInRight">
-							<Link href="/training/register">
-								<Image
-									src="/images/ongoing.png"
-									alt="ongoing img"
-									layout="responsive"
-									width={100}
-									height={100}
-									placeholder="blur"
-									blurDataURL="/images/ongoing.png"
-								/>
-							</Link>
+						<div className="ongoing-training-ads ">
+							<Image
+								src="/images/ongoing.png"
+								alt="ongoing img"
+								layout="fill"
+								width={100}
+								height={100}
+							/>
+
+							<div className="training-overlay">
+								<Link href="/training/register">
+									<button className="btn-sm">Apply</button>
+								</Link>
+							</div>
 						</div>
 					</div>
 
@@ -62,13 +64,13 @@ const Training = () => {
 								<Image
 									src="/images/cohort2.png"
 									alt="previous-img"
-									layout="responsive"
+									layout="fill"
 									width={100}
 									height={100}
-									placeholder="blur"
-									blurDataURL="/images/cohort2.png"
 								/>
+								<div className="training-overlay"></div>
 							</div>
+
 							<div
 								className="prev-img"
 								data-aos="zoom-in-left"
@@ -78,12 +80,24 @@ const Training = () => {
 								<Image
 									src="/images/cohort1.png"
 									alt="previous-img"
-									layout="responsive"
+									layout="fill"
 									width={100}
 									height={100}
-									placeholder="blur"
-									blurDataURL="/images/cohort1.png"
 								/>
+
+								<div className="training-overlay">
+									<div className="training-overlay_inner">
+										<h3>Cohort 1:</h3>
+										<p>July 19, 2022 - Sept 19, 2022</p>
+										<p>
+											Frontend & Backend Development, Brand Identity Design,
+											UI/UX Design
+										</p>
+										<Link href="/#testimonials">
+											<h5 className="to-testimonials">View Testimonials</h5>
+										</Link>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
