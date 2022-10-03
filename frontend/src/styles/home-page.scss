@@ -5,8 +5,10 @@
 		width: 100%;
 		height: 100%;
 	}
+	section {
+		margin-bottom: 5em;
+	}
 
-	// scoped styles
 	.home-hero {
 		min-height: 80vh;
 		position: relative;
@@ -143,7 +145,8 @@
 		position: relative;
 
 		.slide {
-			padding: 2em;
+			padding: auto 2em;
+			padding-bottom: 2em;
 			width: 100%;
 
 			.testifier-avi {
@@ -195,7 +198,8 @@
 		}
 
 		&-card-wrapper {
-			padding: 2em;
+			// padding: 2em;
+			// padding-top: 0;
 
 			.team-card {
 				margin-bottom: 2em;

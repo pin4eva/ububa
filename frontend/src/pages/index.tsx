@@ -63,7 +63,7 @@ const LandingPage = () => {
 
 				<FrontLayout>
 					<div className="landing-page" id="home">
-						<div className="home-hero mb-5">
+						<section className="home-hero">
 							<img
 								src="/images/home-hero.jpg"
 								alt="hero bg img"
@@ -83,9 +83,9 @@ const LandingPage = () => {
 									</Link>
 								</div>
 							</div>
-						</div>
+						</section>
 
-						<section id="about-us" className="about-us mb-5 ">
+						<section id="about-us" className="about-us">
 							{/* <h3 className="text-center section-title">About Us</h3> */}
 							<div className="about-us-inner container">
 								<div
@@ -95,7 +95,7 @@ const LandingPage = () => {
 									data-aos-delay="100"
 									data-aos-duration="1000"
 								>
-									<h3 className="pt-5">IT CONSULTING, COMPUTER TRAINING</h3>
+									<h3 className="">IT CONSULTING, COMPUTER TRAINING</h3>
 									<p>
 										We help you transform your innovation performance for
 										long-term success by combining our Programming knowledge
@@ -125,7 +125,7 @@ const LandingPage = () => {
 							</div>
 						</section>
 
-						<section className="our-team mb-5">
+						<section className="our-team">
 							<h3 className="text-center section-title">Our Team</h3>
 							<div className="our-team-card-wrapper container">
 								{TeamData.map((teamMember) => (
@@ -139,7 +139,7 @@ const LandingPage = () => {
 						<TestimonialsSlider />
 
 						<section id="contact-us" className="contact-us container">
-							<h3 className="section-title ps-0 pt-3 pb-5 text-center">
+							<h3 className="section-title ps-0 pt-3 pb-3 text-center">
 								{"We'd Love to Hear From You"}
 							</h3>
 							<div className="contact-us-inner">
