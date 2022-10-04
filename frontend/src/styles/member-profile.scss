@@ -1,0 +1,155 @@
+.member-profile {
+	img {
+		width: 100%;
+		height: 100%;
+	}
+
+	input,
+	textarea {
+		border: 1px solid #ededed;
+		&:read-only {
+			background: #ededed;
+			color: #c4c4c4;
+		}
+	}
+
+	// scoped styles
+	.profile-header {
+		width: 100%;
+		height: 50px;
+		border: 1px solid green;
+
+		.profile-notifications {
+			gap: 1em;
+			.profile-img_minor {
+				width: 25px;
+				height: 25px;
+				border-radius: 50%;
+				overflow: hidden;
+				border: 1px solid green;
+				background: #022162;
+			}
+		}
+	}
+	main {
+		background: white;
+
+		border: 1px solid red;
+		min-height: 100vh;
+		width: 100%;
+
+		display: grid;
+
+		@media screen and (min-width: 992px) {
+			grid-template-areas:
+				"aside section"
+				"footer footer";
+			grid-template-columns: 30% 1fr;
+		}
+	}
+
+	aside {
+		background: white;
+
+		grid-area: aside;
+		border: 1px solid blue;
+		padding: 1em;
+
+		.aside-top {
+			.profile-img_major {
+				width: 180px;
+				height: 180px;
+				margin: auto;
+				border-radius: 50%;
+				overflow: hidden;
+				border: 1px solid green;
+				position: relative;
+
+				.profile-img_uploader {
+					width: 36px;
+					height: 36px;
+					border-radius: 50%;
+					position: absolute;
+					bottom: 0;
+					left: 50%;
+					transform: translateX(-50%);
+					background: white;
+					outline: none;
+					border: none;
+				}
+			}
+		}
+		.aside-main {
+			input {
+				background: none;
+				padding: 0;
+				height: 45px;
+				margin-bottom: 10px;
+				border: none;
+				cursor: default;
+				color: #595757;
+			}
+		}
+	}
+
+	section {
+		padding: 1em;
+		background: white;
+		grid-area: section;
+		border: 1px solid red;
+
+		.section-top {
+			.edit-profile {
+				background: #ededed;
+				padding: 0.4em;
+				outline: none;
+				border: none;
+			}
+		}
+
+		.section-main {
+			.parent-form-wrapper {
+				border: 1px solid red;
+
+				select {
+					border: 1px solid #ededed;
+					&:disabled {
+						background: #ededed;
+						color: #c4c4c4;
+					}
+				}
+
+				@media screen and (min-width: 992px) {
+					display: flex;
+					justify-content: space-between;
+					gap: 1em;
+
+					.form-wrapper {
+						width: 50%;
+					}
+				}
+			}
+			.member-departments {
+				border: 1px solid purple;
+				display: flex;
+				flex-wrap: wrap;
+
+				.department {
+					align-items: center;
+					justify-content: center;
+					margin-right: 0.7em;
+
+					input {
+						margin-bottom: 0;
+						width: 15px;
+					}
+				}
+			}
+		}
+	}
+
+	footer {
+		grid-area: footer;
+		border: 1px solid yellow;
+	}
+}
