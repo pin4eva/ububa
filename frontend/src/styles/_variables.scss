@@ -1,11 +1,11 @@
 $primary: #0a1828;
 $secondary: #f6921e;
 $blue: #1e3856;
-$info: #f2f9ff;
+$info: rgb(112, 111, 111);
 $light: #ffffff;
 $black: #000000;
-$trtiary: #7ca6cf;
-$silver: rgb(97, 96, 96);
+$trtiary: #b3bfcc;
+$silver: #adadad;
 
 $columns: 12;
 
@@ -56,4 +56,19 @@ $columns: 12;
 	background: $secondary;
 	color: white;
 	// text-align: center;
+}
+
+.btn-animation {
+	&:hover {
+		animation: pulse;
+		animation-duration: 1.3s;
+		animation-iteration-count: 3;
+	}
+}
+.alert-animation {
+	&:hover {
+		animation: heartBeat;
+		animation-duration: 1.3s;
+		animation-iteration-count: 3;
+	}
 }

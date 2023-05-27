@@ -1,58 +1,42 @@
-.trainingPageContainer {
-	margin-top: 2vh;
-
+.training-page {
 	img {
-		height: 500px;
-		width: 400px;
+		height: 100%;
+		width: 100%;
 		cursor: pointer;
 	}
 
-	.alertContainer {
-		display: flex;
-		justify-content: center;
-		margin-bottom: 4rem;
+	.page-alerts {
+		border: 1px solid $secondary;
 
-		.alert {
-			z-index: 1;
-			width: 60%;
-			text-align: center;
-			align-self: center;
-			@media screen and (max-width: 1500px) {
-				width: 90%;
-			}
-
-			.fa-solid {
-				margin: 0 1rem;
-			}
-
-			span {
-				margin: 0 0.3rem;
+		a {
+			text-decoration: none;
+			&:hover {
+				text-decoration: underline;
 			}
 		}
 	}
 
-	h2 {
-		margin: 2rem 4rem;
-	}
-	.onGoingTraining {
-		margin-left: 4rem;
-		margin-bottom: 4rem;
-	}
+	.ongoing-training {
+		margin-bottom: 4em;
+		margin-top: 4em;
 
-	.previousTrainings {
-		margin-left: 4rem;
-		display: flex;
-		flex-direction: column;
-		gap: 4rem;
-
-		@media screen and (min-width: 800px) {
-			flex-direction: row;
+		&-ads {
+			@media screen and (min-width: 992px) {
+				max-width: 50%;
+			}
 		}
 	}
 
-	p {
-		text-align: center;
-		margin-top: 4rem;
-		color: #1e3856;
+	.prev-training {
+		&-inner {
+			@media screen and (min-width: 992px) {
+				display: flex;
+				gap: 4rem;
+
+				.prev-img {
+					min-width: 50%;
+				}
+			}
+		}
 	}
 }

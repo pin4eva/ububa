@@ -21,12 +21,7 @@ const Header: React.FC<{
 	});
 
 	return (
-		<header
-			className={`header ${scrolled ? "scrolled" : ""}`}
-			// style={{
-			// 	background: `${pathName === "/" ? "rgba($blue, 0.3)" : "transparent"}`,
-			// }}
-		>
+		<header className={`header ${scrolled ? "scrolled" : ""}`}>
 			<nav className={`navbar ${!isMobile ? "container" : ""}`}>
 				<Link href="/">
 					<a className="ms-2">
@@ -41,9 +36,9 @@ const Header: React.FC<{
 						showMobileNav ? "abs text-center" : "d-none d-md-flex"
 					}`}
 				>
-					<div className="text-start">
+					<div className="text-end">
 						<button
-							className="btn d-md-none "
+							className="btn d-md-none btn-animation"
 							onClick={() => toggleMobileNav(false)}
 						>
 							<i className="fas fa-close text-light"></i>

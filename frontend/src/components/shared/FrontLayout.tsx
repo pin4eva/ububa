@@ -21,7 +21,7 @@ const FrontLayout: React.FC<{
 
 		window.addEventListener("scroll", () => {
 			const pageHeight = window.scrollY;
-			if (pageHeight >= 3500) {
+			if (pageHeight >= 4000) {
 				setIsAtFooter(true);
 				// console.log(pageHeight);
 			} else setIsAtFooter(false);
@@ -34,7 +34,7 @@ const FrontLayout: React.FC<{
 
 	return (
 		<Fragment>
-			<div className={`front-layout`}>
+			<div className={`front-layout`} style={{ overflow: "hidden" }}>
 				<Header
 					scrolled={scrolled}
 					showMobileNav={showMobileNav}
