@@ -10,26 +10,28 @@ import Head from "next/head";
 import Link from "next/link";
 import { servicesData } from "data/services.data";
 import { EventsAlerts } from "data/alerts.data";
+import TestimonialsSlider from "components/TestimonialsSlider";
 import ContactForm from "components/home/ContactForm";
+import Image from "next/image";
 
 const LandingPage = () => {
 	const [loaded, setLoaded] = useState(false);
+	const [revealPayload, setRevealPayload] = useState(false);
+
+	const handlePayload = (state: boolean) => {
+		setRevealPayload(state);
+	};
 
 	useEffect(() => {
-		// check load state of document
-
-		if (document.readyState === "complete") {
-			setLoaded(true);
-		} else {
-			if (typeof window !== undefined) {
-				window?.addEventListener("load", (e) => {
+		// check document status at an instance
+		if (document.readyState == "complete") setLoaded(true);
+		else {
+			if (typeof window !== "undefined") {
+				window.addEventListener("load", () => {
 					const images = document?.getElementsByTagName("img");
-					const imageLength = images.length;
-					let loadedImages = 0;
-					Array.from(images).forEach((image) => {
-						if (image?.complete && image?.naturalHeight != 0) loadedImages += 1;
-					});
-					if (loadedImages === imageLength) setLoaded(true);
+
+					const heroImg = Array.from(images)[0];
+					if (heroImg.complete && heroImg.naturalHeight !== 0) setLoaded(true);
 				});
 			}
 		}
@@ -50,13 +52,13 @@ const LandingPage = () => {
 			</div>
 			<div style={{ display: loaded ? "block" : "none" }}>
 				<div
-					className="events-alert text-center p-1"
+					className="events-alert text-center p-2 "
 					style={{ display: EventsAlerts.length > 0 ? "block" : "none" }}
 				>
 					{EventsAlerts.map((eventalert) => (
 						<Link href={eventalert.link} key={eventalert.id}>
 							<a>
-								<i className="fa-solid fa-circle-exclamation me-2"></i>
+								<i className="fa-solid fa-circle-exclamation me-2 text-light"></i>
 								{eventalert.message}
 							</a>
 						</Link>
@@ -64,33 +66,39 @@ const LandingPage = () => {
 				</div>
 				<FrontLayout>
 					<div className="landing-page" id="home">
-						<div className="home-hero">
+						<div className="home-hero ">
 							<img
 								src="/images/home-hero.jpg"
 								alt="hero bg img"
 								className="hero-bg"
 							/>
-							<div className="home-hero-inner text-center">
+							<div className="home-hero-inner text-center ">
 								<h4 className="text-light">
 									Build better products and <br /> build better Skills
 								</h4>
 								<div className="mt-5 d-flex-center">
 									<Link href={"/#services"}>
 										<a>
-											<button className="hero-cta ">View Services</button>
+											<button className="hero-cta btn-animation">
+												View Services
+											</button>
 										</a>
 									</Link>
 								</div>
 							</div>
 						</div>
 
-						<section id="about-us" className="about-us">
-							<h3 className="text-secondary text-center section-title">
-								About Us
-							</h3>
+						<section id="about-us" className="about-us pt-5 ">
+							{/* <h3 className="text-center section-title">About Us</h3> */}
 							<div className="about-us-inner container">
-								<div className="about-us-inner-desc">
-									<h4>IT CONSULTING, COMPUTER TRAINING</h4>
+								<div
+									className="about-us-inner-desc"
+									data-aos="fade-left"
+									data-aos-easing="ease-in-out"
+									data-aos-delay="100"
+									data-aos-duration="1000"
+								>
+									<h3>IT CONSULTING, COMPUTER TRAINING</h3>
 									<p>
 										We help you transform your innovation performance for
 										long-term success by combining our Programming knowledge
@@ -100,46 +108,34 @@ const LandingPage = () => {
 										develop creative solutions for small and big brands , also
 										build authenthic product identities and much more.
 									</p>
-									<button className="btn-lg">Read More</button>
+									<button className="btn-lg btn-animation">Read More</button>
 								</div>
-								<div className="img">
-									<img src="/images/side1.png" alt="" />
+								<div
+									className="img"
+									data-aos="fade-right"
+									data-aos-easing="ease-in-out"
+									data-aos-delay="100"
+									data-aos-duration="1000"
+								>
+									<Image
+										src="/images/side1.png"
+										alt="team in meeting"
+										layout="responsive"
+										width={100}
+										height={80}
+									/>
 								</div>
 							</div>
 						</section>
 
-						<section id="services" className="services">
-							<h3 className="text-secondary text-center section-title">
-								Services
-							</h3>
-							<div className="services-inner container">
-								{servicesData.map((service) => (
-									<ServiceCard key={service.id} service={service} />
-								))}
-							</div>
-						</section>
-
-						<section className="testimonials mt-5">
-							<h3 className="container text-light section-title">
-								We believe in the power of technology
-							</h3>
-							<div className="testimonials-inner container">
-								<h4 className="mb-3">OUR HAPPY CLIENTS</h4>
-								<h5 className="mb-3">What Clients Say?</h5>
-								<p>
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius
-									necessitatibus facere ducimus odit. Dolores ducimus a maiores
-									amet omnis quae magnam perspiciatis, nam totam nulla,
-									molestias accusamus fugiat inventore facere.
-								</p>
-							</div>
-						</section>
-
-						<section className="our-team mt-5">
-							<p className="text-center sub-heading">YOU CAN MEET OUR TEAM</p>
-							<h3 className="text-secondary text-center section-title">
-								OUR TEAM
-							</h3>
+						<section
+							className="our-team pt-4"
+							data-aos="fade-up"
+							data-aos-easing="ease-in-out"
+							data-aos-delay="100"
+							data-aos-duration="1000"
+						>
+							<h3 className="text-center section-title">Our Team</h3>
 							<div className="our-team-card-wrapper container">
 								{TeamData.map((teamMember) => (
 									<TeamCard teamMember={teamMember} key={teamMember.id} />
@@ -147,11 +143,55 @@ const LandingPage = () => {
 							</div>
 						</section>
 
-						<section id="contact-us" className="contact-us">
-							<h3 className="text-secondary text-center section-title">
-								Contact Us
+						<section id="services" className="services mb-5">
+							<h3 className=" text-center section-title">Our Services</h3>
+							<div className="services-inner container">
+								{servicesData.map((service) => (
+									<ServiceCard
+										key={service.id}
+										service={service}
+										handlePayload={handlePayload}
+									/>
+								))}
+							</div>
+						</section>
+
+						<TestimonialsSlider />
+
+						<section id="contact-us" className="contact-us container pt-5">
+							<h3 className="section-title ps-0 pt-3 pb-5 text-center">
+								{"We'd Love to Hear From You"}
 							</h3>
-							<ContactForm />
+							<div className="contact-us-inner">
+								<div className="locate-us">
+									<div className="locate-us-contact-details">
+										<p>
+											<i className="fa-solid fa-location-pin"></i>
+											Victoria Plaza Rumuodara Junction
+										</p>
+										<p>
+											<i className="fa-solid fa-phone"></i>
+											+2347062275085
+										</p>
+										<p>
+											<i className="fa-solid fa-envelope"></i>
+											ububa.tech@gmail.com
+										</p>
+									</div>
+									<div className="google-map-container">
+										<iframe
+											src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248.4667677297858!2d7.0300656572127425!3d4.860912785864461!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1069d38495de7af1%3A0xe105140708574a41!2sGourmet%20Spanish%20Supermarket!5e0!3m2!1sen!2sng!4v1663574022010!5m2!1sen!2sng"
+											width="100%"
+											height="100%"
+											loading="lazy"
+										></iframe>
+									</div>
+								</div>
+
+								<div className="message-us">
+									<ContactForm revealPayload={false} />
+								</div>
+							</div>
 						</section>
 					</div>
 				</FrontLayout>
@@ -161,5 +201,3 @@ const LandingPage = () => {
 };
 
 export default LandingPage;
-
-// This page should comprise of the header and hero component

@@ -4,31 +4,26 @@ footer {
 	color: white;
 	padding-bottom: 2em;
 
+	i {
+		font-size: 1.5rem;
+		margin-right: 0.4em;
+		cursor: pointer;
+	}
+
 	.footer-top {
 		padding: 1em 0;
 
 		p {
 			font-weight: 400;
 			font-size: 16px;
-			line-height: 161.19%;
-			letter-spacing: -0.005em;
 		}
 		.footer-logo {
-			// border: 1px solid black;
-			margin: 4em;
-			margin-top: 3em;
+			padding: 3em 0;
 		}
 		.footer-navs {
 			text-align: center;
 		}
-
-		.footer-icon {
-			width: 30px;
-		}
 		.contact-wrapper {
-			gap: 1em;
-			margin-bottom: 1em;
-
 			p {
 				margin-bottom: 0;
 			}
@@ -38,11 +33,17 @@ footer {
 			padding: 0;
 		}
 
+		.socials-wrapper {
+			a {
+				color: white;
+			}
+		}
+
 		.footer-navs-detail {
 			margin-bottom: 3em;
 		}
 
-		@media screen and (min-width: 800px) {
+		@media screen and (min-width: 993px) {
 			.footer-logo,
 			.contact-wrapper {
 				justify-content: left;
