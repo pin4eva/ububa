@@ -41,6 +41,7 @@ function MyApp({
 					name="description"
 					content="Official website of Joint Heirs Assembly International"
 				/>
+				 <meta  name="simpledcver"  content="token">
 			</Head>
 			<ApolloProvider client={client}>
 				<Component {...pageProps} />
