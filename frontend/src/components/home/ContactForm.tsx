@@ -1,74 +1,116 @@
-import { apollo } from "apollo";
-import { CREATE_CONTACT } from "apollo/queries/contact.query";
-import { servicesData } from "data/services.data";
-import { CreateContactInput } from "interface/contact.interface";
-import React, { useState } from "react";
+"use client";
+
 import { useForm, SubmitHandler } from "react-hook-form";
-const ContactForm: React.FC<{ revealPayload: boolean }> = ({
-	revealPayload,
-}) => {
+import { Send } from "lucide-react";
+
+interface ContactFormData {
+	name: string;
+	email: string;
+	message: string;
+}
+
+export default function ContactForm() {
 	const {
 		register,
 		handleSubmit,
 		reset,
-		formState: { isSubmitting },
-	} = useForm<CreateContactInput>();
+		formState: { isSubmitting, errors },
+	} = useForm<ContactFormData>();
 
-	const onSubmit: SubmitHandler<CreateContactInput> = async (input) => {
+	const onSubmit: SubmitHandler<ContactFormData> = async (data) => {
 		try {
-			const { data } = await apollo.mutate({
-				mutation: CREATE_CONTACT,
-				variables: { input },
-			});
-			if (data) {
-				alert("Thank you for message, we will respond in the next 24hrs");
-				reset({ email: "", message: "", name: "" });
-			}
+			// TODO: Replace with your backend API endpoint when ready
+			console.log("Form submitted:", data);
+			alert("Thank you for your message! We will respond within 24 hours.");
+			reset();
 		} catch (error) {
-			console.log(error);
+			console.error("Error submitting form:", error);
+			alert("There was an error submitting your message. Please try again.");
 		}
 	};
+
 	return (
-		<form className="container" onSubmit={handleSubmit(onSubmit)}>
-			{
-				<select required style={{ display: revealPayload ? "block" : "none" }}>
-					<option style={{ color: "gray" }}>Select Needed Service</option>
-					{Object.values(servicesData).map((elem) => (
-						<option key={elem.id}>{elem.productTitle}</option>
-					))}
-				</select>
-			}
-			<div className="form-group">
+		<form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+			<div>
+				<label
+					htmlFor="name"
+					className="block text-sm font-medium text-gray-700 mb-1"
+				>
+					Name
+				</label>
 				<input
-					{...register("name", { required: true, minLength: 5 })}
+					{...register("name", { required: "Name is required", minLength: 2 })}
 					type="text"
-					name="name"
-					placeholder="Name"
+					id="name"
+					placeholder="Your name"
+					className="input-field"
 				/>
+				{errors.name && (
+					<p className="text-red-500 text-sm mt-1">{errors.name.message}</p>
+				)}
 			</div>
-			<div className="form-group">
+
+			<div>
+				<label
+					htmlFor="email"
+					className="block text-sm font-medium text-gray-700 mb-1"
+				>
+					Email
+				</label>
 				<input
+					{...register("email", {
+						required: "Email is required",
+						pattern: {
+							value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+							message: "Invalid email address",
+						},
+					})}
 					type="email"
-					{...register("email", { required: true, minLength: 5 })}
-					name="email"
-					placeholder="Email"
+					id="email"
+					placeholder="your@email.com"
+					className="input-field"
 				/>
+				{errors.email && (
+					<p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
+				)}
 			</div>
-			<div className="form-group">
+
+			<div>
+				<label
+					htmlFor="message"
+					className="block text-sm font-medium text-gray-700 mb-1"
+				>
+					Message
+				</label>
 				<textarea
-					cols={10}
+					{...register("message", {
+						required: "Message is required",
+						minLength: 10,
+					})}
+					id="message"
 					rows={5}
-					{...register("message", { required: true, minLength: 5 })}
-					placeholder="Kindly give us a brief description of your project needs"
-				></textarea>
+					placeholder="Tell us about your project..."
+					className="input-field resize-none"
+				/>
+				{errors.message && (
+					<p className="text-red-500 text-sm mt-1">{errors.message.message}</p>
+				)}
 			</div>
-			<div className="text-end">
-				<button disabled={isSubmitting} className="btn-sm btn-animation">
-					{isSubmitting ? "processing..." : "Submit"}
-				</button>
-			</div>
+
+			<button
+				type="submit"
+				disabled={isSubmitting}
+				className="btn-primary w-full flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+			>
+				{isSubmitting ? (
+					"Sending..."
+				) : (
+					<>
+						Send Message
+						<Send className="w-4 h-4" />
+					</>
+				)}
+			</button>
 		</form>
 	);
-};
-
-export default ContactForm;
+}

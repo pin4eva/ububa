@@ -1,53 +1,60 @@
-import { IServicesData } from "../interface/services.interface.ts";
+import { IServicesData } from "@/interface/services.interface";
 
 export const servicesData: IServicesData[] = [
 	{
 		id: 1,
-		productTitle: "Software Development",
+		productTitle: "Web Development",
 		productDesc:
-			"Ububa  Technologies has reputable proficieny in the development of custom software solutions, portals, e-commerce applications, business application, automation software, etc.",
-		productImg: "/images/softwareDev.jpg",
+			"Build responsive, high-performance websites and web applications using modern frameworks like React, Next.js, and Vue. From landing pages to complex web platforms, we deliver scalable solutions.",
+		productImg: "/images/webdesign.png",
 	},
 	{
 		id: 2,
-		productTitle: "Application Development",
+		productTitle: "Mobile App Development",
 		productDesc:
-			"Mobile app development is the process by which a mobile app is developed for mobiles i.e phone  and this involes different applications like games Luncher, chat-apps, message apps, to-do list",
+			"Create native and cross-platform mobile applications for iOS and Android. We develop intuitive, feature-rich apps that provide seamless user experiences across all devices.",
 		productImg: "/images/appDev.jpg",
 	},
 	{
 		id: 3,
-		productTitle: "Web Development",
+		productTitle: "UI/UX Design",
 		productDesc:
-			"Web development is the work involved in developing a web site for the Internet  and for businesses, individuals for the purpose of reaching out to more individuals inregards to their business...",
-		productImg: "/images/webdesign.png",
-	},
-	{
-		id: 4,
-		productTitle: "Visual Design",
-		productDesc:
-			"Ububa Technologies creates customized e-commerce website that are effective and full of interactions which helps an individual to trade online which involves buying and selling...",
-		productImg: "/images/ecommerce.jpg",
-	},
-	{
-		id: 5,
-		productTitle: "Brand Identity Design",
-		productDesc:
-			"Clients rarely have the time to read something. The unique way to convey something fast is by Graphics Design... and here in Ububa we have good Graphics design instructors with  experience",
+			"Design beautiful, user-centered interfaces that delight users and drive engagement. Our design process focuses on usability, accessibility, and creating memorable digital experiences.",
 		productImg: "/images/graphicdesign.jpg",
 	},
 	{
-		id: 6,
-		productTitle: "Product Design",
+		id: 4,
+		productTitle: "Software Development",
 		productDesc:
-			"Clients rarely have the time to read something. The unique way to convey something fast is by Graphics Design... and here in Ububa we have good Graphics design instructors with  experience",
+			"Develop custom software solutions tailored to your business needs. From enterprise applications to automation tools, we build scalable software that streamlines operations.",
+		productImg: "/images/softwareDev.jpg",
+	},
+	{
+		id: 5,
+		productTitle: "E-commerce Solutions",
+		productDesc:
+			"Launch and scale your online store with powerful e-commerce platforms. We integrate payment gateways, inventory management, and marketing tools to maximize your sales.",
+		productImg: "/images/ecommerce.jpg",
+	},
+	{
+		id: 6,
+		productTitle: "Tech Training & Consulting",
+		productDesc:
+			"Upskill your team with hands-on training in software development, UI/UX design, and digital marketing. We offer bootcamps, workshops, and one-on-one mentoring programs.",
 		productImg: "/images/graphicdesign.jpg",
 	},
 	{
 		id: 7,
-		productTitle: "Training",
+		productTitle: "Digital Marketing",
 		productDesc:
-			"The advent of digital marketing has challenged the existing marketing strategies of companies across the world. It reaches out out to more people in different parts of the world...",
-		productImg: "/images/digital-marketing.jpg",
+			"Grow your online presence with data-driven digital marketing strategies. From SEO and content marketing to social media management, we help you reach your target audience.",
+		productImg: "/images/graphicdesign.jpg",
+	},
+	{
+		id: 8,
+		productTitle: "Brand Identity Design",
+		productDesc:
+			"Create a distinctive brand identity that stands out. We design logos, brand guidelines, marketing materials, and visual assets that communicate your brand values effectively.",
+		productImg: "/images/graphicdesign.jpg",
 	},
 ];
