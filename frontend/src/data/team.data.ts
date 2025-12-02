@@ -1,4 +1,4 @@
-import { ITeamCard } from "interface/team.interface";
+import { ITeamCard } from "@/interface/team.interface";
 
 export const TeamData: ITeamCard[] = [
 	{

@@ -1,51 +1,39 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-import React, { Fragment, useEffect, useState } from "react";
-import Footer from "./Footer";
-import Header from "./Header";
+'use client';
 
-const FrontLayout: React.FC<{
-	children: React.ReactElement;
-	showHeader?: boolean;
-}> = ({ children }) => {
-	const [scrolled, setScrolled] = useState(false);
-	const [isAtFooter, setIsAtFooter] = useState(false);
-	const [showMobileNav, setShowMobileNav] = useState(false);
+import { useState, useEffect } from 'react';
+import Header from './Header';
+import Footer from './Footer';
 
-	useEffect(() => {
-		window.addEventListener("scroll", () => {
-			const pageHeight = window.scrollY;
-			if (pageHeight > 0) {
-				setScrolled(true);
-			} else setScrolled(false);
-		});
+interface FrontLayoutProps {
+  children: React.ReactNode;
+}
 
-		window.addEventListener("scroll", () => {
-			const pageHeight = window.scrollY;
-			if (pageHeight >= 4000) {
-				setIsAtFooter(true);
-				// console.log(pageHeight);
-			} else setIsAtFooter(false);
-		});
-	});
+export function FrontLayout({ children }: FrontLayoutProps) {
+  const [scrolled, setScrolled] = useState(false);
+  const [showMobileNav, setShowMobileNav] = useState(false);
 
-	const toggleMobileNav = (state: boolean) => {
-		setShowMobileNav(state);
-	};
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
 
-	return (
-		<Fragment>
-			<div className={`front-layout`} style={{ overflow: "hidden" }}>
-				<Header
-					scrolled={scrolled}
-					showMobileNav={showMobileNav}
-					toggleMobileNav={toggleMobileNav}
-				/>
-				<main className="front-layout-main ">{children}</main>
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
-				<Footer isAtFooter={isAtFooter} />
-			</div>
-		</Fragment>
-	);
-};
+  const toggleMobileNav = (state: boolean) => {
+    setShowMobileNav(state);
+  };
 
-export default FrontLayout;
+  return (
+    <div className="flex flex-col min-h-screen">
+      <Header
+        scrolled={scrolled}
+        showMobileNav={showMobileNav}
+        toggleMobileNav={toggleMobileNav}
+      />
+      <main className="flex-grow">{children}</main>
+      <Footer />
+    </div>
+  );
+}
