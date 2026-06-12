@@ -1,174 +1,218 @@
-# Ububa Technology Website
+Welcome to your new TanStack Start app! 
 
-A modern, responsive website for Ububa Technology - IT Consulting and Computer Training company.
+# Getting Started
 
-## Tech Stack
+To run this application:
 
-- **Framework**: Next.js 15 with App Router
-- **React**: 19
-- **Styling**: Tailwind CSS 3.4
-- **Icons**: Lucide React
-- **Animations**: AOS (Animate On Scroll), Animate.css
-- **Carousel**: Swiper
-- **Forms**: React Hook Form
-- **Language**: TypeScript 5
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js 18.17 or later
-- npm, yarn, or pnpm
-
-### Installation
-
-1. Clone the repository:
 ```bash
-git clone https://github.com/pin4eva/ububa.git
-cd ububa/frontend
+bun install
+bun --bun run dev
 ```
 
-2. Install dependencies:
+# Building For Production
+
+To build this application for production:
+
 ```bash
-npm install
+bun --bun run build
 ```
 
-3. Set up environment variables:
+## Testing
+
+This project uses [Vitest](https://vitest.dev/) for testing. You can run the tests with:
+
 ```bash
-cp .env.example .env.local
+bun --bun run test
 ```
 
-4. Start the development server:
+## Styling
+
+This project uses [Tailwind CSS](https://tailwindcss.com/) for styling.
+
+### Removing Tailwind CSS
+
+If you prefer not to use Tailwind CSS:
+
+1. Remove the demo pages in `src/routes/demo/`
+2. Replace the Tailwind import in `src/styles.css` with your own styles
+3. Remove `tailwindcss()` from the plugins array in `vite.config.ts`
+4. Uninstall the packages: `bun install @tailwindcss/vite tailwindcss -D`
+
+## Linting & Formatting
+
+
+This project uses [eslint](https://eslint.org/) and [prettier](https://prettier.io/) for linting and formatting. Eslint is configured using [tanstack/eslint-config](https://tanstack.com/config/latest/docs/eslint). The following scripts are available:
+
 ```bash
-npm run dev
+bun --bun run lint
+bun --bun run format
+bun --bun run check
 ```
 
-5. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## Project Structure
+## Deploy with Nitro
 
-```
-src/
-├── app/                    # Next.js App Router
-│   ├── layout.tsx          # Root layout with providers
-│   ├── page.tsx            # Home page
-│   ├── loading.tsx         # Loading UI
-│   ├── error.tsx           # Error boundary
-│   ├── not-found.tsx       # 404 page
-│   ├── demo/               # Demo page (GraphQL test)
-│   └── training/           # Training pages
-│       ├── page.tsx        # Training index
-│       └── register/       # Registration form
-├── components/
-│   ├── home/               # Home page components
-│   │   ├── HeroSection.tsx
-│   │   ├── AboutSection.tsx
-│   │   ├── TeamSection.tsx
-│   │   ├── ServicesSection.tsx
-│   │   ├── TestimonialsSection.tsx
-│   │   └── ContactSection.tsx
-│   ├── shared/             # Shared components
-│   │   ├── Header.tsx
-│   │   ├── Footer.tsx
-│   │   └── FrontLayout.tsx
-│   └── providers/          # React context providers
-│       ├── Providers.tsx
-│       └── NProgressProvider.tsx
-├── lib/                    # Utilities and configurations
-│   ├── apollo-client.ts    # Apollo Client setup
-│   └── queries/            # GraphQL queries
-├── data/                   # Static data files
-├── interface/              # TypeScript interfaces
-└── public/                 # Static assets
+This project uses Nitro as a generic server adapter, so it can run on any Node-compatible host.
+
+```bash
+npm run build
+node dist/server/index.mjs
 ```
 
-## Available Scripts
+The build output is a self-contained Node server. To deploy, push the `dist/` directory to your host (Render, Fly.io, your own VPS, etc.) and run the server command above.
 
-- `npm run dev` - Start development server with Turbopack
-- `npm run build` - Build for production
-- `npm run start` - Start production server
-- `npm run lint` - Run ESLint
+For host-specific presets (Vercel, Netlify, Cloudflare, AWS Lambda, etc.) and tuning, see https://v3.nitro.build/deploy.
 
-## Features
 
-- ✅ **Modern UI** - Clean, responsive design with Tailwind CSS
-- ✅ **Server Components** - Optimal performance with React Server Components
-- ✅ **Animations** - Smooth scroll animations with AOS
-- ✅ **Contact Form** - GraphQL-powered contact form
-- ✅ **Training Registration** - Course registration system
-- ✅ **SEO Optimized** - Metadata API for better SEO
-- ✅ **Type Safe** - Full TypeScript support
-- ✅ **Fast Loading** - Turbopack for instant HMR
 
-## Backend Separation
+## Routing
 
-The backend (GraphQL API, MongoDB) has been separated from this project. Reference code is available in the `_backend-reference` folder for setting up a standalone backend service.
+This project uses [TanStack Router](https://tanstack.com/router) with file-based routing. Routes are managed as files in `src/routes`.
 
-### Environment Variables
+### Adding A Route
 
-| Variable | Description | Default |
-|----------|-------------|---------|
-| `NEXT_PUBLIC_API_URL` | GraphQL API endpoint | `http://localhost:4000/graphql` |
+To add a new route to your application just add a new file in the `./src/routes` directory.
 
-## Upgrade from Next.js 12
+TanStack will automatically generate the content of the route file for you.
 
-This project was upgraded from Next.js 12 to Next.js 15. Key changes include:
+Now that you have two routes you can use a `Link` component to navigate between them.
 
-### Breaking Changes Addressed
+### Adding Links
 
-1. **Pages Router → App Router**
-   - Migrated from `pages/` to `app/` directory
-   - Replaced `getServerSideProps` with Server Components
-   - Updated `next/head` to metadata API
+To use SPA (Single Page Application) navigation you will need to import the `Link` component from `@tanstack/react-router`.
 
-2. **Removed API Routes**
-   - GraphQL API moved to separate backend
-   - API routes removed from Next.js project
+```tsx
+import { Link } from "@tanstack/react-router";
+```
 
-3. **Component Updates**
-   - Added `'use client'` directive for client components
-   - Replaced `useRouter` with `usePathname`
-   - Removed nested `<a>` tags from `<Link>` components
-   - Updated `<Image>` to use `fill` prop instead of `layout="fill"`
+Then anywhere in your JSX you can use it like so:
 
-4. **Styling Migration**
-   - Replaced Bootstrap + SCSS with Tailwind CSS
-   - Replaced Font Awesome with Lucide React icons
-   - Custom component styles converted to Tailwind utilities
+```tsx
+<Link to="/about">About</Link>
+```
 
-### Dependencies Removed
+This will create a link that will navigate to the `/about` route.
 
-- `apollo-server-micro`, `apollo-server-core`
-- `mongoose`, `@typegoose/typegoose`
-- `type-graphql`, `reflect-metadata`
-- `class-validator`
-- `bootstrap`, `sass`
-- `@fortawesome/fontawesome-free`
+More information on the `Link` component can be found in the [Link documentation](https://tanstack.com/router/v1/docs/framework/react/api/router/linkComponent).
 
-### Dependencies Added
+### Using A Layout
 
-- `tailwindcss`, `autoprefixer`, `postcss`
-- `lucide-react`
+In the File Based Routing setup the layout is located in `src/routes/__root.tsx`. Anything you add to the root route will appear in all the routes. The route content will appear in the JSX where you render `{children}` in the `shellComponent`.
 
-## Contributing
+Here is an example layout that includes a header:
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+```tsx
+import { HeadContent, Scripts, createRootRoute } from '@tanstack/react-router'
 
-## License
+export const Route = createRootRoute({
+  head: () => ({
+    meta: [
+      { charSet: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { title: 'My App' },
+    ],
+  }),
+  shellComponent: ({ children }) => (
+    <html lang="en">
+      <head>
+        <HeadContent />
+      </head>
+      <body>
+        <header>
+          <nav>
+            <Link to="/">Home</Link>
+            <Link to="/about">About</Link>
+          </nav>
+        </header>
+        {children}
+        <Scripts />
+      </body>
+    </html>
+  ),
+})
+```
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+More information on layouts can be found in the [Layouts documentation](https://tanstack.com/router/latest/docs/framework/react/guide/routing-concepts#layouts).
 
-## Contact
+## Server Functions
 
-- **Website**: [ububatech.org](https://ububatech.org)
-- **Email**: ububa.tech@gmail.com
-- **Phone**: +234 706 227 5085
-- **Location**: Victoria Plaza, Rumuodara Junction, Port Harcourt, Nigeria
+TanStack Start provides server functions that allow you to write server-side code that seamlessly integrates with your client components.
 
----
+```tsx
+import { createServerFn } from '@tanstack/react-start'
 
-© 2024 Ububa Technologies. All rights reserved.
+const getServerTime = createServerFn({
+  method: 'GET',
+}).handler(async () => {
+  return new Date().toISOString()
+})
+
+// Use in a component
+function MyComponent() {
+  const [time, setTime] = useState('')
+  
+  useEffect(() => {
+    getServerTime().then(setTime)
+  }, [])
+  
+  return <div>Server time: {time}</div>
+}
+```
+
+## API Routes
+
+You can create API routes by using the `server` property in your route definitions:
+
+```tsx
+import { createFileRoute } from '@tanstack/react-router'
+import { json } from '@tanstack/react-start'
+
+export const Route = createFileRoute('/api/hello')({
+  server: {
+    handlers: {
+      GET: () => json({ message: 'Hello, World!' }),
+    },
+  },
+})
+```
+
+## Data Fetching
+
+There are multiple ways to fetch data in your application. You can use TanStack Query to fetch data from a server. But you can also use the `loader` functionality built into TanStack Router to load the data for a route before it's rendered.
+
+For example:
+
+```tsx
+import { createFileRoute } from '@tanstack/react-router'
+
+export const Route = createFileRoute('/people')({
+  loader: async () => {
+    const response = await fetch('https://swapi.dev/api/people')
+    return response.json()
+  },
+  component: PeopleComponent,
+})
+
+function PeopleComponent() {
+  const data = Route.useLoaderData()
+  return (
+    <ul>
+      {data.results.map((person) => (
+        <li key={person.name}>{person.name}</li>
+      ))}
+    </ul>
+  )
+}
+```
+
+Loaders simplify your data fetching logic dramatically. Check out more information in the [Loader documentation](https://tanstack.com/router/latest/docs/framework/react/guide/data-loading#loader-parameters).
+
+# Demo files
+
+Files prefixed with `demo` can be safely deleted. They are there to provide a starting point for you to play around with the features you've installed.
+
+# Learn More
+
+You can learn more about all of the offerings from TanStack in the [TanStack documentation](https://tanstack.com).
+
+For TanStack Start specific documentation, visit [TanStack Start](https://tanstack.com/start).
