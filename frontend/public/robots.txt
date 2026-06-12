@@ -1,3 +1,9 @@
-# https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow:
+Allow: /
+
+Sitemap: https://ububa.org/sitemap.xml
+
+# Block common crawl traps
+Disallow: /api/
+Disallow: /_build/
+Disallow: /.output/

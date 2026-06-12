@@ -2,18 +2,48 @@ import { createFileRoute } from '@tanstack/react-router'
 import { RootLayout } from '../components/layout/RootLayout'
 import { ContactSection } from '../components/sections/ContactSection'
 import { company } from '../data/company'
+import { buildHead } from '../lib/seo'
+
+const contactJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ContactPage',
+  '@id': 'https://ububa.org/contact',
+  url: 'https://ububa.org/contact',
+  name: 'Contact Ububa Technology Limited',
+  description: 'Contact Ububa Technology Limited to start a software project, request a quote, or enquire about training.',
+  mainEntity: {
+    '@type': 'Organization',
+    name: 'Ububa Technology Limited',
+    url: 'https://ububa.org',
+    telephone: '+234-809-977-7733',
+    email: 'mail@ububa.org',
+    contactPoint: {
+      '@type': 'ContactPoint',
+      telephone: '+234-809-977-7733',
+      contactType: 'customer service',
+      email: 'mail@ububa.org',
+      availableLanguage: 'English',
+      hoursAvailable: {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+        opens: '08:00',
+        closes: '18:00',
+      },
+    },
+  },
+}
 
 export const Route = createFileRoute('/contact')({
-  head: () => ({
-    meta: [
-      { title: 'Contact Us | Ububa Technology Limited' },
-      {
-        name: 'description',
-        content:
-          'Get in touch with Ububa Technology Limited. Start a project, request a quote, or ask about our training programs. Based in Port Harcourt, serving clients globally.',
-      },
-    ],
-  }),
+  head: () =>
+    buildHead({
+      title: 'Contact Us | Hire Software Developers in Nigeria — Ububa Technology',
+      description:
+        'Contact Ububa Technology Limited to start your software project. Request a free quote for web development, mobile apps, enterprise software or tech training. Port Harcourt, Nigeria.',
+      path: '/contact',
+      keywords:
+        'hire software developers Nigeria, software development quote Nigeria, contact software company Nigeria, web development quote Port Harcourt, app development Nigeria contact, outsource software development Nigeria',
+      jsonLd: contactJsonLd,
+    }),
   component: ContactPage,
 })
 

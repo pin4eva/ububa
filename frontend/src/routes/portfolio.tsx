@@ -1,22 +1,44 @@
-import { createFileRoute } from '@tanstack/react-router'
-import { RootLayout } from '../components/layout/RootLayout'
-import { SectionHeader } from '../components/ui/SectionHeader'
-import { Badge } from '../components/ui/Badge'
-import { CTASection } from '../components/sections/CTASection'
-import { projects } from '../data/projects'
-import { MapPin, CheckCircle } from 'lucide-react'
+import { createFileRoute } from '@tanstack/react-router';
+import { CheckCircle, MapPin } from 'lucide-react';
+import { RootLayout } from '../components/layout/RootLayout';
+import { CTASection } from '../components/sections/CTASection';
+import { Badge } from '../components/ui/Badge';
+import { projects } from '../data/projects';
+import { buildHead } from '../lib/seo';
+
+const portfolioJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Ububa Technology Portfolio — Software Development Projects Nigeria',
+  description: 'Enterprise software projects delivered by Ububa Technology Limited for clients in Nigeria and Canada.',
+  url: 'https://ububa.org/portfolio',
+  numberOfItems: projects.length,
+  itemListElement: projects.map((p, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    item: {
+      '@type': 'SoftwareApplication',
+      name: p.title,
+      description: p.description,
+      applicationCategory: p.category,
+      operatingSystem: 'Web',
+      offers: { '@type': 'Offer', price: '0', priceCurrency: 'NGN' },
+      author: { '@type': 'Organization', name: 'Ububa Technology Limited' },
+    },
+  })),
+}
 
 export const Route = createFileRoute('/portfolio')({
-  head: () => ({
-    meta: [
-      { title: 'Portfolio | Ububa Technology Limited' },
-      {
-        name: 'description',
-        content:
-          'Case studies from Ububa Technology Limited — enterprise software for University of Port Harcourt, Touchstone Institute Canada, Climax Inspection Service, and Kemcolfarms.',
-      },
-    ],
-  }),
+  head: () =>
+    buildHead({
+      title: 'Portfolio | Software Development Projects — Ububa Technology Nigeria',
+      description:
+        'Real enterprise software built by Ububa Technology Limited. Case studies: University of Port Harcourt student portal, Touchstone Institute Canada platform, Climax IMS, Kemcolfarms agro e-commerce.',
+      path: '/portfolio',
+      keywords:
+        'software projects Nigeria, enterprise software case studies, university management system Nigeria, inventory management software Nigeria, agro ecommerce Nigeria, web app development Nigeria, student portal Nigeria, software development portfolio Nigeria',
+      jsonLd: portfolioJsonLd,
+    }),
   component: PortfolioPage,
 })
 
@@ -56,7 +78,7 @@ function PortfolioPage() {
               <div key={project.id} className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${i % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
                 {/* Image */}
                 <div className={i % 2 === 1 ? 'lg:order-2' : ''}>
-                  <div className="relative rounded-2xl overflow-hidden aspect-[4/3] bg-gradient-to-br from-primary to-teal">
+                  <div className="relative rounded-2xl overflow-hidden aspect-4/3 bg-linear-to-br from-primary to-teal">
                     <img
                       src={project.image}
                       alt={project.title}

@@ -4,18 +4,77 @@ import { SectionHeader } from '../components/ui/SectionHeader'
 import { CTASection } from '../components/sections/CTASection'
 import { bootcamp, corporateTraining } from '../data/training'
 import { Monitor, Smartphone, PenTool, BarChart2, Code, TrendingUp, CheckCircle, ArrowRight, Users, Building } from 'lucide-react'
+import { buildHead } from '../lib/seo'
+
+const trainingJsonLd = [
+  ...bootcamp.tracks.map((track) => ({
+    '@context': 'https://schema.org',
+    '@type': 'Course',
+    name: track.title,
+    description: track.description,
+    url: 'https://ububa.org/training#bootcamp',
+    timeRequired: track.duration,
+    educationalLevel: 'Beginner to Intermediate',
+    teaches: track.curriculum,
+    inLanguage: 'en',
+    provider: {
+      '@type': 'Organization',
+      name: 'Ububa Technology Limited',
+      url: 'https://ububa.org',
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Port Harcourt',
+        addressRegion: 'Rivers State',
+        addressCountry: 'NG',
+      },
+    },
+    courseMode: ['onsite', 'online'],
+    availableLanguage: 'English',
+    hasCourseInstance: {
+      '@type': 'CourseInstance',
+      courseMode: ['onsite', 'online'],
+      location: { '@type': 'Place', name: 'Port Harcourt, Nigeria' },
+      courseSchedule: {
+        '@type': 'Schedule',
+        repeatFrequency: 'P3M',
+        repeatCount: 4,
+      },
+    },
+  })),
+  {
+    '@context': 'https://schema.org',
+    '@type': 'EducationalOrganization',
+    name: 'Ububa Technology Training',
+    url: 'https://ububa.org/training',
+    description:
+      'Tech training programs in Port Harcourt, Nigeria — bootcamps for individuals and corporate workshops for teams.',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Port Harcourt',
+      addressRegion: 'Rivers State',
+      addressCountry: 'NG',
+    },
+    telephone: '+234-809-977-7733',
+    email: 'mail@ububa.org',
+    parentOrganization: {
+      '@type': 'Organization',
+      name: 'Ububa Technology Limited',
+      url: 'https://ububa.org',
+    },
+  },
+]
 
 export const Route = createFileRoute('/training')({
-  head: () => ({
-    meta: [
-      { title: 'Tech Training Programs | Ububa Technology Limited' },
-      {
-        name: 'description',
-        content:
-          'Software bootcamps and corporate training in Nigeria. Learn web development, mobile apps, UI/UX design, and data analytics with Ububa Technology Limited in Port Harcourt.',
-      },
-    ],
-  }),
+  head: () =>
+    buildHead({
+      title: 'Software Bootcamp & Tech Training Nigeria | Ububa Technology Limited',
+      description:
+        'Join our software bootcamp in Port Harcourt, Nigeria. Courses in web development, mobile app development, UI/UX design & data analytics. Corporate tech training also available.',
+      path: '/training',
+      keywords:
+        'software bootcamp Nigeria, tech training Port Harcourt, web development course Nigeria, data analytics training Nigeria, corporate tech training Nigeria, learn coding Nigeria, software engineering bootcamp Nigeria, UI UX design course Nigeria, mobile app development course Nigeria, data analytics course Port Harcourt',
+      jsonLd: trainingJsonLd,
+    }),
   component: TrainingPage,
 })
 

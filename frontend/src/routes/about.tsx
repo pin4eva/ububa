@@ -6,18 +6,42 @@ import { TestimonialsSection } from '../components/sections/TestimonialsSection'
 import { company } from '../data/company'
 import { team } from '../data/team'
 import { Shield, Clock, Handshake, Globe, Linkedin, Twitter, Github } from 'lucide-react'
+import { buildHead } from '../lib/seo'
+
+const aboutJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'AboutPage',
+  '@id': 'https://ububa.org/about',
+  url: 'https://ububa.org/about',
+  name: 'About Ububa Technology Limited',
+  description:
+    'Ububa Technology Limited is a software development company based in Port Harcourt, Nigeria, founded in 2014. We build enterprise-grade applications for universities, enterprises, and growing businesses across Nigeria and Canada.',
+  mainEntity: {
+    '@type': 'Organization',
+    '@id': 'https://ububa.org/#organization',
+    name: 'Ububa Technology Limited',
+    foundingDate: '2014',
+    foundingLocation: { '@type': 'Place', name: 'Port Harcourt, Nigeria' },
+    slogan: 'Enterprise Software. Global Impact.',
+    employee: team.map((m) => ({
+      '@type': 'Person',
+      name: m.name,
+      jobTitle: m.role,
+    })),
+  },
+}
 
 export const Route = createFileRoute('/about')({
-  head: () => ({
-    meta: [
-      { title: 'About Us | Ububa Technology Limited' },
-      {
-        name: 'description',
-        content:
-          'Learn about Ububa Technology Limited — 10+ years building enterprise software for clients in Nigeria and Canada. Our story, values, and team.',
-      },
-    ],
-  }),
+  head: () =>
+    buildHead({
+      title: 'About Us | Ububa Technology Limited — Software Company in Nigeria Since 2014',
+      description:
+        'Ububa Technology Limited is a software development company in Port Harcourt, Nigeria. Founded in 2014, we have delivered 150+ enterprise projects for clients in Nigeria and Canada. Meet our team.',
+      path: '/about',
+      keywords:
+        'Ububa Technology Limited, software company Nigeria, tech company Port Harcourt, software developers Nigeria, enterprise software company Nigeria, IT company Port Harcourt, Nigeria software company, software development company Rivers State',
+      jsonLd: aboutJsonLd,
+    }),
   component: AboutPage,
 })
 
