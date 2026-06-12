@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ububa.org/sitemap.xml
+
+# Block common crawl traps
+Disallow: /api/
+Disallow: /_build/
+Disallow: /.output/
