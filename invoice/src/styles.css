@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy: #1a2b4a;
+  --color-navy-light: #2a3d5f;
+  --color-gold: #b8956a;
+  --color-ink: #0f172a;
+  --color-mute: #64748b;
+  --color-hair: #e2e8f0;
+  --color-soft: #f8fafc;
+  --color-band: #f1f5f9;
+
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+@layer base {
+  html, body {
+    @apply text-ink antialiased;
+    font-family: var(--font-sans);
+  }
+}
+
+/* Print styles — fall-back if user prints from browser directly */
+@media print {
+  body {
+    @apply bg-white;
+  }
+  .no-print {
+    display: none !important;
+  }
+}
