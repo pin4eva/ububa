@@ -9,15 +9,15 @@ import {
 } from '@react-pdf/renderer'
 import type { Invoice, InvoiceTotals } from '~/lib/types'
 import { COMPANY } from '~/lib/company'
-import { formatDate, formatMoney } from '~/lib/format'
+import { formatDate, formatMoney, getCurrencyPrefix } from '~/lib/format'
 
-// Register Inter via Google's static CDN. If the user runs offline, swap to bundled files.
+// Inter is bundled in /public/fonts so PDF generation has no runtime network dependency.
 Font.register({
   family: 'Inter',
   fonts: [
-    { src: 'https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_nVMrMxCp50ojIa1ZL7.woff2', fontWeight: 400 },
-    { src: 'https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_nVMrMxCp50ojIa2pL7.woff2', fontWeight: 600 },
-    { src: 'https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_nVMrMxCp50ojIa1pL7.woff2', fontWeight: 700 },
+    { src: '/fonts/Inter-Regular.ttf', fontWeight: 400 },
+    { src: '/fonts/Inter-SemiBold.ttf', fontWeight: 600 },
+    { src: '/fonts/Inter-Bold.ttf', fontWeight: 700 },
   ],
 })
 
@@ -53,7 +53,7 @@ const s = StyleSheet.create({
   headerLeft: { flexDirection: 'row', alignItems: 'center' },
   logo: { width: 32, height: 38, marginRight: 12 },
   brandName: { fontSize: 18, fontWeight: 700, color: C.white, letterSpacing: 0.5 },
-  brandTag: { fontSize: 8, color: '#CBD5E1', fontStyle: 'italic', marginTop: 2 },
+  brandTag: { fontSize: 8, color: '#CBD5E1', marginTop: 2 },
   invoiceTitle: { fontSize: 26, fontWeight: 700, color: C.gold },
   goldStrip: { height: 3, backgroundColor: C.gold },
 
@@ -182,7 +182,7 @@ const s = StyleSheet.create({
   // Footer
   footerRow: { marginTop: 24 },
   notesBlock: { maxWidth: 320 },
-  notesText: { fontSize: 8, color: C.mute, fontStyle: 'italic', lineHeight: 1.4 },
+  notesText: { fontSize: 8, color: C.mute, lineHeight: 1.4 },
 })
 
 type Props = {
@@ -201,7 +201,7 @@ export function InvoiceDocument({ invoice, totals }: Props) {
         {/* Header */}
         <View style={s.header} fixed>
           <View style={s.headerLeft}>
-            <Image src={COMPANY.logoUrl} style={s.logo} />
+            <Image src={COMPANY.logoWhiteUrl} style={s.logo} />
             <View>
               <Text style={s.brandName}>{COMPANY.name.toUpperCase()}</Text>
               <Text style={s.brandTag}>{COMPANY.tagline}</Text>
@@ -236,7 +236,10 @@ export function InvoiceDocument({ invoice, totals }: Props) {
                 label="Due date"
                 value={formatDate(invoice.dueDate)}
               />
-              <MetaPdfRow label="Currency" value={invoice.currency} />
+              <MetaPdfRow
+                label="Currency"
+                value={`${invoice.currency} (${getCurrencyPrefix(invoice.currency).trim()})`}
+              />
             </View>
           </View>
 

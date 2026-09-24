@@ -1,11 +1,18 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { useMemo, useState } from 'react'
+// eslint-disable-next-line node/prefer-node-protocol -- the bare specifier resolves to the browser `buffer` polyfill; `node:buffer` would break the client build
+import { Buffer } from 'buffer'
 import { pdf, PDFViewer } from '@react-pdf/renderer'
 import { InvoiceForm } from '~/components/InvoiceForm'
 import { InvoicePreview } from '~/components/InvoicePreview'
 import { InvoiceDocument } from '~/components/InvoiceDocument'
 import { todayIso, addDaysIso, newId, calculateTotals } from '~/lib/format'
 import type { Invoice } from '~/lib/types'
+
+// @react-pdf/renderer expects Node's Buffer global, which the browser lacks.
+if (typeof globalThis.Buffer === 'undefined') {
+  globalThis.Buffer = Buffer
+}
 
 export const Route = createFileRoute('/')({
   component: HomePage,
@@ -51,9 +58,15 @@ function HomePage() {
 
       link.href = url
       link.download = `${invoice.invoiceNo || 'invoice'}.pdf`
+      document.body.appendChild(link)
       link.click()
+      link.remove()
 
-      URL.revokeObjectURL(url)
+      // Defer revoke so the browser has time to start the download.
+      setTimeout(() => URL.revokeObjectURL(url), 1000)
+    } catch (err) {
+      console.error('Failed to generate invoice PDF', err)
+      alert('Sorry, the PDF could not be generated. Please try again.')
     } finally {
       setIsDownloading(false)
     }

@@ -23,4 +23,6 @@ export const COMPANY = {
   },
   /** Path served from /public — used in HTML preview and PDF */
   logoUrl: '/logo.png',
+  /** White variant for use on the dark navy header */
+  logoWhiteUrl: '/logo-white.png',
 } as const

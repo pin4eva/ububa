@@ -1,5 +1,5 @@
 import type { Invoice, InvoiceItem } from '~/lib/types'
-import { newId } from '~/lib/format'
+import { CURRENCIES, newId } from '~/lib/format'
 
 type Props = {
   value: Invoice
@@ -53,13 +53,18 @@ export function InvoiceForm({ value, onChange }: Props) {
             />
           </Field>
           <Field label="Currency">
-            <input
-              type="text"
+            <select
               value={value.currency}
               onChange={(e) => update('currency', e.target.value)}
               title="Currency code"
               className={inputCls}
-            />
+            >
+              {CURRENCIES.map((code) => (
+                <option key={code} value={code}>
+                  {code}
+                </option>
+              ))}
+            </select>
           </Field>
           <Field label="Issue date">
             <input
