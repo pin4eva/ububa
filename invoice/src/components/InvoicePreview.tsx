@@ -31,7 +31,7 @@ export function InvoicePreview({ invoice, totals }: Props) {
           <div className="text-3xl font-bold text-gold">INVOICE</div>
         </div>
       </div>
-      <div className="h-75 bg-gold" />
+      <div className="h-0.75 bg-gold" />
 
       {/* From + meta */ }
       <div className="grid grid-cols-2 gap-8 px-8 pt-5">
